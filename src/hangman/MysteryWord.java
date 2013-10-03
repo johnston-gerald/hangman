@@ -11,7 +11,7 @@ package hangman;
 public class MysteryWord {
 
     String wordString;
-    char[] wordArray;
+    // char[] wordArray;
         
     public MysteryWord() {
     }

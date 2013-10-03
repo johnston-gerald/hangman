@@ -16,7 +16,7 @@ public class Gallows {
 
 public void displayGallows () {
         System.out.println(
-          "\n\t------------"
+          "\t------------"
         + "\n\t|          |"
         + "\n\t|          |"
         + "\n\t|"
