@@ -11,8 +11,8 @@ package hangman;
 public class Gallows {
     
     
-public Gallows() {
-}
+    public Gallows() {
+    }
 
 public void displayGallows () {
         System.out.println(

@@ -10,14 +10,26 @@ package hangman;
  */
 public class MysteryWord {
 
-    
-public MysteryWord() {
-}
+    String wordString;
+    char[] wordArray;
+        
+    public MysteryWord() {
+    }
 
 public void displayMysteryWord () {
-        System.out.println(
-          "\n\t_ _ _ _ _ _ _"
-        + "\n");
+    
+    wordString = "mississippi"; // This is just a dummy word. Eventually this will load from a text file
+    // wordArray = new char[wordString.length()];
+    // wordArray = wordString.toCharArray();
+    
+    System.out.print("Mystery word: ");
+    
+    for(int i = 0; i < wordString.length(); i++) {
+         System.out.print("_" + " ");
+    }
+    
+    System.out.print("(" +wordString.length() +" letters)");
+    System.out.println("\n");
 }
 
 }

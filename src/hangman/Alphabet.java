@@ -9,15 +9,25 @@ package hangman;
  * @author gerrygj
  */
 public class Alphabet {
-    
-public Alphabet() {
-}
+
+    // The array to contain the alphabet
+    char[] alphabetArray = new char[26];
+        
+    public Alphabet() {
+    }
 
 public void displayAlphabet () {
-        System.out.println(
-          "\n\tRemaining Letters:"
-        + "\n\tA B C D E F G H I J K L M N O P Q R S T U V W Z Y Z"
-        + "\n");
+    
+    alphabetArray= "abcdefghijklmnopqrstuvwxyz".toCharArray();
+    
+    System.out.println("Remaining Letters:");
+    
+    for(int i = 0; i < 26; i++) {
+         System.out.print(alphabetArray[i] + " ");
+    }
+    
+    System.out.print("\n");
+        
 }
 
 }
