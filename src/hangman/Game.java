@@ -19,7 +19,7 @@ public class Game {
     public void displayLosingMessage () {
         System.out.println(
              "\n\t*******************************************************************************"
-             + "\n\t Sorry. You lose." 
+             + "\n\t Sorry. You lose. Better luck next time!" 
              + "\n\t*******************************************************************************");
     }
     
