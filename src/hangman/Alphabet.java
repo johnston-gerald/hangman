@@ -12,18 +12,25 @@ public class Alphabet {
 
     // The array to contain the alphabet
     char[] alphabetArray = new char[26];
-        
+    
     public Alphabet() {
     }
 
-public void displayAlphabet () {
-    
+public void makeAlphabet (){
     alphabetArray= "abcdefghijklmnopqrstuvwxyz".toCharArray();
+}
+    
+public void displayAlphabet (char letter) {
     
     System.out.println("Remaining Letters:");
     
-    for(int i = 0; i < 26; i++) {
-         System.out.print(alphabetArray[i] + " ");
+    for(int i = 0; i < alphabetArray.length; i++) {
+        
+        if (alphabetArray[i] == letter) {
+            alphabetArray[i] = '_';
+        }
+        
+        System.out.print(alphabetArray[i] + " ");
     }
     
     System.out.print("\n");

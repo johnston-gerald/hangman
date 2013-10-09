@@ -4,32 +4,83 @@
  */
 package hangman;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  *
  * @author gerrygj
  */
 public class MysteryWord {
 
-    String wordString;
-    // char[] wordArray;
-        
+    String mysteryWord = getWord();
+    char[] mysteryArray = new char[mysteryWord.length()];
+    char[] wordArray = new char[mysteryWord.length()];
+    int count = 0;
+    
     public MysteryWord() {
+        for(int i = 0; i < mysteryArray.length; i++) {
+            mysteryArray[i] = '_';
+        }
     }
 
-public void displayMysteryWord () {
+public char getLetter() {
+    Scanner objScanner = new Scanner(System.in);
+    System.out.println("Please enter a letter: ");
+    char letter = objScanner.next().charAt(0);
+        
+    return letter;
+}
     
-    wordString = "mississippi"; // This is just a dummy word. Eventually this will load from a text file
-    // wordArray = new char[wordString.length()];
-    // wordArray = wordString.toCharArray();
+public String getWord() {
+    String hangmanWord = "mississippi"; // we will need to modify this later so it uploads a random word from a file
+    return hangmanWord;
+}    
+
+public void displayMysteryWord (char letter) {
+    
+    wordArray = mysteryWord.toCharArray();
+    boolean correctLetter = false;
     
     System.out.print("Mystery word: ");
     
-    for(int i = 0; i < wordString.length(); i++) {
-         System.out.print("_" + " ");
+    for(int i = 0; i < wordArray.length; i++) { // this convert the word to an array of characters
+        
+        if (wordArray[i] == letter) {
+            mysteryArray[i] = letter;
+            correctLetter = true;
+        }
+        
+        System.out.print(mysteryArray[i] + " ");
+        
     }
     
-    System.out.print("(" +wordString.length() +" letters)");
+    if (correctLetter == false) {
+        count++;
+    }
+    
+    System.out.print("(" +mysteryWord.length() +" letters)");
     System.out.println("\n");
+}
+
+public boolean winGame () {
+    
+    if (Arrays.equals(wordArray, mysteryArray)){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+public boolean loseGame () {
+    
+    if (count > 5){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 }
