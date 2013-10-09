@@ -33,7 +33,7 @@ public void displayAlphabet (char letter) {
         System.out.print(alphabetArray[i] + " ");
     }
     
-    System.out.print("\n");
+    System.out.print("\n\n");
         
 }
 

@@ -34,6 +34,7 @@ public class Game {
         
         MysteryWord mysteryWord = new MysteryWord();
         mysteryWord.displayMysteryWord('_');
+        mysteryWord.guessesLeft();
         
         char mysteryLetter;
                 
@@ -41,8 +42,9 @@ public class Game {
             
             mysteryLetter = mysteryWord.getLetter();
             gallows.displayGallows();
-            mysteryWord.displayMysteryWord(mysteryLetter);
             alphabet.displayAlphabet(mysteryLetter);
+            mysteryWord.displayMysteryWord(mysteryLetter);
+            mysteryWord.guessesLeft();
         }
         
         if (mysteryWord.winGame()){

@@ -16,6 +16,7 @@ public class MysteryWord {
     String mysteryWord = getWord();
     char[] mysteryArray = new char[mysteryWord.length()];
     char[] wordArray = new char[mysteryWord.length()];
+    int numberOfGuesses = 5; // we could have a difficulty setting that changes this value
     int count = 0;
     
     public MysteryWord() {
@@ -26,7 +27,7 @@ public class MysteryWord {
 
 public char getLetter() {
     Scanner objScanner = new Scanner(System.in);
-    System.out.println("Please enter a letter: ");
+    System.out.println("\nPlease enter a letter: ");
     char letter = objScanner.next().charAt(0);
         
     return letter;
@@ -59,8 +60,11 @@ public void displayMysteryWord (char letter) {
         count++;
     }
     
-    System.out.print("(" +mysteryWord.length() +" letters)");
-    System.out.println("\n");
+    System.out.print("(" +mysteryWord.length() +" letters)\n");
+}
+
+public void guessesLeft(){
+    System.out.println("You have " + (numberOfGuesses - count +1) + " guesses left.");
 }
 
 public boolean winGame () {
@@ -75,7 +79,7 @@ public boolean winGame () {
 
 public boolean loseGame () {
     
-    if (count > 5){
+    if (count > numberOfGuesses){
         return true;
     }
     else {
