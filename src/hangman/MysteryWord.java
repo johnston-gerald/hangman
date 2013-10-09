@@ -28,8 +28,7 @@ public class MysteryWord {
 public char getLetter() {
     Scanner objScanner = new Scanner(System.in);
     System.out.println("\nPlease enter a letter: ");
-    char letter = objScanner.next().charAt(0);
-        
+    char letter = Character.toLowerCase(objScanner.next().charAt(0));
     return letter;
 }
     
@@ -45,7 +44,7 @@ public void displayMysteryWord (char letter) {
     
     System.out.print("Mystery word: ");
     
-    for(int i = 0; i < wordArray.length; i++) { // this convert the word to an array of characters
+    for(int i = 0; i < wordArray.length; i++) {
         
         if (wordArray[i] == letter) {
             mysteryArray[i] = letter;
