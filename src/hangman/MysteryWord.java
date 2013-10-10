@@ -26,9 +26,10 @@ public class MysteryWord {
     }
 
 public char getLetter() {
-    Scanner objScanner = new Scanner(System.in);
-    System.out.println("\nPlease enter a letter: ");
-    char letter = Character.toLowerCase(objScanner.next().charAt(0));
+    Scanner letterScanner = new Scanner(System.in);
+    System.out.println("Please enter a letter: ");
+    char letter = letterScanner.next().charAt(0);
+        
     return letter;
 }
     
