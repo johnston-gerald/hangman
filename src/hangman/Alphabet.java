@@ -17,7 +17,7 @@ public class Alphabet {
     }
 
 public void makeAlphabet (){
-    alphabetArray= "abcdefghijklmnopqrstuvwxyz".toCharArray();
+    alphabetArray= "abcdefghijklmnopqrstuvwxyz".toCharArray(); //type conversion
 }
     
 public void displayAlphabet (char letter) {

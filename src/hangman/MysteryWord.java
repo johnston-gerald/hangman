@@ -48,7 +48,7 @@ public String getWord() {
 
 public void displayMysteryWord (char letter) {
     
-    wordArray = mysteryWord.toCharArray();
+    wordArray = mysteryWord.toCharArray(); //type conversion
     boolean correctLetter = false;
     
     System.out.print("Mystery word: ");
