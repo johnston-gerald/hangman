@@ -43,7 +43,7 @@ public class Game {
             mysteryLetter = mysteryWord.getLetter();
             
             if (mysteryLetter == '1') {
-                System.out.println("We will eventually build a real menu.");
+                System.out.println("We will eventually build a real menu."); //this will be replaced with call to the menu class
             }
             else {
                 gallows.displayGallows();

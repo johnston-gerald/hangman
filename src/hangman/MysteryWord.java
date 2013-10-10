@@ -38,7 +38,7 @@ public char getLetter() {
 }
     
 public String getWord() {
-    String hangmanWord = "mississippi"; // we will need to modify this later so it uploads a random word from a file
+    String hangmanWord = "mississippi"; // we will need to modify this so it uploads a random word from a file
     return hangmanWord;
 }    
 
