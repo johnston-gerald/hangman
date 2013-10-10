@@ -41,10 +41,16 @@ public class Game {
         while (mysteryWord.winGame() == false && mysteryWord.loseGame() == false){
             
             mysteryLetter = mysteryWord.getLetter();
-            gallows.displayGallows();
-            alphabet.displayAlphabet(mysteryLetter);
-            mysteryWord.displayMysteryWord(mysteryLetter);
-            mysteryWord.guessesLeft();
+            
+            if (mysteryLetter == '1') {
+                System.out.println("We will eventually build a real menu.");
+            }
+            else {
+                gallows.displayGallows();
+                alphabet.displayAlphabet(mysteryLetter);
+                mysteryWord.displayMysteryWord(mysteryLetter);
+                mysteryWord.guessesLeft();
+            }
         }
         
         if (mysteryWord.winGame()){

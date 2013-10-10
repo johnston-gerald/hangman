@@ -27,9 +27,13 @@ public class MysteryWord {
 
 public char getLetter() {
     Scanner letterScanner = new Scanner(System.in);
-    System.out.println("Please enter a letter: ");
-    char letter = letterScanner.next().charAt(0);
-        
+    char letter = '0';
+    
+    do {
+        System.out.println("Please enter a letter or enter 1 for the menu: ");
+        letter = letterScanner.next().charAt(0);
+    } while (Character.isLetter(letter) == false && letter != '1');
+    
     return letter;
 }
     
