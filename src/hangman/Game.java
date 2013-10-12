@@ -44,7 +44,7 @@ public class Game {
             
             if (mysteryLetter == '1') {
                 MenuView menuView = new MenuView();
-                menuView.showMenu(); //this will be replaced with call to the menu class
+                menuView.showMenu();
                 
             }
             else {
