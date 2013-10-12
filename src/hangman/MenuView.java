@@ -46,4 +46,9 @@ void showMenu(){
         System.out.println("\tChoose a corresponding number or 5 to exit the menu: " 
         + "\nHere is some math for the assignment: 8 * 8 = " + 8 * 8 );
     }
+
+boolean isvalid(int i) {
+        if(i < '1' | i > '6') return false;
+        else return true;
+    }
 }
