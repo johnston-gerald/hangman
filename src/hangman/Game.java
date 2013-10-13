@@ -49,7 +49,7 @@ public class Game {
                 gallows.displayGallows();
                 alphabet.displayAlphabet(mysteryLetter);
                 mysteryWord.displayMysteryWord(mysteryLetter);
-                mysteryWord.guessesLeft();
+                System.out.println("You have " + mysteryWord.guessesLeft() + " wrong letters until you die.");
             }
         }
         

@@ -16,8 +16,7 @@ public class MysteryWord {
     String mysteryWord = getWord();
     char[] mysteryArray = new char[mysteryWord.length()];
     char[] wordArray = new char[mysteryWord.length()];
-    int numberOfGuesses = 6; // we could have a difficulty setting that changes this value
-    int count = 0;
+    int numberOfGuesses = 6+1; // we could have a difficulty setting that changes this value
     
     public MysteryWord() {
         for(int i = 0; i < mysteryArray.length; i++) {
@@ -65,14 +64,14 @@ public void displayMysteryWord (char letter) {
     }
     
     if (correctLetter == false) {
-        count++;
+        numberOfGuesses--;
     }
     
     System.out.print("(" +mysteryWord.length() +" letters)\n");
 }
 
-public void guessesLeft(){
-    System.out.println("You have " + (numberOfGuesses - count +1) + " guesses left.");
+public int guessesLeft(){
+    return numberOfGuesses;
 }
 
 public boolean winGame () {
@@ -87,7 +86,7 @@ public boolean winGame () {
 
 public boolean loseGame () {
     
-    if (count > numberOfGuesses){
+    if (numberOfGuesses < 1){
         return true;
     }
     else {
