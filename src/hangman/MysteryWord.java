@@ -16,7 +16,7 @@ public class MysteryWord {
     String mysteryWord = getWord();
     char[] mysteryArray = new char[mysteryWord.length()];
     char[] wordArray = new char[mysteryWord.length()];
-    int numberOfGuesses = 5; // we could have a difficulty setting that changes this value
+    int numberOfGuesses = 6; // we could have a difficulty setting that changes this value
     int count = 0;
     
     public MysteryWord() {
