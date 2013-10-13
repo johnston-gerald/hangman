@@ -111,6 +111,14 @@ public class Gallows {
                 System.out.println();
             }
         }
+       //asignment method only.
+       public void assignmentMethod(){
+           int a = 1;   
+           double b = 2.0;
+           int c = 3;
+           System.out.println((a + (int)b)/c );
+       }
+       
        boolean validInput(int gallowsChoice){
            if ((gallowsChoice < '0' ) | (gallowsChoice > '6')) return false;
            else return true;
