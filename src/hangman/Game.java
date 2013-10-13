@@ -25,16 +25,17 @@ public class Game {
     }
 
     public void playTheGame () {
+        
+        MysteryWord mysteryWord = new MysteryWord();
+
         Gallows gallows = new Gallows();
-        gallows.displayGallows();
+        gallows.displayGallows(mysteryWord.guessesLeft());
         
         Alphabet alphabet = new Alphabet();
         alphabet.makeAlphabet();
         alphabet.displayAlphabet('_');
         
-        MysteryWord mysteryWord = new MysteryWord();
         mysteryWord.displayMysteryWord('_');
-        mysteryWord.guessesLeft();
         
         char mysteryLetter;
                 
@@ -46,7 +47,7 @@ public class Game {
                 System.out.println("We will eventually build a real menu."); //this will be replaced with call to the menu class
             }
             else {
-                gallows.displayGallows();
+                gallows.displayGallows(mysteryWord.guessesLeft());
                 alphabet.displayAlphabet(mysteryLetter);
                 mysteryWord.displayMysteryWord(mysteryLetter);
                 System.out.println("You have " + mysteryWord.guessesLeft() + " wrong letters until you die.");
@@ -57,6 +58,7 @@ public class Game {
             displayWinningMessage();
         }
         else {
+            gallows.displayGallows(mysteryWord.guessesLeft());
             displayLosingMessage();
         }
         

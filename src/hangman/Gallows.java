@@ -11,12 +11,10 @@ package hangman;
 public class Gallows {
     
     
-    public void displayGallows() {
-    }
-    
-       public void option(int gallowsChoice){
-            switch(gallowsChoice){
-                case '0':
+    public void displayGallows(int gallowsChoice) {
+        
+        switch(gallowsChoice){
+                case 6:
                     System.out.println("\t------------"
         + "\n\t|          |"
         + "\n\t|          |"
@@ -29,7 +27,7 @@ public class Gallows {
         + "\n\t|"
         + "\n");
                     break;
-                case '1':
+                case 5:
                     System.out.println("\t------------"
         + "\n\t|          |"
         + "\n\t|          |"
@@ -42,7 +40,7 @@ public class Gallows {
         + "\n\t|"
         + "\n");
                     break;
-                case '2':
+                case 4:
                     System.out.println("\t------------"
         + "\n\t|          |"
         + "\n\t|          |"
@@ -55,7 +53,7 @@ public class Gallows {
         + "\n\t|"
         + "\n");
                     break;
-                case '3':
+                case 3:
                     System.out.println("\t------------"
         + "\n\t|          |"
         + "\n\t|          |"
@@ -68,7 +66,7 @@ public class Gallows {
         + "\n\t|"
         + "\n");
                     break;
-                case '4':
+                case 2:
                     System.out.println("\t------------"
         + "\n\t|          |"
         + "\n\t|          |"
@@ -81,7 +79,7 @@ public class Gallows {
         + "\n\t|"
         + "\n");
                     break;
-                case '5':
+                case 1:
                     System.out.println("\t------------"
         + "\n\t|          |"
         + "\n\t|          |"
@@ -94,7 +92,7 @@ public class Gallows {
         + "\n\t|"
         + "\n");
                     break;
-                case '6':
+                case 0:
                     System.out.println("\t------------"
         + "\n\t|          |"
         + "\n\t|          |"
