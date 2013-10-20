@@ -23,12 +23,13 @@ public class MainMenuView {
                 + "\n\t1. Continue game"
                 + "\n\t2. Display instructions"
                 + "\n\t3. Change number of players"
-                + "\n\t4. Start new game"
-                + "\n\t5. Exit program");
+                + "\n\t4. Select game options"  //Lorna added game options to the menu
+                + "\n\t5. Start new game"
+                + "\n\t6. Exit program");
             
             menuSelection = inputScanner.next();
             
-        } while (errorHandling.isInteger(menuSelection) == false || menuSelection.charAt(0) < '1' || menuSelection.charAt(0) > '5');
+        } while (errorHandling.isInteger(menuSelection) == false || menuSelection.charAt(0) < '1' || menuSelection.charAt(0) > '6');  //Lorna changed the menuSelection.charAt(0) > '5' value to '6'.
     
         return menuSelection.charAt(0);
     }
