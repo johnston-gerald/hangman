@@ -11,10 +11,14 @@ import java.util.Scanner;
  * @author Lorna
  */
 public class OptionsMenuView {
-    public char displayOptionsMenu() {
-       throws java.io.IOException() {
-       char optionsSelection;
-       optionsSelection = '0';
+    
+       public char displayOptionsView() {
+
+           Scanner inputScanner = new Scanner(System.in);
+
+           ErrorHandling errorHandling = new ErrorHandling();
+           
+           String optionsSelection = "0";
      
         do {
           System.out.println("\nPlease select one of the following game options by entering the number."
@@ -22,13 +26,13 @@ public class OptionsMenuView {
                   + "\n2. Medium Game"
                   + "\n3. Difficult Game"
                   + "\n4. Return to main menu");
+         
+          optionsSelection = inputScanner.next();
           
-          optionsSelection = (char) System.in.read();
-          
-       } while (optionsSelection < '1' | optionsSelection > '4');
+       } while (optionsSelection.charAt(0) < '1' | optionsSelection.charAt(0) > '4');
 
-            return (char) optionsSelection; 
+            return (optionsSelection.charAt(0)); 
          }  
        
     }
-}
+
