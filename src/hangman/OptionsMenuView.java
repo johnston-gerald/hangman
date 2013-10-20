@@ -12,22 +12,23 @@ import java.util.Scanner;
  */
 public class OptionsMenuView {
     public char displayOptionsMenu() {
-        Scanner inputScanner = new Scanner(System.in);
-        ErrorHandling errorHandling = new ErrorHandling();
-        
-        String optionsSelection = "0";
-        
+       throws java.io.IOException() {
+       char optionsSelection;
+       optionsSelection = '0';
+     
         do {
           System.out.println("\nPlease select one of the following game options by entering the number."
-                  + "\n\t1. Easy Game"
-                  + "\n\t2. Medium Game"
-                  + "\n\t3. Difficult Game"
-                  + "\n\t4. Return to main menu");
+                  + "\n1. Easy Game"
+                  + "\n2. Medium Game"
+                  + "\n3. Difficult Game"
+                  + "\n4. Return to main menu");
           
-          optionsSelection = inputScanner.next();
+          optionsSelection = (char) System.in.read();
           
-        } while (errorHandling.isInteger(optionsSelection) == false || optionsSelection.charAt(0) < '1' || optionsSelection.charAt(0));
-                
-                return optionsSelection.charAt(0);
+       } while (optionsSelection < '1' | optionsSelection > '4');
+
+            return (char) optionsSelection; 
+         }  
+       
     }
 }
