@@ -50,19 +50,19 @@ public class Game {
                 mainMenuControl.activateControl(mainMenuView.displayMenu());
             }
             
-            if (mysteryLetter == '4' || mainMenuControl.startNewGame) {
+            if (mysteryLetter == '5' || mainMenuControl.startNewGame) {
                 mainMenuControl.resetNewGame();
                 //System.out.println("\n***New game started***\n");
                 System.out.println("\n***Eventually this will start a new game***\n"); //still need to figrue this one out
-                break;
+                continue;
             }
             
-            if (mysteryLetter == '5' || mainMenuControl.exitGame()) {
+            if (mysteryLetter == '6' || mainMenuControl.exitGame()) {
                 System.out.println("\nGoodbye");
                 break;
             }
             
-            if (mysteryLetter >= '2'&& mysteryLetter <= '5') {
+            if (mysteryLetter >= '2'&& mysteryLetter <= '6') {
                 mainMenuControl.activateControl(mysteryLetter);
             }
             else {

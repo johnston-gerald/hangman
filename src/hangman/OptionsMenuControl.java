@@ -13,21 +13,21 @@ public class OptionsMenuControl {
     boolean mainMenuControl = false;
     
     public void activateOptionsControl(char optionsSelection) {
-       EasyGame easyGame = new EasyGame();  //This class is not written yet.
-       MediumGame mediumGame = new MediumGame();  //This class is not written yet.
-       DifficultGame difficultGame = new DifficultGame();  //This class is not written yet.
+       //EasyGame easyGame = new EasyGame();  //This class is not written yet.
+       //MediumGame mediumGame = new MediumGame();  //This class is not written yet.
+       //DifficultGame difficultGame = new DifficultGame();  //This class is not written yet.
        
        switch(optionsSelection){
            case '1':
-               easyGame.activateGame();
+               //easyGame.activateGame();
            break;
                
            case '2':
-               mediumGame.activateGame();
+               //mediumGame.activateGame();
            break;
                
            case '3':
-               difficultGame.activateGame();
+               //difficultGame.activateGame();
            break;
                
            case '4':

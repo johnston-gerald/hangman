@@ -29,12 +29,28 @@ public class MysteryWord {
         ErrorHandling errorHandling = new ErrorHandling();
     
         String letter = "0";
-    
-        do {
+        
+        boolean valid = false;
+        while (!valid) {
             System.out.println("Please enter a letter or enter 1 for the menu: ");
         
             letter = letterScanner.next();
-        } while (errorHandling.isChar(letter) == false && letter.length() != 1 && letter.charAt(0) < '1' && letter.charAt(0) > '5');
+            
+            if (letter.length() != 1) {
+                continue;
+            }
+            
+            if (letter.charAt(0) >= '1' && letter.charAt(0) <= '6') {
+                return letter.charAt(0);
+            }
+            
+            if (!errorHandling.isChar(letter)) {
+                System.out.println("\nInvalid input.");
+                continue;
+            }
+            
+            valid = true;
+        }
     
         return letter.charAt(0);
     }
