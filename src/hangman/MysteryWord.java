@@ -24,74 +24,77 @@ public class MysteryWord {
         }
     }
 
-public char getLetter() {
-    Scanner letterScanner = new Scanner(System.in);
-    char letter = '0';
+    public char getLetter() {
+        Scanner letterScanner = new Scanner(System.in);
+        ErrorHandling errorHandling = new ErrorHandling();
     
-    do {
-        //System.out.println("Please enter a letter or enter 1 for the menu: ");
+        String letter = "0";
+    
+        do {
+            System.out.println("Please enter a letter or enter 1 for the menu: ");
         
-        // Added a tab escape and a math operator for the assignment. It will be deleted later. The original line is above this one.
-        System.out.println("\tPlease enter a letter or enter " + (100-99) + " for the menu: ");
-        
-        letter = letterScanner.next().charAt(0);
-    } while (Character.isLetter(letter) == false && letter != '1');
+            letter = letterScanner.next();
+        } while (errorHandling.isChar(letter) == false && letter.length() != 1 && letter.charAt(0) < '1' && letter.charAt(0) > '5');
     
-    return letter;
-}
+        return letter.charAt(0);
+    }
     
-public String getWord() {
-    String hangmanWord = "mississippi"; // we will need to modify this so it uploads a random word from a file
-    return hangmanWord;
+    public String getWord() {
+        String hangmanWord = "mississippi"; // we will need to modify this so it uploads a random word from a file or array
+        return hangmanWord;
 }    
 
-public void displayMysteryWord (char letter) {
+    public String displayMysteryWord (char letter) {
     
-    wordArray = mysteryWord.toCharArray(); //type conversion
-    boolean correctLetter = false;
+        wordArray = mysteryWord.toCharArray(); //type conversion
+        String mysteryWordOutput = "";
+        boolean correctLetter = false;
     
-    System.out.print("Mystery word: ");
+        if (letter == '_' || letter == '1'){
     
-    for(int i = 0; i < wordArray.length; i++) {
-        
-        if (wordArray[i] == letter) {
-            mysteryArray[i] = letter;
             correctLetter = true;
         }
+
+        for(int i = 0; i < wordArray.length; i++) {
         
-        System.out.print(mysteryArray[i] + " ");
-        
-    }
-    
-    if (correctLetter == false) {
-        numberOfGuesses--;
-    }
-    
-    System.out.print("(" +mysteryWord.length() +" letters)\n");
-}
+            if (wordArray[i] == letter) {
+                mysteryArray[i] = letter;
+                correctLetter = true;
+            }
 
-public int guessesLeft(){
-    return numberOfGuesses;
-}
-
-public boolean winGame () {
+            mysteryWordOutput = mysteryWordOutput + mysteryArray[i] + " ";
+        }
     
-    if (Arrays.equals(wordArray, mysteryArray)){
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-public boolean loseGame () {
+        if (correctLetter == false) {
+            numberOfGuesses--;
+        }
     
-    if (numberOfGuesses < 1){
-        return true;
+        mysteryWordOutput = mysteryWordOutput + "(" +mysteryWord.length() +" letters)";
+        return mysteryWordOutput;
     }
-    else {
-        return false;
+
+    public int guessesLeft(){
+        return numberOfGuesses;
     }
-}
+
+    public boolean winGame () {
+    
+        if (Arrays.equals(wordArray, mysteryArray)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public boolean loseGame () {
+    
+        if (numberOfGuesses < 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 }

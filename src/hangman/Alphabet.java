@@ -33,10 +33,7 @@ public void displayAlphabet (char letter) {
         System.out.print(alphabetArray[i] + " ");
     }
     
-    //System.out.print("\n\n");
-    
-    // Added a tab escape and a math operator for the assignment. It will be deleted later. The original line is above this one.
-    System.out.print("\n\t***Here's some math just for the assignment: 1*2*3*4*5 = " + 1*2*3*4*5 + "\n");
+    System.out.print("\n\n");
         
 }
 

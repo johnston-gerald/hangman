@@ -12,45 +12,64 @@ public class Game {
 
     public void displayWinningMessage () {
         System.out.println(
-             "\n\t*******************************************************************************"
-             + "\n\t Congratulations. You win!"
-             + "\n\t*******************************************************************************");
+            "\n*******************************************************************************"
+          + "\n Congratulations. You win!"
+          + "\n*******************************************************************************");
     }
 
     public void displayLosingMessage () {
         System.out.println(
-             "\n\t*******************************************************************************"
-             + "\n\t Sorry. You lose. Better luck next time!" 
-             + "\n\t*******************************************************************************");
+            "*******************************************************************************"
+        + "\n Sorry. You lose. Better luck next time!" 
+        + "\n*******************************************************************************");
     }
 
     public void playTheGame () {
         
         MysteryWord mysteryWord = new MysteryWord();
-
         Gallows gallows = new Gallows();
-        gallows.displayGallows(mysteryWord.guessesLeft());
-        
         Alphabet alphabet = new Alphabet();
+        MainMenuView mainMenuView = new MainMenuView();
+        MainMenuControl mainMenuControl = new MainMenuControl();
+        ErrorHandling errorHandling = new ErrorHandling();
+        
+        char mysteryLetter = '_';
         alphabet.makeAlphabet();
+        String mysteryWordOutput;
+
+        gallows.displayGallows(mysteryWord.guessesLeft());
         alphabet.displayAlphabet('_');
+        System.out.println(mysteryWord.displayMysteryWord('_'));
         
-        mysteryWord.displayMysteryWord('_');
-        
-        char mysteryLetter;
-                
         while (mysteryWord.winGame() == false && mysteryWord.loseGame() == false){
             
             mysteryLetter = mysteryWord.getLetter();
+            mysteryWordOutput = mysteryWord.displayMysteryWord(mysteryLetter);
             
             if (mysteryLetter == '1') {
-                System.out.println("We will eventually build a real menu."); //this will be replaced with call to the menu class
+                mainMenuControl.activateControl(mainMenuView.displayMenu());
+            }
+            
+            if (mysteryLetter == '4' || mainMenuControl.startNewGame) {
+                mainMenuControl.resetNewGame();
+                //System.out.println("\n***New game started***\n");
+                System.out.println("\n***Eventually this will start a new game***\n"); //still need to figrue this one out
+                break;
+            }
+            
+            if (mysteryLetter == '5' || mainMenuControl.exitGame()) {
+                System.out.println("\nGoodbye");
+                break;
+            }
+            
+            if (mysteryLetter >= '2'&& mysteryLetter <= '5') {
+                mainMenuControl.activateControl(mysteryLetter);
             }
             else {
                 gallows.displayGallows(mysteryWord.guessesLeft());
                 alphabet.displayAlphabet(mysteryLetter);
-                mysteryWord.displayMysteryWord(mysteryLetter);
-                System.out.println("You have " + mysteryWord.guessesLeft() + " wrong letters until you die.");
+                System.out.println("You have " + mysteryWord.guessesLeft() + " wrong letters until you die.\n");
+                System.out.print("Mystery word: " + mysteryWordOutput + "\n");
             }
         }
         
@@ -58,8 +77,10 @@ public class Game {
             displayWinningMessage();
         }
         else {
-            gallows.displayGallows(mysteryWord.guessesLeft());
-            displayLosingMessage();
+            if (mysteryWord.loseGame()) {
+                gallows.displayGallows(mysteryWord.guessesLeft());
+                displayLosingMessage();
+            }
         }
         
     }
