@@ -24,6 +24,7 @@ public class MysteryWord {
         }
     }
 
+    // Lorna & Gerald created this function for the Lesson 5 Paired Assignment
     public char getLetter() {
         Scanner letterScanner = new Scanner(System.in);
         ErrorHandling errorHandling = new ErrorHandling();
@@ -37,10 +38,11 @@ public class MysteryWord {
             letter = letterScanner.next();
             
             if (letter.length() != 1) {
+                System.out.println("\nInvalid input.");
                 continue;
             }
             
-            if (letter.charAt(0) >= '1' && letter.charAt(0) <= '6') {
+            if (letter.charAt(0) >= '1' && letter.charAt(0) <= '6') { //menu
                 return letter.charAt(0);
             }
             
@@ -52,7 +54,7 @@ public class MysteryWord {
             valid = true;
         }
     
-        return letter.charAt(0);
+        return Character.toLowerCase(letter.charAt(0));
     }
     
     public String getWord() {
