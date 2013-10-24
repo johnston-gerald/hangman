@@ -31,7 +31,7 @@ public class MysteryWord {
         String letter = "0";
         
         boolean valid = false;
-        while (!valid) {
+        while (!valid) {  //This is our new while continue loop
             System.out.println("Please enter a letter or enter 1 for the menu: ");
         
             letter = letterScanner.next();
