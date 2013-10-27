@@ -20,7 +20,7 @@ public class Hangman {
     public static void main(String[] args) {
         Hangman hangman = new Hangman();
         hangman.getName();
-        
+       
         hangman.displayName();
         Instructions instructions = new Instructions();
         instructions.displayInstructions();
