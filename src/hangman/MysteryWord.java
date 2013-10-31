@@ -5,6 +5,7 @@
 package hangman;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -58,7 +59,14 @@ public class MysteryWord {
     }
     
     public String getWord() {
-        String hangmanWord = "mississippi"; // we will need to modify this so it uploads a random word from a file or array
+        WordList wordList = new WordList();
+        String words[] = wordList.sortList(wordList.makeList());
+        Random random = new Random();
+        int randomWord = random.nextInt(words.length);
+        
+        String hangmanWord = words[randomWord];
+        wordList.displayWordList(words); // this line is just for the assignment
+                
         return hangmanWord;
 }    
 
