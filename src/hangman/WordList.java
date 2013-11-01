@@ -19,6 +19,7 @@ public class WordList {
     public String[] sortList(String[] words) {
         String tmpWord;
         boolean notDone = true;
+        
         while(notDone) {
             
             notDone = false; // assume that you done

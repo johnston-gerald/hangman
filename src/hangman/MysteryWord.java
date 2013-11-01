@@ -62,7 +62,7 @@ public class MysteryWord {
         WordList wordList = new WordList();
         String words[] = wordList.sortList(wordList.makeList());
         Random random = new Random();
-        int randomWord = random.nextInt(words.length);
+        int randomWord = random.nextInt(words.length-1);
         
         String hangmanWord = words[randomWord];
         wordList.displayWordList(words); // this line is just for the assignment
