@@ -10,12 +10,14 @@ package hangman;
  */
 public class WordList {
 
+    // Lorna & Gerald, L6 Paired Assignment
     public String[] makeList() {
         String wordList[] = { "halloween", "oxen", "moroni", "university", "jazz", "canada", 
             "theater", "collapse", "random", "elephant", "alphabet", "development", "vegetables" };
         return wordList;
     }
     
+    // Lorna & Gerald, L6 Paired Assignment
     public String[] sortList(String[] words) {
         String tmpWord;
         boolean notDone = true;
@@ -37,6 +39,7 @@ public class WordList {
         return words;
     }
     
+    // Lorna & Gerald, L6 Paired Assignment
     // this function is just for the assignment
     public void displayWordList(String[] words) {
         System.out.println("\n\t===============================================================");
