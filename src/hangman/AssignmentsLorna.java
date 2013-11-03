@@ -30,7 +30,8 @@ public class AssignmentsLorna {
     }
     }
        
-       public static void multiDimArr() {
+       // lesson 6 - Lorna's Individual Assignment
+       public static void multiDimArr() { //multidimensional array
         int sum = 0;
         int nums[][] = new int [4][6];
         int average = 0;
@@ -41,15 +42,15 @@ public class AssignmentsLorna {
                 for(int j = 0; j < 6; j++)
                     nums[i][j] = (i+2)+(j*3);
 
-            for(int a[] : nums) {
+            for(int a[] : nums) { //nested for each loops
                 for(int b  : a) {
                     System.out.println("\t The sum is " + b);
                     sum += b;
                 }
             }
         average = sum / (row * col);
-        System.out.println("\t The total is " + sum); 
-        System.out.println("\t The average is " + average);
+        System.out.println("\t The total is " + sum); //sum
+        System.out.println("\t The average is " + average); //average
       }
 }
  
