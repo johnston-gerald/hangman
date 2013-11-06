@@ -29,7 +29,6 @@ public class WordList {
         return wordList;
     }
     
-    // Lorna & Gerald, L6 Paired Assignment
     public String[] sortList(String[] words) {
         String tmpWord;
         boolean notDone = true;
@@ -51,8 +50,7 @@ public class WordList {
         return words;
     }
     
-    // Lorna & Gerald, L6 Paired Assignment
-    // this function is just for the assignment
+    // this function is just for testing
     public void displayWordList(String[] words) {
         System.out.println("\n\t===============================================================");
         System.out.println("\tHere is the sorted list of words:");

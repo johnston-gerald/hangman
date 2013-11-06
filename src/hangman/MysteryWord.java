@@ -65,8 +65,8 @@ public class MysteryWord {
         Random random = new Random();
         int randomWord = random.nextInt(words.length-1);
         
-        String hangmanWord = "Canada";//words[randomWord];
-        wordList.displayWordList(words); // this line is just for the assignment
+        String hangmanWord = words[randomWord];
+        //wordList.displayWordList(words); // this line is just for testing
                 
         return hangmanWord;
 }    
