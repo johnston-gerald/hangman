@@ -5,6 +5,8 @@
 package hangman;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -12,10 +14,15 @@ import java.io.IOException;
  */
 public class WordList {
 
-    public String[] makeList() throws IOException {
+    public String[] makeList() {
         FileArrayProvider fap = new FileArrayProvider();
-        String[] wordList = fap
-                .readLines("src/hangman/words.txt");
+        String[] wordList = null;
+        try {
+            wordList = fap
+           .readLines("src/hangman/words.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(WordList.class.getName()).log(Level.SEVERE, null, ex);
+        }
         /*for (String line : wordList) { //display the list (array) of words - use for testing only
             System.out.println(line);
         }*/

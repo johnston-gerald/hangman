@@ -60,11 +60,12 @@ public class MysteryWord {
     
     public String getWord() {
         WordList wordList = new WordList();
-        String words[] = wordList.sortList(wordList.makeList());
+        String words[];
+        words = wordList.sortList(wordList.makeList());
         Random random = new Random();
         int randomWord = random.nextInt(words.length-1);
         
-        String hangmanWord = words[randomWord];
+        String hangmanWord = "Canada";//words[randomWord];
         wordList.displayWordList(words); // this line is just for the assignment
                 
         return hangmanWord;
@@ -72,7 +73,7 @@ public class MysteryWord {
 
     public String displayMysteryWord (char letter) {
     
-        wordArray = mysteryWord.toCharArray(); //type conversion
+        wordArray = mysteryWord.toCharArray();
         String mysteryWordOutput = "";
         boolean correctLetter = false;
     
@@ -83,8 +84,8 @@ public class MysteryWord {
 
         for(int i = 0; i < wordArray.length; i++) {
         
-            if (wordArray[i] == letter) {
-                mysteryArray[i] = letter;
+            if (Character.toLowerCase(wordArray[i]) == letter) {
+                mysteryArray[i] = wordArray[i];
                 correctLetter = true;
             }
 
