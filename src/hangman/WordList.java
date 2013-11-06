@@ -4,16 +4,21 @@
  */
 package hangman;
 
+import java.io.IOException;
+
 /**
  *
  * @author gerrygj
  */
 public class WordList {
 
-    // Lorna & Gerald, L6 Paired Assignment
-    public String[] makeList() {
-        String wordList[] = { "halloween", "oxen", "moroni", "university", "jazz", "canada", 
-            "theater", "collapse", "random", "elephant", "alphabet", "development", "vegetables" };
+    public String[] makeList() throws IOException {
+        FileArrayProvider fap = new FileArrayProvider();
+        String[] wordList = fap
+                .readLines("src/hangman/words.txt");
+        /*for (String line : wordList) { //display the list (array) of words - use for testing only
+            System.out.println(line);
+        }*/
         return wordList;
     }
     
