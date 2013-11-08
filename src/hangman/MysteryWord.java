@@ -60,12 +60,11 @@ public class MysteryWord {
     
     public String getWord() {
         WordList wordList = new WordList();
-        String words[];
-        words = wordList.sortList(wordList.makeList());
-        Random random = new Random();
-        int randomWord = random.nextInt(words.length-1);
+        String words[] = wordList.randomizeList(wordList.makeList());
+        //Random random = new Random();
+        //int randomWord = random.nextInt(words.length-1);
         
-        String hangmanWord = words[randomWord];
+        String hangmanWord = words[0];
         //wordList.displayWordList(words); // this line is just for testing
                 
         return hangmanWord;

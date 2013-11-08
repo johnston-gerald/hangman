@@ -5,6 +5,7 @@
 package hangman;
 
 import java.io.IOException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,7 +30,7 @@ public class WordList {
         return wordList;
     }
     
-    public String[] sortList(String[] words) {
+    /*public String[] sortList(String[] words) {
         String tmpWord;
         boolean notDone = true;
         
@@ -45,15 +46,26 @@ public class WordList {
                     notDone = true;
                 } 
             }
+        }*/
+        
+    public String[] randomizeList(String[] words) {
+        // Implementing Fisher–Yates shuffle
+        Random rnd = new Random();
+        for (int i = 0; i < words.length-1; i++) {
+            int index = rnd.nextInt(i + 1);
+            // Simple swap
+            String a = words[index];
+            words[index] = words[i];
+            words[i] = a;
         }
-
+       
         return words;
     }
     
     // this function is just for testing
     public void displayWordList(String[] words) {
         System.out.println("\n\t===============================================================");
-        System.out.println("\tHere is the sorted list of words:");
+        System.out.println("\tHere is the randomized list of words:");
 
         for (int i = 0; i < words.length; i++) {
             if (words[i] == null) {

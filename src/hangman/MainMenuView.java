@@ -22,14 +22,14 @@ public class MainMenuView {
             System.out.println("\nPlease enter one of the following commands:"
                 + "\n\t1. Continue game"
                 + "\n\t2. Display instructions"
-                + "\n\t3. Change number of players"
-                + "\n\t4. Select game options"  //Lorna added game options to the menu
-                + "\n\t5. Start new game"
-                + "\n\t6. Exit program");
+                //+ "\n\t3. Change number of players"
+                //+ "\n\t4. Select game options"  //Lorna added game options to the menu
+                //+ "\n\t3. Start new game"
+                + "\n\t3. Exit program");
             
             menuSelection = inputScanner.next();
             
-        } while (errorHandling.isInteger(menuSelection) == false || menuSelection.charAt(0) < '1' || menuSelection.charAt(0) > '6');  //Lorna changed the menuSelection.charAt(0) > '5' value to '6'.
+        } while (errorHandling.isInteger(menuSelection) == false || menuSelection.charAt(0) < '1' || menuSelection.charAt(0) > '3');
     
         return menuSelection.charAt(0);
     }

@@ -17,29 +17,28 @@ public class MainMenuControl {
     public void activateControl(char menuSelection) {
     
         Instructions instructions = new Instructions();
-        PlayerMenuView playerMenuView = new PlayerMenuView();
-        PlayerMenuControl playerMenuControl = new PlayerMenuControl();
-
+        //PlayerMenuView playerMenuView = new PlayerMenuView();
+        //PlayerMenuControl playerMenuControl = new PlayerMenuControl();
         
         switch(menuSelection){
             case '2':
                 instructions.displayInstructions();
             break;
             
-            case '3':
+            /*case '3':
                 playerMenuControl.activateControl(playerMenuView.displayMenu());
-            break;
+            break;*/
                 
-            case '4':  //Lorna added case 4.
+            /*case '4':  //Lorna added case 4.
                 optionsMenuControl = true;
-            break;    
+            break;    */
 
-            case '5':
+            /*case '3':
                 startNewGame = true;
                 //System.out.println("\n***This will eventually start a new game.***\n");
-            break;
+            break;*/
                 
-            case '6':
+            case '3':
                 exitProgram = true;
             break;
             
