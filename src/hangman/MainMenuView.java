@@ -23,8 +23,8 @@ public class MainMenuView {
                 + "\n\t1. Continue game"
                 + "\n\t2. Display instructions"
                 //+ "\n\t3. Change number of players"
-                //+ "\n\t4. Select game options"  //Lorna added game options to the menu
-                //+ "\n\t3. Start new game"
+                //+ "\n\t4. Select game options"
+                //+ "\n\t5. Start new game"
                 + "\n\t3. Exit program");
             
             menuSelection = inputScanner.next();

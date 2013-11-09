@@ -33,7 +33,7 @@ public class MainMenuControl {
                 optionsMenuControl = true;
             break;    */
 
-            /*case '3':
+            /*case '5':
                 startNewGame = true;
                 //System.out.println("\n***This will eventually start a new game.***\n");
             break;*/
