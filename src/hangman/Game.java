@@ -41,7 +41,7 @@ public class Game {
         alphabet.displayAlphabet('_');
         System.out.println(mysteryWord.displayMysteryWord('_'));
         
-        while (mysteryWord.winGame() == false && mysteryWord.loseGame() == false){
+        while (!mysteryWord.winGame() && !mysteryWord.loseGame()){
             
             mysteryLetter = mysteryWord.getLetter();
             mysteryWordOutput = mysteryWord.displayMysteryWord(mysteryLetter);
