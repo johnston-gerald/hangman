@@ -62,7 +62,7 @@ public class Game {
                 break;
             }
             
-            if (mysteryLetter >= '2'&& mysteryLetter <= '4') {
+            if (mysteryLetter >= '2'&& mysteryLetter <= '3') {
                 mainMenuControl.activateControl(mysteryLetter);
             }
             else {
