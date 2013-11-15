@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class PlayerName implements Serializable {
 
     public PlayerName() {
+        this.promptName();
     }
     
     private String name;
@@ -25,7 +26,6 @@ public class PlayerName implements Serializable {
     }
     
     public String getName() {
-        this.promptName();
         return name;
     }
 
