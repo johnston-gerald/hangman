@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 import java.util.Scanner;
@@ -22,9 +18,6 @@ public class MainMenuView {
             System.out.println("\nPlease enter one of the following commands:"
                 + "\n\t1. Continue game"
                 + "\n\t2. Display instructions"
-                //+ "\n\t3. Change number of players"
-                //+ "\n\t4. Select game options"
-                //+ "\n\t5. Start new game"
                 + "\n\t3. Exit program");
             
             menuSelection = inputScanner.next();

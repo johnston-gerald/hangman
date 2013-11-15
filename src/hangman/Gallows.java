@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 /**
@@ -9,9 +5,6 @@ package hangman;
  * @author gerrygj
  */
 public class Gallows {
-    
-    public Gallows() {
-    }
     
     public void displayGallows(int gallowsChoice) {
         

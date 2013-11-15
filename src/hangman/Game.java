@@ -1,28 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 public class Game {
-
-   
-    public Game() {
-    }
-
-    public void displayWinningMessage () {
-        System.out.println(
-            "\n*******************************************************************************"
-          + "\n Congratulations. You win!"
-          + "\n*******************************************************************************");
-    }
-
-    public void displayLosingMessage () {
-        System.out.println(
-            "*******************************************************************************"
-        + "\n Sorry. You lose. Better luck next time!" 
-        + "\n*******************************************************************************");
-    }
 
     public void playTheGame () {
         
@@ -34,7 +12,6 @@ public class Game {
         ErrorHandling errorHandling = new ErrorHandling();
         
         char mysteryLetter = '_';
-        alphabet.makeAlphabet();
         String mysteryWordOutput;
 
         gallows.displayGallows(mysteryWord.guessesLeft());
@@ -49,13 +26,6 @@ public class Game {
             if (mysteryLetter == '1') {
                 mainMenuControl.activateControl(mainMenuView.displayMenu());
             }
-            
-            /*if (mysteryLetter == '4' || mainMenuControl.startNewGame) {
-                mainMenuControl.resetNewGame();
-                //System.out.println("\n***New game started***\n");
-                System.out.println("\n***Eventually this will start a new game***\n"); //still need to figrue this one out
-                continue;
-            }*/
             
             if (mysteryLetter == '3' || mainMenuControl.exitGame()) {
                 System.out.println("\nGoodbye");
@@ -82,6 +52,20 @@ public class Game {
                 displayLosingMessage();
             }
         }
-        
     }
+    
+        private void displayWinningMessage () {
+        System.out.println(
+            "\n*******************************************************************************"
+          + "\n Congratulations. You win!"
+          + "\n*******************************************************************************");
+    }
+
+    private void displayLosingMessage () {
+        System.out.println(
+            "*******************************************************************************"
+        + "\n Sorry. You lose. Better luck next time!" 
+        + "\n*******************************************************************************");
+    }
+
 }

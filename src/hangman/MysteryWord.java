@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 import java.util.Arrays;
@@ -14,10 +10,10 @@ import java.util.Scanner;
  */
 public class MysteryWord {
 
-    String mysteryWord = getWord();
-    char[] mysteryArray = new char[mysteryWord.length()];
-    char[] wordArray = new char[mysteryWord.length()];
-    int numberOfGuesses = 6; // we could have a difficulty setting that changes this value
+    private String mysteryWord = getWord();
+    private char[] mysteryArray = new char[mysteryWord.length()];
+    private char[] wordArray = new char[mysteryWord.length()];
+    private int numberOfGuesses = 6;
     
     public MysteryWord() {
         for(int i = 0; i < mysteryArray.length; i++) {
@@ -25,7 +21,6 @@ public class MysteryWord {
         }
     }
 
-    // Lorna & Gerald created this function for the Lesson 5 Paired Assignment
     public char getLetter() {
         Scanner letterScanner = new Scanner(System.in);
         ErrorHandling errorHandling = new ErrorHandling();
@@ -61,8 +56,6 @@ public class MysteryWord {
     public String getWord() {
         WordList wordList = new WordList();
         String words[] = wordList.randomizeList(wordList.makeList());
-        //Random random = new Random();
-        //int randomWord = random.nextInt(words.length-1);
         
         String hangmanWord = words[0];
         //wordList.displayWordList(words); // this line is just for testing

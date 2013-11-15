@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 /**
@@ -11,30 +7,23 @@ package hangman;
 public class Alphabet {
 
     // The array to contain the alphabet
-    char[] alphabetArray = new char[26];
+    private char[] alphabetArray = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     
-    public Alphabet() {
-    }
-
-public void makeAlphabet (){
-    alphabetArray= "abcdefghijklmnopqrstuvwxyz".toCharArray(); //type conversion
-}
+    public void displayAlphabet (char letter) {
     
-public void displayAlphabet (char letter) {
+        System.out.println("Remaining Letters:");
     
-    System.out.println("Remaining Letters:");
-    
-    for(int i = 0; i < alphabetArray.length; i++) {
+        for(int i = 0; i < alphabetArray.length; i++) {
         
-        if (alphabetArray[i] == letter) {
-            alphabetArray[i] = '_';
+            if (alphabetArray[i] == letter) {
+                alphabetArray[i] = '_';
+            }
+        
+            System.out.print(alphabetArray[i] + " ");
         }
-        
-        System.out.print(alphabetArray[i] + " ");
-    }
     
-    System.out.print("\n\n");
+        System.out.print("\n\n");
         
-}
+    }
 
 }

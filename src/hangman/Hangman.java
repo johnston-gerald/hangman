@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 import java.util.Scanner;
@@ -12,11 +8,8 @@ import java.util.Scanner;
  */
 public class Hangman {
 
-    String name;
+    private String name;
     
-    public Hangman() {
-    }
-
     public static void main(String[] args) {
         Hangman hangman = new Hangman();
         hangman.getName();
@@ -29,16 +22,15 @@ public class Hangman {
         game.playTheGame();
     }
     
-    public void getName() {
+    private void getName() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your name: ");
         this.name = input.next();
     }
     
-    public void displayName() {
+    private void displayName() {
         
         System.out.println("\nWelcome " +this.name);
     }
-    
 
 }

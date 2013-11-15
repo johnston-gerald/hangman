@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 /**
@@ -10,34 +6,20 @@ package hangman;
  */
 public class MainMenuControl {
     
-    boolean exitProgram = false;
-    boolean startNewGame = false;
-    boolean optionsMenuControl = false;
+    private boolean exitProgram = false;
+    private boolean startNewGame = false;
+    private boolean optionsMenuControl = false;
     
     public void activateControl(char menuSelection) {
     
         Instructions instructions = new Instructions();
-        //PlayerMenuView playerMenuView = new PlayerMenuView();
-        //PlayerMenuControl playerMenuControl = new PlayerMenuControl();
         
         switch(menuSelection){
+
             case '2':
                 instructions.displayInstructions();
             break;
             
-            /*case '3':
-                playerMenuControl.activateControl(playerMenuView.displayMenu());
-            break;*/
-                
-            /*case '4':  //Lorna added case 4.
-                optionsMenuControl = true;
-            break;    */
-
-            /*case '5':
-                startNewGame = true;
-                //System.out.println("\n***This will eventually start a new game.***\n");
-            break;*/
-                
             case '3':
                 exitProgram = true;
             break;

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 import java.io.IOException;
@@ -30,24 +26,6 @@ public class WordList {
         return wordList;
     }
     
-    /*public String[] sortList(String[] words) {
-        String tmpWord;
-        boolean notDone = true;
-        
-        while(notDone) {
-            
-            notDone = false; // assume that you done
-            for (int i = 0; i < words.length-1; i++) {
-                if (words[i].length() > words[i+1].length()) {
-                    // swap words
-                    tmpWord = words[i];
-                    words[i] = words[i+1];
-                    words[i+1] = tmpWord;
-                    notDone = true;
-                } 
-            }
-        }*/
-        
     public String[] randomizeList(String[] words) {
         // Implementing Fisher–Yates shuffle
         Random rnd = new Random();

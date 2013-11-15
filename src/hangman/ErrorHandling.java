@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 /**
@@ -10,9 +6,6 @@ package hangman;
  */
 public class ErrorHandling {
 
-    public ErrorHandling() {
-    }
-    
     public boolean isInteger( String input ) {
         try {
             Integer.parseInt( input );

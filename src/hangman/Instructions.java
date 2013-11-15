@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package hangman;
 
 /**
@@ -10,10 +6,6 @@ package hangman;
  */
 public class Instructions {
     
-    
-    public Instructions() {
-    }
-
     public void displayInstructions () {
 
         System.out.println( 
