@@ -55,13 +55,14 @@ public class MysteryWord {
     
     public String getWord() {
         WordList wordList = new WordList();
-        String words[] = wordList.randomizeList(wordList.makeList());
+        wordList.randomizeList();
+        String words[] = wordList.getWordList();
         
         String hangmanWord = words[0];
         //wordList.displayWordList(words); // this line is just for testing
                 
         return hangmanWord;
-}    
+    }    
 
     public String displayMysteryWord (char letter) {
     

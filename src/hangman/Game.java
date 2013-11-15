@@ -15,7 +15,7 @@ public class Game {
         String mysteryWordOutput;
 
         gallows.displayGallows(mysteryWord.guessesLeft());
-        alphabet.displayAlphabet('_');
+        alphabet.displayAlphabet();
         System.out.println(mysteryWord.displayMysteryWord('_'));
         
         while (!mysteryWord.winGame() && !mysteryWord.loseGame()){
@@ -37,7 +37,8 @@ public class Game {
             }
             else {
                 gallows.displayGallows(mysteryWord.guessesLeft());
-                alphabet.displayAlphabet(mysteryLetter);
+                alphabet.setLetter(mysteryLetter);
+                alphabet.displayAlphabet();
                 System.out.println("You have " + mysteryWord.guessesLeft() + " wrong letters until you die.\n");
                 System.out.print("Mystery word: " + mysteryWordOutput + "\n");
             }

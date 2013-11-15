@@ -1,6 +1,7 @@
 package hangman;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -9,11 +10,17 @@ import java.util.logging.Logger;
  *
  * @author gerrygj
  */
-public class WordList {
 
-    public String[] makeList() {
+//Lesson 8 Paired Assignment - Lorna & Gerald
+public class WordList implements Serializable {
+
+    public WordList() {
+    }
+
+    private String[] wordList = null;
+    
+    private void makeList() {
         FileArrayProvider fap = new FileArrayProvider();
-        String[] wordList = null;
         try {
             wordList = fap
            .readLines("src/hangman/words.txt");
@@ -23,21 +30,19 @@ public class WordList {
         /*for (String line : wordList) { //display the list (array) of words - use for testing only
             System.out.println(line);
         }*/
-        return wordList;
     }
     
-    public String[] randomizeList(String[] words) {
+    public void randomizeList() {
         // Implementing Fisher–Yates shuffle
+        this.makeList();
         Random rnd = new Random();
-        for (int i = 0; i < words.length-1; i++) {
+        for (int i = 0; i < wordList.length-1; i++) {
             int index = rnd.nextInt(i + 1);
             // Simple swap
-            String a = words[index];
-            words[index] = words[i];
-            words[i] = a;
+            String a = wordList[index];
+            wordList[index] = wordList[i];
+            wordList[i] = a;
         }
-       
-        return words;
     }
     
     // this function is just for testing
@@ -53,6 +58,14 @@ public class WordList {
             System.out.println("\t    " + words[i]);
         }
         System.out.println("\t===============================================================\n");
+    }
+
+    public String[] getWordList() {
+        return wordList;
+    }
+
+    public void setWordList(String[] wordList) {
+        this.wordList = wordList;
     }
     
 }
