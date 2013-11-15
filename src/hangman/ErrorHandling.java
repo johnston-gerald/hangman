@@ -6,6 +6,7 @@ package hangman;
  */
 public class ErrorHandling {
 
+    //see if a string is also an integer
     public boolean isInteger( String input ) {
         try {
             Integer.parseInt( input );
@@ -16,6 +17,7 @@ public class ErrorHandling {
         }
     }
     
+    //see if a string is also a char
     public boolean isChar( String input ) {
         if (input.length() == 1){
             if (Character.isLetter(input.charAt(0))) {

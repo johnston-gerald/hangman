@@ -10,7 +10,8 @@ import java.util.Scanner;
  */
 public class MysteryWord {
 
-    private String mysteryWord = getWord();
+    private WordList wordList = new WordList();
+    private String mysteryWord = wordList.getWordList()[0];
     private char[] mysteryArray = new char[mysteryWord.length()];
     private char[] wordArray = new char[mysteryWord.length()];
     private int numberOfGuesses = 6;
@@ -53,17 +54,6 @@ public class MysteryWord {
         return Character.toLowerCase(letter.charAt(0));
     }
     
-    public String getWord() {
-        WordList wordList = new WordList();
-        wordList.randomizeList();
-        String words[] = wordList.getWordList();
-        
-        String hangmanWord = words[0];
-        //wordList.displayWordList(words); // this line is just for testing
-                
-        return hangmanWord;
-    }    
-
     public String displayMysteryWord (char letter) {
     
         wordArray = mysteryWord.toCharArray();

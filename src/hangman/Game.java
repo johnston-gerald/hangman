@@ -11,7 +11,7 @@ public class Game {
         MainMenuControl mainMenuControl = new MainMenuControl();
         ErrorHandling errorHandling = new ErrorHandling();
         
-        char mysteryLetter = '_';
+        char mysteryLetter;
         String mysteryWordOutput;
 
         gallows.displayGallows(mysteryWord.guessesLeft());
@@ -55,7 +55,7 @@ public class Game {
         }
     }
     
-        private void displayWinningMessage () {
+    private void displayWinningMessage () {
         System.out.println(
             "\n*******************************************************************************"
           + "\n Congratulations. You win!"

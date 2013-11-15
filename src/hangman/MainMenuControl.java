@@ -7,17 +7,13 @@ package hangman;
 public class MainMenuControl {
     
     private boolean exitProgram = false;
-    private boolean startNewGame = false;
-    private boolean optionsMenuControl = false;
     
     public void activateControl(char menuSelection) {
     
-        Instructions instructions = new Instructions();
-        
         switch(menuSelection){
 
             case '2':
-                instructions.displayInstructions();
+                System.out.println(Instructions.getInstructions());
             break;
             
             case '3':
@@ -27,18 +23,6 @@ public class MainMenuControl {
             default:
                 System.out.println();
             }
-    }
-    
-    public boolean optionsMenuControl () {
-        return optionsMenuControl;
-    }
-
-    public boolean newGame () {
-        return startNewGame;
-    }
-    
-    public void resetNewGame () {
-        startNewGame = false;
     }
     
     public boolean exitGame () {

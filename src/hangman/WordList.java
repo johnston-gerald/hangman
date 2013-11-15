@@ -22,8 +22,7 @@ public class WordList implements Serializable {
     private void makeList() {
         FileArrayProvider fap = new FileArrayProvider();
         try {
-            wordList = fap
-           .readLines("src/hangman/words.txt");
+            wordList = fap.readLines("src/hangman/words.txt");
         } catch (IOException ex) {
             Logger.getLogger(WordList.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -61,6 +60,7 @@ public class WordList implements Serializable {
     }
 
     public String[] getWordList() {
+        this.randomizeList();
         return wordList;
     }
 
