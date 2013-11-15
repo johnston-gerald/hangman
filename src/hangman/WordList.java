@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 public class WordList implements Serializable {
 
     public WordList() {
+        this.randomizeList();
     }
 
     private String[] wordList = null;
@@ -31,7 +32,7 @@ public class WordList implements Serializable {
         }*/
     }
     
-    public void randomizeList() {
+    private void randomizeList() {
         // Implementing Fisher–Yates shuffle
         this.makeList();
         Random rnd = new Random();
@@ -60,7 +61,6 @@ public class WordList implements Serializable {
     }
 
     public String[] getWordList() {
-        this.randomizeList();
         return wordList;
     }
 
