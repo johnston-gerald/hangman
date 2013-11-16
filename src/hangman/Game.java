@@ -14,12 +14,11 @@ public class Game implements Serializable {
         Alphabet alphabet = new Alphabet();
         MainMenuView mainMenuView = new MainMenuView();
         MainMenuControl mainMenuControl = new MainMenuControl();
-        ErrorHandling errorHandling = new ErrorHandling();
         
         char mysteryLetter;
         String mysteryWordOutput;
 
-        gallows.displayGallows(mysteryWord.guessesLeft());
+        gallows.displayGallows(mysteryWord.getNumberOfGuesses());
         alphabet.displayAlphabet();
         System.out.println(mysteryWord.displayMysteryWord('_'));
         
@@ -32,7 +31,7 @@ public class Game implements Serializable {
                 mainMenuControl.activateControl(mainMenuView.displayMenu());
             }
             
-            if (mysteryLetter == '3' || mainMenuControl.exitGame()) {
+            if (mysteryLetter == '3' || mainMenuControl.isExitProgram()) {
                 System.out.println("\nGoodbye");
                 break;
             }
@@ -41,10 +40,10 @@ public class Game implements Serializable {
                 mainMenuControl.activateControl(mysteryLetter);
             }
             else {
-                gallows.displayGallows(mysteryWord.guessesLeft());
+                gallows.displayGallows(mysteryWord.getNumberOfGuesses()); //Lorna adjusted to use the getter lesson 8
                 alphabet.setLetter(mysteryLetter);
                 alphabet.displayAlphabet();
-                System.out.println("You have " + mysteryWord.guessesLeft() + " wrong letters until you die.\n");
+                System.out.println("You have " + mysteryWord.getNumberOfGuesses() + " wrong letters until you die.\n");
                 System.out.print("Mystery word: " + mysteryWordOutput + "\n");
             }
         }
@@ -54,13 +53,122 @@ public class Game implements Serializable {
         }
         else {
             if (mysteryWord.loseGame()) {
-                gallows.displayGallows(mysteryWord.guessesLeft());
+                gallows.displayGallows(mysteryWord.getNumberOfGuesses());
                 displayLosingMessage();
             }
         }
     }
-    
-    private void displayWinningMessage () {
+   class Gallows {
+            //nesting of gallows class done by Gerald and Lorna lesson 8
+    private void displayGallows(int gallowsChoice) {  
+
+        switch(gallowsChoice){
+            case 6:
+                System.out.println("\t------------"
+                               + "\n\t|          |"
+                               + "\n\t|          |"
+                               + "\n\t|"
+                               + "\n\t|" 
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n");
+            break;
+            
+            case 5:
+                System.out.println("\t------------"
+                               + "\n\t|          |"
+                               + "\n\t|          |"
+                               + "\n\t|          O"
+                               + "\n\t|" 
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n");
+            break;
+                
+            case 4:
+                System.out.println("\t------------"
+                               + "\n\t|          |"
+                               + "\n\t|          |"
+                               + "\n\t|          O"
+                               + "\n\t|          |" 
+                               + "\n\t|          |"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n");
+            break;
+            
+            case 3:
+                System.out.println("\t------------"
+                               + "\n\t|          |"
+                               + "\n\t|          |"
+                               + "\n\t|          O"
+                               + "\n\t|         /|" 
+                               + "\n\t|          |"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n");
+            break;
+            
+            case 2:
+                System.out.println("\t------------"
+                               + "\n\t|          |"
+                               + "\n\t|          |"
+                               + "\n\t|          O"
+                               + "\n\t|         /|\\" 
+                               + "\n\t|          |"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n");
+            break;
+            
+            case 1:
+                System.out.println("\t------------"
+                               + "\n\t|          |"
+                               + "\n\t|          |"
+                               + "\n\t|          O"
+                               + "\n\t|         /|\\" 
+                               + "\n\t|          |"
+                               + "\n\t|         /"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n");
+            break;
+            
+            case 0:
+                System.out.println("\t------------"
+                               + "\n\t|          |"
+                               + "\n\t|          |"
+                               + "\n\t|          O"
+                               + "\n\t|         /|\\" 
+                               + "\n\t|          |"
+                               + "\n\t|         / \\"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n\t|"
+                               + "\n");
+            break;
+            
+            default:
+                System.out.println();
+            }
+    }
+       
+}
+
+    private void displayWinningMessage () {  //Gerald individual lesson 8
         System.out.println(
             "\n*******************************************************************************"
           + "\n Congratulations. You win!"

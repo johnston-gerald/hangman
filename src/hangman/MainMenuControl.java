@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author gerrygj
  */
 public class MainMenuControl implements Serializable {
-
+// Lorna lesson 8
     public MainMenuControl() {
     }
     
@@ -30,8 +30,12 @@ public class MainMenuControl implements Serializable {
             }
     }
     
-    public boolean exitGame () {
+    public boolean isExitProgram() {
         return exitProgram;
+    }
+
+    public void setExitProgram(boolean exitProgram) {
+        this.exitProgram = exitProgram;
     }
     
 }

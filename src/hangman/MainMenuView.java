@@ -14,7 +14,6 @@ public class MainMenuView implements Serializable {
 
     public char displayMenu() {
         Scanner inputScanner = new Scanner(System.in);
-        ErrorHandling errorHandling = new ErrorHandling();
         
         String menuSelection = "0";
     
@@ -26,7 +25,7 @@ public class MainMenuView implements Serializable {
             
             menuSelection = inputScanner.next();
             
-        } while (errorHandling.isInteger(menuSelection) == false || menuSelection.charAt(0) < '1' || menuSelection.charAt(0) > '3');
+        } while (ErrorHandling.isInteger(menuSelection) == false || menuSelection.charAt(0) < '1' || menuSelection.charAt(0) > '3');  //Lorna made changes
     
         return menuSelection.charAt(0);
     }

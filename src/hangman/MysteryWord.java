@@ -24,7 +24,6 @@ public class MysteryWord implements Serializable {
 
     public char getLetter() {
         Scanner letterScanner = new Scanner(System.in);
-        ErrorHandling errorHandling = new ErrorHandling();
     
         String letter = "0";
         
@@ -43,7 +42,7 @@ public class MysteryWord implements Serializable {
                 return letter.charAt(0);
             }
             
-            if (!errorHandling.isChar(letter)) {
+            if (!ErrorHandling.isChar(letter)) {  //Lorna made changes
                 System.out.println("\nInvalid input.");
                 continue;
             }
@@ -82,10 +81,15 @@ public class MysteryWord implements Serializable {
         mysteryWordOutput = mysteryWordOutput + "(" +mysteryWord.length() +" letters)";
         return mysteryWordOutput;
     }
-
-    public int guessesLeft(){
+//Lorna individual lesson 8 changed to getter and setter.
+    public int getNumberOfGuesses() {
         return numberOfGuesses;
     }
+
+    public void setNumberOfGuesses(int numberOfGuesses) {
+        this.numberOfGuesses = numberOfGuesses;
+    }
+
 
     public boolean winGame () {
     

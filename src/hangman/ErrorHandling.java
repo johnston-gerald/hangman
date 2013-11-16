@@ -6,15 +6,13 @@ import java.io.Serializable;
  *
  * @author gerrygj
  */
-public class ErrorHandling implements Serializable {
+public class ErrorHandling implements Serializable { //Lorna individual Lesson 8
 
-    public ErrorHandling() {
+    public ErrorHandling() { 
     }
     
-    //make these functions static?
-    
     //see if a string is also an integer
-    public boolean isInteger(String input) {
+    public static boolean isInteger(String input) {
         try {
             Integer.parseInt(input);
             return true;
@@ -25,7 +23,7 @@ public class ErrorHandling implements Serializable {
     }
     
     //see if a string is also a char
-    public boolean isChar(String input) {
+    public static boolean isChar(String input) {
         if (input.length() == 1){
             if (Character.isLetter(input.charAt(0))) {
                 return true;
