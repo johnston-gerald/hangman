@@ -1,5 +1,6 @@
 package hangman;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ import java.util.Scanner;
  *
  * @author gerrygj
  */
-public class MysteryWord {
+public class MysteryWord implements Serializable {
 
     private WordList wordList = new WordList();
     private String mysteryWord = wordList.getWordList()[0];

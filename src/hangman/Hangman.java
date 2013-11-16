@@ -1,10 +1,15 @@
 package hangman;
 
+import java.io.Serializable;
+
 /**
  *
  * @author gerrygj
  */
-public class Hangman {
+public class Hangman implements Serializable {
+
+    public Hangman() {
+    }
 
     public static void main(String[] args) {
 

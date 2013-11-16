@@ -1,10 +1,15 @@
 package hangman;
 
+import java.io.Serializable;
+
 /**
  *
  * @author gerrygj
  */
-public class Gallows {
+public class Gallows implements Serializable {
+
+    public Gallows() {
+    }
     
     public void displayGallows(int gallowsChoice) {
         

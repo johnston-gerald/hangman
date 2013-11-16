@@ -1,7 +1,12 @@
 package hangman;
 
-public class Game {
+import java.io.Serializable;
 
+public class Game implements Serializable {
+
+    public Game() {
+    }
+    
     public void playTheGame () {
         
         MysteryWord mysteryWord = new MysteryWord();

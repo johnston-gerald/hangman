@@ -1,12 +1,16 @@
 package hangman;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author gerrygj
  */
-public class MainMenuView {
+public class MainMenuView implements Serializable {
+
+    public MainMenuView() {
+    }
 
     public char displayMenu() {
         Scanner inputScanner = new Scanner(System.in);

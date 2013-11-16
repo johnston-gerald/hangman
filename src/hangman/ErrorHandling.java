@@ -1,12 +1,17 @@
 package hangman;
 
+import java.io.Serializable;
+
 /**
  *
  * @author gerrygj
  */
-public class ErrorHandling {
+public class ErrorHandling implements Serializable {
 
-    //make these static?
+    public ErrorHandling() {
+    }
+    
+    //make these functions static?
     
     //see if a string is also an integer
     public boolean isInteger(String input) {

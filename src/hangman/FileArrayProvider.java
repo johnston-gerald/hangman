@@ -3,6 +3,7 @@ package hangman;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,10 @@ import java.util.List;
  *
  * @author gerrygj
  */
-public class FileArrayProvider {
+public class FileArrayProvider implements Serializable {
+
+    public FileArrayProvider() {
+    }
 
     public String[] readLines(String filename) throws IOException {
         FileReader fileReader = new FileReader(filename);

@@ -1,10 +1,15 @@
 package hangman;
 
+import java.io.Serializable;
+
 /**
  *
  * @author gerrygj
  */
-public class MainMenuControl {
+public class MainMenuControl implements Serializable {
+
+    public MainMenuControl() {
+    }
     
     private boolean exitProgram = false;
     
