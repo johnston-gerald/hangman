@@ -6,19 +6,21 @@ package hangman;
  */
 public class ErrorHandling {
 
+    //make these static?
+    
     //see if a string is also an integer
-    public boolean isInteger( String input ) {
+    public boolean isInteger(String input) {
         try {
-            Integer.parseInt( input );
+            Integer.parseInt(input);
             return true;
         }
-        catch( Exception e ) {
+        catch(Exception e) {
             return false;
         }
     }
     
     //see if a string is also a char
-    public boolean isChar( String input ) {
+    public boolean isChar(String input) {
         if (input.length() == 1){
             if (Character.isLetter(input.charAt(0))) {
                 return true;
