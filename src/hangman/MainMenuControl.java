@@ -11,7 +11,7 @@ public class MainMenuControl implements Serializable {
     public MainMenuControl() {
     }
     
-    private boolean exitProgram = false;
+    public static boolean exitProgram = false;
     
     public void activateControl(char menuSelection) {
     
@@ -23,6 +23,7 @@ public class MainMenuControl implements Serializable {
             
             case '3':
                 exitProgram = true;
+                System.out.println("this is supposed to exit the game!!!!!!!!");
             break;
             
             default:

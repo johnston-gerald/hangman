@@ -28,10 +28,14 @@ public class Game implements Serializable {
             mysteryWordOutput = mysteryWord.displayMysteryWord(mysteryLetter);
             
             if (mysteryLetter == '1') {
-                mainMenuControl.activateControl(mainMenuView.displayMenu());
+                mainMenuView.getMainMenuItem();
             }
             
-            if (mysteryLetter == '3' || mainMenuControl.isExitProgram()) {
+            if (mysteryLetter == '3') {
+                mainMenuControl.setExitProgram(true);
+            }
+                
+            if (mainMenuControl.isExitProgram()) {
                 System.out.println("\nGoodbye");
                 break;
             }

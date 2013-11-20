@@ -1,18 +1,29 @@
 package hangman;
 
-import java.io.Serializable;
-import java.util.Scanner;
-
 /**
  *
  * @author gerrygj
  */
-public class MainMenuView implements Serializable {
+public class MainMenuView extends Menu {
 
+    private static final String[][] menuItems = {
+        {"1", "Continue game"},
+        {"2", "Display instructions"},
+        {"3", "Exit program"},
+    };
+
+    MainMenuControl mainMenuControl = new MainMenuControl();
+    
     public MainMenuView() {
+        super(MainMenuView.menuItems);
     }
 
-    public char displayMenu() {
+    public void getMainMenuItem() {
+        this.display();
+        mainMenuControl.activateControl(this.getCommand().charAt(0));
+    }
+    
+    /*public char displayMenu() {
         Scanner inputScanner = new Scanner(System.in);
         
         String menuSelection = "0";
@@ -28,6 +39,6 @@ public class MainMenuView implements Serializable {
         } while (ErrorHandling.isInteger(menuSelection) == false || menuSelection.charAt(0) < '1' || menuSelection.charAt(0) > '3');  //Lorna made changes
     
         return menuSelection.charAt(0);
-    }
+    }*/
     
 }
