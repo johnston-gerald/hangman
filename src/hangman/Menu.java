@@ -56,11 +56,12 @@ public abstract class Menu {
         String command;
         boolean valid = false;
         do {
+            this.display();
             command = inputScanner.nextLine();
             command = command.trim();
             valid = validCommand(command);
             if (!validCommand(command)) {
-                System.out.println("Invalid command. Please enter a valid command.");
+                System.out.println("\nInvalid command.");
                 continue;
             }
                 

@@ -19,7 +19,6 @@ public class MainMenuView extends Menu {
     }
 
     public void getMainMenuItem() {
-        this.display();
         mainMenuControl.activateControl(this.getCommand().charAt(0));
     }
     
