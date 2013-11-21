@@ -6,7 +6,7 @@ import java.util.Scanner;
  *
  * @author gerrygj
  */
-public abstract class Menu {
+public class Menu {  //New Super Class, Gerald and Lorna, paired assignment, lesson 9.
     
     private String[][] menuItems = null;
 
@@ -65,5 +65,7 @@ public abstract class Menu {
         
         return command;
     }
-
+    public void displayClassName() {  //Added just for override example, Gerald and Lorna, paired assignment, lesson 9.
+        System.out.println("Class name: Menu");
+    }
 }
