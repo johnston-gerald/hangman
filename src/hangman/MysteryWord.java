@@ -1,5 +1,6 @@
 package hangman;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -16,7 +17,7 @@ public class MysteryWord implements Serializable {
     private char[] wordArray = new char[mysteryWord.length()];
     private int numberOfGuesses = 6;
     
-    public MysteryWord() {
+    public MysteryWord() throws IOException {
         for(int i = 0; i < mysteryArray.length; i++) {
             mysteryArray[i] = '_';
         }
@@ -24,26 +25,27 @@ public class MysteryWord implements Serializable {
 
     public char getLetter() {
         Scanner letterScanner = new Scanner(System.in);
+        MainMenuView mainMenuView = new MainMenuView();
     
         String letter = "0";
         
         boolean valid = false;
-        while (!valid) {  //This is our new while continue loop
+        while (!valid) {
             System.out.println("Please enter a letter or enter 1 for the menu: ");
         
             letter = letterScanner.next();
             
             if (letter.length() != 1) {
-                System.out.println("\nInvalid input.");
+                System.out.println("\nInvalid input.\n");
                 continue;
             }
             
-            if (letter.charAt(0) >= '1' && letter.charAt(0) <= '6') { //menu
+            if (letter.charAt(0) >= '1' && letter.charAt(0) <= '3') { //menu
                 return letter.charAt(0);
             }
             
-            if (!ErrorHandling.isChar(letter)) {  //Lorna made changes
-                System.out.println("\nInvalid input.");
+            if (!ErrorHandling.isChar(letter)) {
+                System.out.println("\nInvalid input.\n");
                 continue;
             }
             
@@ -81,7 +83,7 @@ public class MysteryWord implements Serializable {
         mysteryWordOutput = mysteryWordOutput + "(" +mysteryWord.length() +" letters)";
         return mysteryWordOutput;
     }
-//Lorna individual lesson 8 changed to getter and setter.
+
     public int getNumberOfGuesses() {
         return numberOfGuesses;
     }

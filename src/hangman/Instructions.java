@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author gerrygj
  */
 public class Instructions implements Serializable {
-//Gerald individual lesson 8
+
     public Instructions() {
     }
     

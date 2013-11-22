@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author gerrygj
  */
 public class PlayerName implements Serializable {
-//Gerald lesson 8
+
     public PlayerName() {
         this.promptName();
     }

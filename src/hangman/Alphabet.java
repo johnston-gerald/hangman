@@ -7,7 +7,6 @@ import java.io.Serializable;
  * @author gerrygj
  */
 
-//Lesson 8 Paired Assignment - Lorna & Gerald
 public class Alphabet implements Serializable {
 
     public Alphabet() {

@@ -22,6 +22,7 @@ public class MainMenuView extends Menu {  //Subclass of Menu, Gerald and Lorna, 
     public void getMainMenuItem() {
         mainMenuControl.activateControl(this.getCommand().charAt(0));
     }
+    
     @Override
     public void displayClassName() {  //Added just for override example, Gerald and Lorna, paired assignment, lesson 9.
         System.out.println("Class name: MainMenuView");

@@ -1,5 +1,6 @@
 package hangman;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 public class Game implements Serializable {
@@ -7,7 +8,7 @@ public class Game implements Serializable {
     public Game() {
     }
     
-    public void playTheGame () {
+    public void playTheGame () throws IOException {
         
         MysteryWord mysteryWord = new MysteryWord();
         Gallows gallows = new Gallows();
@@ -44,7 +45,7 @@ public class Game implements Serializable {
                 mainMenuControl.activateControl(mysteryLetter);
             }
             else {
-                gallows.displayGallows(mysteryWord.getNumberOfGuesses()); //Lorna adjusted to use the getter lesson 8
+                gallows.displayGallows(mysteryWord.getNumberOfGuesses()); 
                 alphabet.setLetter(mysteryLetter);
                 alphabet.displayAlphabet();
                 System.out.println("You have " + mysteryWord.getNumberOfGuesses() + " wrong letters until you die.\n");
@@ -62,8 +63,9 @@ public class Game implements Serializable {
             }
         }
     }
-   class Gallows {
-            //nesting of gallows class done by Gerald and Lorna lesson 8
+    
+    class Gallows {
+            
     private void displayGallows(int gallowsChoice) {  
 
         switch(gallowsChoice){
@@ -172,7 +174,7 @@ public class Game implements Serializable {
        
 }
 
-    private void displayWinningMessage () {  //Gerald individual lesson 8
+    private void displayWinningMessage () { 
         System.out.println(
             "\n*******************************************************************************"
           + "\n Congratulations. You win!"

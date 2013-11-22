@@ -6,7 +6,7 @@ import java.io.Serializable;
  *
  * @author gerrygj
  */
-public class ErrorHandling implements Serializable { //Lorna individual Lesson 8
+public class ErrorHandling implements Serializable { 
 
     public ErrorHandling() { 
     }

@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author gerrygj
  */
 public class MainMenuControl implements Serializable {
-// Lorna lesson 8
+
     public MainMenuControl() {
     }
     
