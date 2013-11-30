@@ -6,7 +6,7 @@ import java.util.Scanner;
  *
  * @author gerrygj
  */
-public class Menu {  //New Super Class, Gerald and Lorna, paired assignment, lesson 9.
+public class Menu implements DisplayInfo, EnterInfo {  //implements interfaces, Gerald and Lorna, paired assignment, lesson 10.
     
     private String[][] menuItems = null;
 
@@ -26,13 +26,13 @@ public class Menu {  //New Super Class, Gerald and Lorna, paired assignment, les
         this.menuItems = menuItems;
     }
 
+    @Override
     public final void display() {
         System.out.println("\nPlease enter one of the following commands:");
 
         for (int i = 0; i < this.menuItems.length; i++) {
             System.out.println("\t" + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
-        //System.out.println("\t===============================================================\n");
     }
 
     private boolean validCommand(String command) {
@@ -46,7 +46,8 @@ public class Menu {  //New Super Class, Gerald and Lorna, paired assignment, les
         return false;
     }
 
-    protected final String getCommand() {
+    @Override
+    public final String getCommand() {
 
         Scanner inputScanner = new Scanner(System.in);
         String command;
@@ -64,8 +65,5 @@ public class Menu {  //New Super Class, Gerald and Lorna, paired assignment, les
         } while (!valid);
         
         return command;
-    }
-    public void displayClassName() {  //Added just for override example, Gerald and Lorna, paired assignment, lesson 9.
-        System.out.println("Class name: Menu");
     }
 }

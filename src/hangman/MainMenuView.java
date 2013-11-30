@@ -10,7 +10,6 @@ public class MainMenuView extends Menu {  //Subclass of Menu, Gerald and Lorna, 
         {"1", "Continue game"},
         {"2", "Display instructions"},
         {"3", "Exit program"},
-        {"4", "Display Class Names"},  //Added just to test the override example, Gerald and Lorna, paired assignment, lesson 9.
     };
 
     MainMenuControl mainMenuControl = new MainMenuControl();
@@ -23,8 +22,4 @@ public class MainMenuView extends Menu {  //Subclass of Menu, Gerald and Lorna, 
         mainMenuControl.activateControl(this.getCommand().charAt(0));
     }
     
-    @Override
-    public void displayClassName() {  //Added just for override example, Gerald and Lorna, paired assignment, lesson 9.
-        System.out.println("Class name: MainMenuView");
-    } 
 }
