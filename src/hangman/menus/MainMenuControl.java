@@ -1,12 +1,14 @@
-package hangman;
+package hangman.menus;
 
+import hangman.Instructions;
+import hangman.Status;
 import java.io.Serializable;
 
 /**
  *
  * @author gerrygj
  */
-public class MainMenuControl implements Serializable {
+public class MainMenuControl implements Serializable {  //Lesson 10 Paired, moved to menus package
 
     public MainMenuControl() {
     }

@@ -1,5 +1,6 @@
 package hangman;
 
+import hangman.menus.MainMenuView;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Arrays;

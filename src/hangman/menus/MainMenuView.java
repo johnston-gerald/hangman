@@ -1,10 +1,13 @@
-package hangman;
+package hangman.menus;
+
+import hangman.Status;
+import hangman.menus.Menu;
 
 /**
  *
  * @author gerrygj
  */
-public class MainMenuView extends Menu {  
+public class MainMenuView extends Menu {  //Lesson 10 Paired, moved to menus package
 
     private static final String[][] menuItems = {
         {"1", "Continue game"},

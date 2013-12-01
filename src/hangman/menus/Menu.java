@@ -1,5 +1,7 @@
-package hangman;
+package hangman.menus;
 
+import hangman.DisplayInfo;
+import hangman.EnterInfo;
 import java.util.Scanner;
 
 /**
@@ -7,7 +9,7 @@ import java.util.Scanner;
  * @author gerrygj
  */
 public class Menu implements DisplayInfo, EnterInfo {  //implements interfaces, Gerald and Lorna, paired assignment, lesson 10.
-    
+//Lesson 10 Paired, moved to menus package    
     private String[][] menuItems = null;
 
     public Menu() {
