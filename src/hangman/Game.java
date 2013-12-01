@@ -5,6 +5,8 @@ import java.io.Serializable;
 
 public class Game implements Serializable {
 
+    private Status status;  //Lesson 10 Paired, Lorna & Gerald
+    
     public Game() {
     }
     
@@ -15,7 +17,8 @@ public class Game implements Serializable {
         Alphabet alphabet = new Alphabet();
         MainMenuView mainMenuView = new MainMenuView();
         MainMenuControl mainMenuControl = new MainMenuControl();
-        
+
+        this.setStatus(Status.PLAYING); //Lesson 10 Paired, Lorna & Gerald
         char mysteryLetter;
         String mysteryWordOutput;
 
@@ -23,20 +26,20 @@ public class Game implements Serializable {
         alphabet.displayAlphabet();
         System.out.println(mysteryWord.displayMysteryWord('_'));
         
-        while (!mysteryWord.winGame() && !mysteryWord.loseGame()){
+        while (status == Status.PLAYING){   //Lesson 10 Paired, Lorna & Gerald
             
             mysteryLetter = mysteryWord.getLetter();
             mysteryWordOutput = mysteryWord.displayMysteryWord(mysteryLetter);
             
             if (mysteryLetter == '1') {
-                mainMenuView.getMainMenuItem();
+                this.setStatus(mainMenuView.getMainMenuItem());
             }
             
             if (mysteryLetter == '3') {
-                mainMenuControl.setExitProgram(true);
+                this.setStatus(Status.EXIT);
             }
                 
-            if (mainMenuControl.isExitProgram()) {
+            if (status == Status.EXIT) {
                 System.out.println("\nGoodbye");
                 break;
             }
@@ -51,17 +54,27 @@ public class Game implements Serializable {
                 System.out.println("You have " + mysteryWord.getNumberOfGuesses() + " wrong letters until you die.\n");
                 System.out.print("Mystery word: " + mysteryWordOutput + "\n");
             }
+            
+            this.setStatus(mysteryWord.winOrLose());
         }
         
-        if (mysteryWord.winGame()){
+        if (this.getStatus() == Status.WIN_GAME){   //Lesson 10 Paired, Lorna & Gerald
             displayWinningMessage();
         }
         else {
-            if (mysteryWord.loseGame()) {
+            if (this.getStatus() == Status.LOSE_GAME) { //Lesson 10 Paired, Lorna & Gerald
                 gallows.displayGallows(mysteryWord.getNumberOfGuesses());
                 displayLosingMessage();
             }
         }
+    }
+
+    public Status getStatus() { //Lesson 10 Paired, Lorna & Gerald
+        return status;
+    }
+
+    public void setStatus(Status status) {  //Lesson 10 Paired, Lorna & Gerald
+        this.status = status;
     }
     
     class Gallows {

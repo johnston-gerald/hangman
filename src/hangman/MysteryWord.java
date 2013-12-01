@@ -92,25 +92,16 @@ public class MysteryWord implements Serializable {
         this.numberOfGuesses = numberOfGuesses;
     }
 
-
-    public boolean winGame () {
-    
+    public Status winOrLose(){  //Lesson 10 Paired, Lorna & Gerald
+        
         if (Arrays.equals(wordArray, mysteryArray)){
-            return true;
+            return Status.WIN_GAME;
         }
-        else {
-            return false;
+        else if (numberOfGuesses < 1) {
+            return Status.LOSE_GAME;
         }
-    }
-
-    public boolean loseGame () {
+        
+        return Status.PLAYING;
+    }    
     
-        if (numberOfGuesses < 1){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
 }

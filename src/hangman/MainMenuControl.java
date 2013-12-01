@@ -11,31 +11,21 @@ public class MainMenuControl implements Serializable {
     public MainMenuControl() {
     }
     
-    public static boolean exitProgram = false;
-    
-    public void activateControl(char menuSelection) {
+    public Status activateControl(char menuSelection) {
         
         switch(menuSelection){
 
             case '2':
                 System.out.println(Instructions.getInstructions());
-            break;
+                return Status.PLAYING;  //Lesson 10 Paired, Lorna & Gerald
             
             case '3':
-                exitProgram = true;
-            break;
+                return Status.EXIT; //Lesson 10 Paired, Lorna & Gerald
                 
             default:
                 System.out.println();
+                return Status.PLAYING;  //Lesson 10 Paired, Lorna & Gerald
             }
-    }
-    
-    public boolean isExitProgram() {
-        return exitProgram;
-    }
-
-    public void setExitProgram(boolean exitProgram) {
-        this.exitProgram = exitProgram;
     }
     
 }
