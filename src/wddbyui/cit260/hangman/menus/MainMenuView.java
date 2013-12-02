@@ -1,7 +1,6 @@
 package wddbyui.cit260.hangman.menus;
 
 import wddbyui.cit260.hangman.enums.Status;
-import wddbyui.cit260.hangman.menus.Menu;
 
 /**
  *

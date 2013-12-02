@@ -1,6 +1,5 @@
 package wddbyui.cit260.hangman.words;
 
-import wddbyui.cit260.hangman.words.WordList;
 import wddbyui.cit260.hangman.menus.MainMenuView;
 import java.io.IOException;
 import java.io.Serializable;

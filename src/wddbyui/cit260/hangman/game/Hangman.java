@@ -1,6 +1,5 @@
 package wddbyui.cit260.hangman.game;
 
-import wddbyui.cit260.hangman.game.Game;
 import java.io.IOException;
 import java.io.Serializable;
 

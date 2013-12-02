@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package wddbyui.cit260.hangman.game;
 
 import java.io.Serializable;
