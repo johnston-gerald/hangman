@@ -10,7 +10,7 @@ import java.io.IOException;
 //coverted to sub-class by Gerald for Lesson 9
 public class WordList extends FileArrayProvider {
     
-    private static final String filename = "src/hangman/words.txt";
+    private static final String filename = "src/wddbyui/cit260/hangman/words/words.txt";
     
     public WordList() throws IOException {
         super(WordList.filename);
