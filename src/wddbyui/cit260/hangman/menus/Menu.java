@@ -3,6 +3,7 @@ package wddbyui.cit260.hangman.menus;
 import wddbyui.cit260.hangman.interfaces.DisplayInfo;
 import wddbyui.cit260.hangman.interfaces.EnterInfo;
 import java.util.Scanner;
+import wddbyui.cit260.hangman.enums.ErrorType;
 
 /**
  *
@@ -60,7 +61,7 @@ public class Menu implements DisplayInfo, EnterInfo {  //implements interfaces, 
             command = command.trim();
             valid = validCommand(command);
             if (!validCommand(command)) {
-                System.out.println("\nInvalid command.");
+                System.out.println("\n" + ErrorType.MENU_INPUT.getMessage());  //Lorna Lesson 10 Individual
                 continue;
             }
                 

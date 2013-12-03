@@ -1,6 +1,7 @@
 package wddbyui.cit260.hangman.words;
 
 import java.io.IOException;
+import wddbyui.cit260.hangman.interfaces.DisplayArray;
 
 /**
  *
@@ -8,18 +9,20 @@ import java.io.IOException;
  */
 
 //coverted to sub-class by Gerald for Lesson 9
-public class WordList extends FileArrayProvider {
+public class WordList extends FileArrayProvider implements DisplayArray {
     
     private static final String filename = "src/wddbyui/cit260/hangman/words/words.txt";
     
     public WordList() throws IOException {
         super(WordList.filename);
         this.randomizeList();
-        //this.displayWordList(); //for testing only
+       // this.displayArray(); //for testing only
     }
     
     // this function is just for testing
-    public void displayWordList() {
+
+    @Override
+    public void displayArray() {  //Lorna Lesson 10 individual
         System.out.println("\n\t===============================================================");
         System.out.println("\tHere is the randomized list of words:");
 

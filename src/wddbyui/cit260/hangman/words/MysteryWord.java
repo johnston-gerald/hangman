@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Scanner;
+import wddbyui.cit260.hangman.enums.ErrorType;
 import wddbyui.cit260.hangman.game.ErrorHandling;
 import wddbyui.cit260.hangman.enums.Status;
 
@@ -39,7 +40,7 @@ public class MysteryWord implements Serializable {
             letter = letterScanner.next();
             
             if (letter.length() != 1) {
-                System.out.println("\nInvalid input.\n");
+                System.out.println("\n" + ErrorType.ONE_LETTER.getMessage() + "\n");  //Lorna Lesson 10 Individual
                 continue;
             }
             
@@ -48,7 +49,7 @@ public class MysteryWord implements Serializable {
             }
             
             if (!ErrorHandling.isChar(letter)) {
-                System.out.println("\nInvalid input.\n");
+                System.out.println("\n" + ErrorType.ENTER_LETTER.getMessage() + "\n");  //Lorna Lesson 10 Individual
                 continue;
             }
             

@@ -18,7 +18,7 @@ public class Hangman implements Serializable {
         PlayerName playerName = new PlayerName();
         System.out.println("\nWelcome " + playerName.getName());
        
-        System.out.println(Help.WELCOME.getMessage());
+        System.out.println(Help.WELCOME.getMessage());  //Gerald, Lesson 10, individual
         
         Game game = new Game();
         game.playTheGame();

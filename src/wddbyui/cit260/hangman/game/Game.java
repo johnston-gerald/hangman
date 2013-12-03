@@ -28,7 +28,7 @@ public class Game implements Serializable {
         String mysteryWordOutput;
 
         gallows.displayGallows(mysteryWord.getNumberOfGuesses());
-        alphabet.displayAlphabet();
+        alphabet.displayArray();
         System.out.println(mysteryWord.displayMysteryWord('_'));
         
         while (status == Status.PLAYING){   //Lesson 10 Paired, Lorna & Gerald
@@ -55,7 +55,7 @@ public class Game implements Serializable {
             else {
                 gallows.displayGallows(mysteryWord.getNumberOfGuesses()); 
                 alphabet.setLetter(mysteryLetter);
-                alphabet.displayAlphabet();
+                alphabet.displayArray();
                 System.out.println("You have " + mysteryWord.getNumberOfGuesses() + " wrong letters until you die.\n");
                 System.out.print("Mystery word: " + mysteryWordOutput + "\n");
             }

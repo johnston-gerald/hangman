@@ -1,13 +1,14 @@
 package wddbyui.cit260.hangman.words;
 
 import java.io.Serializable;
+import wddbyui.cit260.hangman.interfaces.DisplayArray;
 
 /**
  *
  * @author gerrygj
  */
 
-public class Alphabet implements Serializable {
+public class Alphabet implements Serializable, DisplayArray {
 
     public Alphabet() {
     }
@@ -16,7 +17,8 @@ public class Alphabet implements Serializable {
     private char[] alphabetArray = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     private char letter = '_';
     
-    public void displayAlphabet () {
+    @Override
+    public void displayArray () {  //Lorna Lesson 10 individual
     
         System.out.println("Remaining Letters:");
     

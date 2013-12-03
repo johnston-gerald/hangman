@@ -18,7 +18,7 @@ public class MainMenuControl implements Serializable {  //Lesson 10 Paired, move
         switch(menuSelection){
 
             case '2':
-                System.out.println(Help.INSTRUCTIONS.getMessage());
+                System.out.println(Help.INSTRUCTIONS.getMessage());  //Gerald, Lesson 10, Individual
                 return Status.PLAYING;  //Lesson 10 Paired, Lorna & Gerald
             
             case '3':
