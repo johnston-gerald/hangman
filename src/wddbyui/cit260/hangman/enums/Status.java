@@ -1,27 +1,26 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package wddbyui.cit260.hangman.enums;
+
+import wddbyui.cit260.hangman.interfaces.DisplayMessage;
 
 /**
  *
  * @author gerrygj
  */
-public enum Status {    //Lesson 10 Paired, Lorna & Gerald
+public enum Status implements DisplayMessage{    //Lesson 10 Paired, Lorna & Gerald
     
     PLAYING ("PLAYING"), 
     WIN_GAME ("WIN_GAME"), 
     LOSE_GAME ("LOSE_GAME"), 
     EXIT ("EXIT");
     
-    String value;
+    String message;
     
-    Status(String value) {
-        this.value = value;   
+    Status(String message) {
+        this.message = message;   
     }
     
-    public String getValue() {
-        return value;
+    @Override
+    public String getMessage() {    //Gerald, Lesson 10 Individual
+        return message;
     }
 }

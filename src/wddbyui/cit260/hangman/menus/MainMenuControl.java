@@ -1,8 +1,8 @@
 package wddbyui.cit260.hangman.menus;
 
-import wddbyui.cit260.hangman.game.Instructions;
 import wddbyui.cit260.hangman.enums.Status;
 import java.io.Serializable;
+import wddbyui.cit260.hangman.enums.Help;
 
 /**
  *
@@ -18,7 +18,7 @@ public class MainMenuControl implements Serializable {  //Lesson 10 Paired, move
         switch(menuSelection){
 
             case '2':
-                System.out.println(Instructions.getInstructions());
+                System.out.println(Help.INSTRUCTIONS.getMessage());
                 return Status.PLAYING;  //Lesson 10 Paired, Lorna & Gerald
             
             case '3':

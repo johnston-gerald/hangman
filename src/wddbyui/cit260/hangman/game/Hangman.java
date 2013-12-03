@@ -2,6 +2,7 @@ package wddbyui.cit260.hangman.game;
 
 import java.io.IOException;
 import java.io.Serializable;
+import wddbyui.cit260.hangman.enums.Help;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Hangman implements Serializable {
         PlayerName playerName = new PlayerName();
         System.out.println("\nWelcome " + playerName.getName());
        
-        System.out.println(Instructions.getInstructions());
+        System.out.println(Help.WELCOME.getMessage());
         
         Game game = new Game();
         game.playTheGame();
