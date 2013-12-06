@@ -4,7 +4,7 @@ import wddbyui.cit260.hangman.interfaces.DisplayInfo;
 import wddbyui.cit260.hangman.interfaces.EnterInfo;
 import java.util.Scanner;
 import wddbyui.cit260.hangman.enums.ErrorType;
-import wddbyui.cit260.hangman.exceptions.MenuException;
+import wddbyui.cit260.hangman.exceptions.MenuException;  //Gerald and Lorna Lesson 11 Paired assignment
 
 /**
  *
@@ -39,18 +39,18 @@ public class Menu implements DisplayInfo, EnterInfo {  //implements interfaces, 
         }
     }
 
-    private boolean validCommand(String command) throws MenuException {
+    private boolean validCommand(String command) throws MenuException {  //Gerald and Lorna Lesson 11 Paired assignment
         String[][] items = this.menuItems;
 
-        try {
+        try { //Gerald and Lorna Lesson 11 Paired assignment
             for (String[] item : this.menuItems) {
                 if (item[0].equals(command)) {
                     return true;
                 }
             }
-            throw new MenuException();
+            throw new MenuException();  //Gerald and Lorna Lesson 11 Paired assignment
         }
-        catch (MenuException e) {
+        catch (MenuException e) {  //Gerald and Lorna Lesson 11 Paired assignment
             System.out.println("\n" + ErrorType.MENU_INPUT.getMessage());
             return false;
         }
