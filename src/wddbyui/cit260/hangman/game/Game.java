@@ -7,6 +7,7 @@ import wddbyui.cit260.hangman.menus.MainMenuView;
 import java.io.IOException;
 import java.io.Serializable;
 import wddbyui.cit260.hangman.enums.Status;
+import wddbyui.cit260.hangman.exceptions.MenuException;
 
 public class Game implements Serializable {
 
@@ -15,7 +16,7 @@ public class Game implements Serializable {
     public Game() {
     }
     
-    public void playTheGame () throws IOException {
+    public void playTheGame () throws IOException, MenuException {
         
         MysteryWord mysteryWord = new MysteryWord();
         Gallows gallows = new Gallows();

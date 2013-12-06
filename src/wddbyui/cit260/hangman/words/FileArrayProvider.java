@@ -1,12 +1,16 @@
 package wddbyui.cit260.hangman.words;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import wddbyui.cit260.hangman.enums.ErrorType;
 
 /**
  *
@@ -27,17 +31,29 @@ public class FileArrayProvider implements Serializable {
         this.fileName = fileName;
     }
 
-    public void readLines() throws IOException {
-        FileReader fileReader = new FileReader(fileName);
-        List<String> lines;
-        try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+    public void readLines() throws FileNotFoundException, IOException {
+        FileReader fileReader;
+        try {
+            fileReader = new FileReader(fileName);
+            List<String> lines;
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
             lines = new ArrayList<>();
             String line = null;
             while ((line = bufferedReader.readLine()) != null) {
                 lines.add(line);
             }
+        
+            wordList = lines.toArray(new String[lines.size()]);
         }
-        wordList = lines.toArray(new String[lines.size()]);
+        catch (FileNotFoundException e) {
+            System.out.println(ErrorType.MISSING_FILE.getMessage());
+            //Logger.getLogger(FileArrayProvider.class.getName()).log(Level.SEVERE, null, e);
+        }
+        catch (IOException e) {
+            System.out.println(ErrorType.INCORRECT_FILE.getMessage());
+            Logger.getLogger(FileArrayProvider.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
     }
     
     public void randomizeList() throws IOException {

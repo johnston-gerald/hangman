@@ -4,6 +4,7 @@ import wddbyui.cit260.hangman.interfaces.DisplayInfo;
 import wddbyui.cit260.hangman.interfaces.EnterInfo;
 import java.util.Scanner;
 import wddbyui.cit260.hangman.enums.ErrorType;
+import wddbyui.cit260.hangman.exceptions.MenuException;
 
 /**
  *
@@ -38,19 +39,25 @@ public class Menu implements DisplayInfo, EnterInfo {  //implements interfaces, 
         }
     }
 
-    private boolean validCommand(String command) {
+    private boolean validCommand(String command) throws MenuException {
         String[][] items = this.menuItems;
 
-        for (String[] item : this.menuItems) {
-            if (item[0].equals(command)) {
-                return true;
+        try {
+            for (String[] item : this.menuItems) {
+                if (item[0].equals(command)) {
+                    return true;
+                }
             }
+            throw new MenuException();
         }
-        return false;
+        catch (MenuException e) {
+            System.out.println("\n" + ErrorType.MENU_INPUT.getMessage());
+            return false;
+        }
     }
 
     @Override
-    public final String getCommand() {
+    public final String getCommand() throws MenuException{
 
         Scanner inputScanner = new Scanner(System.in);
         String command;
@@ -60,11 +67,7 @@ public class Menu implements DisplayInfo, EnterInfo {  //implements interfaces, 
             command = inputScanner.nextLine();
             command = command.trim();
             valid = validCommand(command);
-            if (!validCommand(command)) {
-                System.out.println("\n" + ErrorType.MENU_INPUT.getMessage());  //Lorna Lesson 10 Individual
-                continue;
-            }
-                
+
         } while (!valid);
         
         return command;
