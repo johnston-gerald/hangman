@@ -13,9 +13,12 @@ public class MainMenuControl implements Serializable {  //Lesson 10 Paired, move
     public MainMenuControl() {
     }
     
-    public Status activateControl(char menuSelection) {
-        
+    public Status activateControl(char menuSelection) { 
+
         switch(menuSelection){
+            
+            case '1':
+                return Status.PLAYING;
 
             case '2':
                 System.out.println(Help.INSTRUCTIONS.getMessage());  //Gerald, Lesson 10, Individual
@@ -26,8 +29,7 @@ public class MainMenuControl implements Serializable {  //Lesson 10 Paired, move
                 
             default:
                 System.out.println();
-                return Status.PLAYING;  //Lesson 10 Paired, Lorna & Gerald
+                return Status.PLAYING;
             }
-    }
-    
+        } 
 }
