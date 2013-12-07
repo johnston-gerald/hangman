@@ -17,19 +17,17 @@ public class Hangman implements Serializable {
 
     public static void main(String[] args) throws IOException, MenuException {  //Gerald and Lorna Lesson 11 Paired assignment
         try {  //Gerald and Lorna Lesson 11 Paired assignment
-        PlayerName playerName = new PlayerName();
-        System.out.println("\nWelcome " + playerName.getName());
+            PlayerName playerName = new PlayerName();
+            System.out.println("\nWelcome " + playerName.getName());
        
-        System.out.println(Help.WELCOME.getMessage());  //Gerald, Lesson 10, individual
+            System.out.println(Help.WELCOME.getMessage());
         
-        Game game = new Game();
-        game.playTheGame();
-    } catch(Throwable e) {  //Gerald and Lorna Lesson 11 Paired assignment
-       System.out.println(ErrorType.FATAL_ERROR.getMessage()
-            + "\n" + e.getStackTrace().toString());
-}
-    
-    finally { //Lesson 11, we don't have any input in this class.  Do we really need this?
+            Game game = new Game();
+            game.playTheGame();
+        }
+        catch(Throwable e) {  //Gerald and Lorna Lesson 11 Paired assignment
+            System.out.println(ErrorType.FATAL_ERROR.getMessage()
+                + "\n" + e.getStackTrace().toString());
+        }
     }
-}
 }

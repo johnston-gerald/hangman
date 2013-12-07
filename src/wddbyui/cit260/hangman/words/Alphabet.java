@@ -18,7 +18,7 @@ public class Alphabet implements Serializable, DisplayArray {
     private char letter = '_';
     
     @Override
-    public void displayArray () {  //Lorna Lesson 10 individual
+    public void displayArray () {
     
         System.out.println("Remaining Letters:");
     

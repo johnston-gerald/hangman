@@ -6,7 +6,7 @@ import wddbyui.cit260.hangman.interfaces.DisplayMessage;
  *
  * @author gerrygj
  */
-public enum Help implements DisplayMessage{ //Gerald, Lesson 10 Individual
+public enum Help implements DisplayMessage{
     
     WELCOME ("\n\t***********************************************************************"
             + "\n\t* Welcome to the game of Hangman!                                     *"                            

@@ -8,7 +8,7 @@ import wddbyui.cit260.hangman.enums.Help;
  *
  * @author gerrygj
  */
-public class MainMenuControl implements Serializable {  //Lesson 10 Paired, moved to menus package
+public class MainMenuControl implements Serializable {
 
     public MainMenuControl() {
     }
@@ -21,11 +21,11 @@ public class MainMenuControl implements Serializable {  //Lesson 10 Paired, move
                 return Status.PLAYING;
 
             case '2':
-                System.out.println(Help.INSTRUCTIONS.getMessage());  //Gerald, Lesson 10, Individual
-                return Status.PLAYING;  //Lesson 10 Paired, Lorna & Gerald
+                System.out.println(Help.INSTRUCTIONS.getMessage());
+                return Status.PLAYING;
             
             case '3':
-                return Status.EXIT; //Lesson 10 Paired, Lorna & Gerald
+                return Status.EXIT;
                 
             default:
                 System.out.println();

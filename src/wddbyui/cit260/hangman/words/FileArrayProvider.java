@@ -17,7 +17,6 @@ import wddbyui.cit260.hangman.enums.ErrorType;
  * @author gerrygj
  */
 
-//converted to super-class by Gerald for Lesson 9
 public class FileArrayProvider implements Serializable {
 
     public String[] wordList = null;
@@ -31,9 +30,9 @@ public class FileArrayProvider implements Serializable {
         this.fileName = fileName;
     }
 
-    public void readLines() throws FileNotFoundException, IOException {
+    public void readLines() throws FileNotFoundException, IOException { //Gerald, Lesson 11 Individual
         FileReader fileReader;
-        try {
+        try {   //Gerald, Lesson 11 Individual
             fileReader = new FileReader(fileName);
             List<String> lines;
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -45,15 +44,14 @@ public class FileArrayProvider implements Serializable {
         
             wordList = lines.toArray(new String[lines.size()]);
         }
-        catch (FileNotFoundException e) {
+        catch (FileNotFoundException e) {   //Gerald, Lesson 11 Individual
             System.out.println(ErrorType.MISSING_FILE.getMessage());
-            //Logger.getLogger(FileArrayProvider.class.getName()).log(Level.SEVERE, null, e);
+            //Logger.getLogger(FileArrayProvider.class.getName()).log(Level.SEVERE, null, e);   // use for testing
         }
-        catch (IOException e) {
+        catch (IOException e) { //Gerald, Lesson 11 Individual
             System.out.println(ErrorType.INCORRECT_FILE.getMessage());
-            Logger.getLogger(FileArrayProvider.class.getName()).log(Level.SEVERE, null, e);
+            //Logger.getLogger(FileArrayProvider.class.getName()).log(Level.SEVERE, null, e);   // use for testing
         }
-        
     }
     
     public void randomizeList() throws IOException {

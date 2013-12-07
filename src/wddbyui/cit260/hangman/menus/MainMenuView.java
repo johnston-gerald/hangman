@@ -7,7 +7,7 @@ import wddbyui.cit260.hangman.exceptions.MenuException; //Lesson 11 Paired, Lorn
  *
  * @author gerrygj
  */
-public class MainMenuView extends Menu {  //Lesson 10 Paired, moved to menus package
+public class MainMenuView extends Menu {
 
     private static final String[][] menuItems = {
         {"1", "Continue game"},

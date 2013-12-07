@@ -40,7 +40,7 @@ public class MysteryWord implements Serializable {
             letter = letterScanner.next();
             
             if (letter.length() != 1) {
-                System.out.println("\n" + ErrorType.ONE_LETTER.getMessage() + "\n");  //Lorna Lesson 10 Individual
+                System.out.println("\n" + ErrorType.ONE_LETTER.getMessage() + "\n");
                 continue;
             }
             
@@ -49,7 +49,7 @@ public class MysteryWord implements Serializable {
             }
             
             if (!ErrorHandling.isChar(letter)) {
-                System.out.println("\n" + ErrorType.ENTER_LETTER.getMessage() + "\n");  //Lorna Lesson 10 Individual
+                System.out.println("\n" + ErrorType.ENTER_LETTER.getMessage() + "\n");
                 continue;
             }
             
@@ -96,7 +96,7 @@ public class MysteryWord implements Serializable {
         this.numberOfGuesses = numberOfGuesses;
     }
 
-    public Status winOrLose(){  //Lesson 10 Paired, Lorna & Gerald
+    public Status winOrLose(){
         
         if (Arrays.equals(wordArray, mysteryArray)){
             return Status.WIN_GAME;

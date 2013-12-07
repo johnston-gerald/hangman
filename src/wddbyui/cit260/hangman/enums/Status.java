@@ -6,7 +6,7 @@ import wddbyui.cit260.hangman.interfaces.DisplayMessage;
  *
  * @author gerrygj
  */
-public enum Status implements DisplayMessage{    //Lesson 10 Paired, Lorna & Gerald
+public enum Status implements DisplayMessage{
     
     PLAYING ("PLAYING"), 
     WIN_GAME ("WIN_GAME"), 
@@ -20,7 +20,7 @@ public enum Status implements DisplayMessage{    //Lesson 10 Paired, Lorna & Ger
     }
     
     @Override
-    public String getMessage() {    //Gerald, Lesson 10 Individual
+    public String getMessage() {
         return message;
     }
 }

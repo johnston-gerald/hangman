@@ -11,7 +11,7 @@ import wddbyui.cit260.hangman.exceptions.MenuException;  //Gerald and Lorna Less
 
 public class Game implements Serializable {
 
-    private Status status;  //Lesson 10 Paired, Lorna & Gerald
+    private Status status;
     
     public Game() {
     }
@@ -24,7 +24,7 @@ public class Game implements Serializable {
         MainMenuView mainMenuView = new MainMenuView();
         MainMenuControl mainMenuControl = new MainMenuControl();
 
-        this.setStatus(Status.PLAYING); //Lesson 10 Paired, Lorna & Gerald
+        this.setStatus(Status.PLAYING);
         char mysteryLetter;
         String mysteryWordOutput;
 
@@ -32,7 +32,7 @@ public class Game implements Serializable {
         alphabet.displayArray();
         System.out.println(mysteryWord.displayMysteryWord('_'));
         
-        while (status == Status.PLAYING){   //Lesson 10 Paired, Lorna & Gerald
+        while (status == Status.PLAYING){
             
             mysteryLetter = mysteryWord.getLetter();
             mysteryWordOutput = mysteryWord.displayMysteryWord(mysteryLetter);
@@ -64,22 +64,22 @@ public class Game implements Serializable {
             this.setStatus(mysteryWord.winOrLose());
         }
         
-        if (this.getStatus() == Status.WIN_GAME){   //Lesson 10 Paired, Lorna & Gerald
+        if (this.getStatus() == Status.WIN_GAME){
             displayWinningMessage();
         }
         else {
-            if (this.getStatus() == Status.LOSE_GAME) { //Lesson 10 Paired, Lorna & Gerald
+            if (this.getStatus() == Status.LOSE_GAME) {
                 gallows.displayGallows(mysteryWord.getNumberOfGuesses());
                 displayLosingMessage();
             }
         }
     }
 
-    public Status getStatus() { //Lesson 10 Paired, Lorna & Gerald
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {  //Lesson 10 Paired, Lorna & Gerald
+    public void setStatus(Status status) {
         this.status = status;
     }
     

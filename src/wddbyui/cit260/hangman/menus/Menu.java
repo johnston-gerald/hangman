@@ -10,8 +10,8 @@ import wddbyui.cit260.hangman.exceptions.MenuException;  //Gerald and Lorna Less
  *
  * @author gerrygj
  */
-public class Menu implements DisplayInfo, EnterInfo {  //implements interfaces, Gerald and Lorna, paired assignment, lesson 10.
-//Lesson 10 Paired, moved to menus package    
+public class Menu implements DisplayInfo, EnterInfo {
+
     private String[][] menuItems = null;
 
     public Menu() {

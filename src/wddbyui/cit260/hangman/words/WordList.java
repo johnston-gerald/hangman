@@ -8,7 +8,6 @@ import wddbyui.cit260.hangman.interfaces.DisplayArray;
  * @author gerrygj
  */
 
-//coverted to sub-class by Gerald for Lesson 9
 public class WordList extends FileArrayProvider implements DisplayArray {
     
     private static final String filename = "src/wddbyui/cit260/hangman/words/words.txt";
@@ -22,7 +21,7 @@ public class WordList extends FileArrayProvider implements DisplayArray {
     // this function is just for testing
 
     @Override
-    public void displayArray() {  //Lorna Lesson 10 individual
+    public void displayArray() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tHere is the randomized list of words:");
 
