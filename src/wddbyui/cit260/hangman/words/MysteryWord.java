@@ -8,6 +8,7 @@ import java.util.Scanner;
 import wddbyui.cit260.hangman.enums.ErrorType;
 import wddbyui.cit260.hangman.game.ErrorHandling;
 import wddbyui.cit260.hangman.enums.Status;
+import wddbyui.cit260.hangman.exceptions.HangmanException;   //Lesson 11 Lorna Individual
 
 /**
  *
@@ -27,35 +28,42 @@ public class MysteryWord implements Serializable {
         }
     }
 
-    public char getLetter() {
+    public char getLetter() throws HangmanException {
         Scanner letterScanner = new Scanner(System.in);
         MainMenuView mainMenuView = new MainMenuView();
     
         String letter = "0";
         
         boolean valid = false;
+
         while (!valid) {
             System.out.println("Please enter a letter or enter 1 for the menu: ");
-        
+        try {          //Lesson 11 Lorna Individual
             letter = letterScanner.next();
-            
+                      
+            if (letter.charAt(0) >= '1' && letter.charAt(0) <= '3') { //menu
+                return letter.charAt(0);
+            }
+         
             if (letter.length() != 1) {
                 System.out.println("\n" + ErrorType.ONE_LETTER.getMessage() + "\n");
                 continue;
-            }
-            
-            if (letter.charAt(0) >= '1' && letter.charAt(0) <= '3') { //menu
-                return letter.charAt(0);
             }
             
             if (!ErrorHandling.isChar(letter)) {
                 System.out.println("\n" + ErrorType.ENTER_LETTER.getMessage() + "\n");
                 continue;
             }
-            
+
             valid = true;
+            
+            throw new HangmanException();
+            
+         } catch(HangmanException exc) {     //Lesson 11 Lorna Individual
+            System.out.println("\n" + ErrorType.ENTER_LETTER.getMessage() + "\n");
+        }           
         }
-    
+
         return Character.toLowerCase(letter.charAt(0));
     }
     
@@ -84,7 +92,7 @@ public class MysteryWord implements Serializable {
             numberOfGuesses--;
         }
     
-        mysteryWordOutput = mysteryWordOutput + "(" +mysteryWord.length() +" letters)";
+        mysteryWordOutput = mysteryWordOutput + "(" + mysteryWord.length() + " letters)";
         return mysteryWordOutput;
     }
 
