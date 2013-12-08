@@ -13,7 +13,7 @@ public enum ErrorType implements DisplayMessage{
     MISSING_FILE ("Error. The file, words.txt, is missing."),
     INCORRECT_FILE ("Error. The file, words.txt, is not formatted properly."),
     FATAL_ERROR ("Fatal Error.  This program is terminated.  Good-bye!"),  //Gerald and Lorna Lesson 11 Paired assignment
-    NAME_ERROR ("Error.  Please enter your name without any spaces.");
+    NAME_ERROR ("Error.  Please enter your name without any spaces.");   //Lesson 11 Lorna Individual
     String message;
     
     ErrorType(String message) {
