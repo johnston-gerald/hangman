@@ -7,8 +7,8 @@ import wddbyui.cit260.hangman.menus.MainMenuView;
 import java.io.IOException;
 import java.io.Serializable;
 import wddbyui.cit260.hangman.enums.Status;
-import wddbyui.cit260.hangman.exceptions.HangmanException;     //Lesson 11 Lorna Individual
-import wddbyui.cit260.hangman.exceptions.MenuException;  //Gerald and Lorna Lesson 11 Paired assignment
+import wddbyui.cit260.hangman.exceptions.HangmanException;
+import wddbyui.cit260.hangman.exceptions.MenuException;
 
 public class Game implements Serializable {
 
@@ -17,13 +17,16 @@ public class Game implements Serializable {
     public Game() {
     }
     
-    public void playTheGame () throws IOException, MenuException, HangmanException {  //Gerald and Lorna Lesson 11 Paired assignment; Lorna added HangmanException  
+    public void playTheGame () throws IOException, MenuException, HangmanException {
         
         MysteryWord mysteryWord = new MysteryWord();
         Gallows gallows = new Gallows();
         Alphabet alphabet = new Alphabet();
         MainMenuView mainMenuView = new MainMenuView();
         MainMenuControl mainMenuControl = new MainMenuControl();
+        
+        PlayerName playerName = new PlayerName();   //Paired Lesson 12, Lorna & Gerald
+        System.out.println("\nWelcome " + playerName.getName());
 
         this.setStatus(Status.PLAYING);
         char mysteryLetter;

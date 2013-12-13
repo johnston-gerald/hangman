@@ -1,40 +1,43 @@
 package wddbyui.cit260.hangman.game;
 
 import java.io.Serializable;
-import java.util.Scanner;
 import wddbyui.cit260.hangman.enums.ErrorType;
-import wddbyui.cit260.hangman.exceptions.HangmanException;   //Lesson 11 Lorna Individual
+import wddbyui.cit260.hangman.exceptions.HangmanException;
 
 /**
  *
  * @author gerrygj
  */
-public class PlayerName implements Serializable {
+public class PlayerName implements Serializable {   //Paired Lesson 12, Lorna & Gerald
 
+    private static String name = null;
+    
     public PlayerName() {
-        this.promptName();
     }
-    
-    private String name;
-    
-    private void promptName() {
-        try {  //Lesson 11 Lorna Individual
-             Scanner input = new Scanner(System.in);
+   
+    public void promptName(String inputName) {
+        try {
+             //Scanner input = new Scanner(System.in);  //obsolete code
              Boolean valid = false;
         
            while(!valid) {
-                System.out.println("Enter your name: ");
-                this.name = input.next();
-                if (this.name.equals(this.name.toString())) {
+               
+               //obsolete code
+                    //System.out.println("Enter your name: ");
+                    //this.name = input.next();
+                    //if (name.equals(name.toString())) {
+               name = inputName;
+               
+               if (name != null) {
                     valid = true;
                 }
                 else {
-                    throw new HangmanException();   //Lesson 11 Lorna Individual
+                    throw new HangmanException();
                 }
-                 //   throw new HangmanException();  I used this line to test my exception handling for Lorna's individual lesson 11
+                 //   throw new HangmanException();  //for testing only
             }
 
-        } catch(HangmanException exc){   //Lesson 11 Lorna Individual
+        } catch(HangmanException exc){
             System.out.println("\n" + ErrorType.NAME_ERROR.getMessage() + "\n");
         }
     }

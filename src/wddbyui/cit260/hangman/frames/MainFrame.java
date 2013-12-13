@@ -10,9 +10,10 @@ import wddbyui.cit260.hangman.menus.MainMenuControl;
  *
  * @author gerrygj
  */
-public class MainFrame extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & Gerald
     
     private MainMenuControl mainMenuControl = new MainMenuControl();
+    //private Game game = new Game();
 
     /**
      * Creates new form MainFrame
@@ -36,6 +37,7 @@ public class MainFrame extends javax.swing.JFrame {
         jpContinueButton = new javax.swing.JButton();
         jpInstructionsButton = new javax.swing.JButton();
         jExitButton = new javax.swing.JButton();
+        jpStartButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtWelcome = new javax.swing.JTextArea();
 
@@ -55,6 +57,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         jpContinueButton.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jpContinueButton.setText("Continue Playing");
+        jpContinueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpContinueButtonActionPerformed(evt);
+            }
+        });
 
         jpInstructionsButton.setFont(new java.awt.Font("Myriad Web Pro", 0, 16)); // NOI18N
         jpInstructionsButton.setText("Display Instructions");
@@ -72,28 +79,42 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jpStartButton.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jpStartButton.setText("Start Game");
+        jpStartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpStartButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpInstructionsButton)
-                    .addComponent(jpContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jExitButton)
                 .addGap(41, 41, 41))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpStartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpInstructionsButton)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jpStartButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jpContinueButton)
-                .addGap(17, 17, 17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jpInstructionsButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -115,9 +136,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
-                .addContainerGap(366, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jpTitle)
                 .addGap(119, 119, 119))
         );
@@ -129,19 +150,19 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -154,6 +175,25 @@ public class MainFrame extends javax.swing.JFrame {
     private void jExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitButtonActionPerformed
         this.dispose(); //exit the game
     }//GEN-LAST:event_jExitButtonActionPerformed
+
+    private void jpContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpContinueButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jpContinueButtonActionPerformed
+
+    private void jpStartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpStartButtonActionPerformed
+        
+        GetNamesFrame getNamesFrame = new GetNamesFrame();
+        getNamesFrame.setVisible(true);
+        this.dispose();
+        
+        /*try {
+            game.playTheGame();
+        } catch (IOException | MenuException | HangmanException e) {
+            System.out.println(ErrorType.FATAL_ERROR.getMessage()
+                + "\n" + e.getStackTrace().toString());
+        }*/
+        
+    }//GEN-LAST:event_jpStartButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,6 +236,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jpBody;
     private javax.swing.JButton jpContinueButton;
     private javax.swing.JButton jpInstructionsButton;
+    private javax.swing.JButton jpStartButton;
     private javax.swing.JLabel jpTitle;
     private javax.swing.JTextArea jtWelcome;
     // End of variables declaration//GEN-END:variables
