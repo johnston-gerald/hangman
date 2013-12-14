@@ -9,6 +9,7 @@ import wddbyui.cit260.hangman.enums.ErrorType;
 import wddbyui.cit260.hangman.exceptions.HangmanException;
 import wddbyui.cit260.hangman.exceptions.MenuException;
 import wddbyui.cit260.hangman.game.Game;
+import wddbyui.cit260.hangman.game.Hangman;
 import wddbyui.cit260.hangman.game.PlayerName;
 
 /**
@@ -112,12 +113,15 @@ public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorn
         this.dispose();
         // need to display player's name
         
-        try {
+     /*   try {
             game.playTheGame();
         } catch (IOException | MenuException | HangmanException e) {
             System.out.println(ErrorType.FATAL_ERROR.getMessage()
                 + "\n" + e.getStackTrace().toString());
         }
+        */
+        GameFrame gameFrame = new GameFrame();
+        gameFrame.setVisible(true);
     }//GEN-LAST:event_jNameButtonActionPerformed
 
     /**
@@ -149,6 +153,7 @@ public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorn
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new GetNamesFrame().setVisible(true);
             }

@@ -169,7 +169,8 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
     }// </editor-fold>//GEN-END:initComponents
 
     private void jpInstructionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpInstructionsButtonActionPerformed
-        // TODO add your handling code here:
+        InstructionsFrame instructionsFrame = new InstructionsFrame();
+        instructionsFrame.setVisible(true);
     }//GEN-LAST:event_jpInstructionsButtonActionPerformed
 
     private void jExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitButtonActionPerformed
@@ -224,6 +225,7 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MainFrame().setVisible(true);
             }
