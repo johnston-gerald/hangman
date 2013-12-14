@@ -103,11 +103,13 @@ public class GameFrame extends javax.swing.JFrame {
         jMysteryWordDiisplayLabel.setText("word");
         jMysteryWordDiisplayLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(66, 66, 166), 2));
 
+        jGallowsArea.setEditable(false);
         jGallowsArea.setBackground(new java.awt.Color(255, 247, 222));
         jGallowsArea.setColumns(20);
+        jGallowsArea.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
         jGallowsArea.setForeground(jpTitle.getForeground());
         jGallowsArea.setRows(5);
-        jGallowsArea.setText("         ______________\n         |            |\n         |            |\n         |            |\n         |\n         |\n         |\n         |\n         |\n         |\n         |\n         |\n         |\n    _____|______________\n ___|                   |\n |                      | ");
+        jGallowsArea.setText("                       ______________\n                       |                              |\n                       |                              |\n                       |                              |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n          ______|______________\n   ___|                                             |\n   |                                                    | ");
         jGallowsArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(66, 66, 166), 3));
         jScrollPane1.setViewportView(jGallowsArea);
 
@@ -168,7 +170,7 @@ public class GameFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)))
                 .addComponent(jAlphabetLabel)
                 .addGap(18, 18, 18)
                 .addComponent(jExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
