@@ -19,6 +19,7 @@ public class LoseGameFrame extends javax.swing.JFrame {
      */
     public LoseGameFrame() {
         initComponents();
+        this.jGallowsArea.setText(GameFrame.getGallowsString());
     }
 
     /**
@@ -30,19 +31,16 @@ public class LoseGameFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jInstructionsPanel = new javax.swing.JPanel();
-        jWinnerLabel = new javax.swing.JLabel();
+        jLoserPanel = new javax.swing.JPanel();
         jPlayAgainButton = new javax.swing.JButton();
         jExitButton1 = new javax.swing.JButton();
+        jWinnerLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jGallowsArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jInstructionsPanel.setBackground(new java.awt.Color(204, 204, 255));
-
-        jWinnerLabel.setBackground(new java.awt.Color(204, 204, 255));
-        jWinnerLabel.setFont(new java.awt.Font("Minion Pro SmBd", 0, 36)); // NOI18N
-        jWinnerLabel.setForeground(new java.awt.Color(61, 61, 155));
-        jWinnerLabel.setText("You Lose!");
+        jLoserPanel.setBackground(new java.awt.Color(204, 204, 255));
 
         jPlayAgainButton.setFont(new java.awt.Font("Myriad Web Pro", 0, 16)); // NOI18N
         jPlayAgainButton.setText("Play Again");
@@ -60,47 +58,69 @@ public class LoseGameFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jInstructionsPanelLayout = new javax.swing.GroupLayout(jInstructionsPanel);
-        jInstructionsPanel.setLayout(jInstructionsPanelLayout);
-        jInstructionsPanelLayout.setHorizontalGroup(
-            jInstructionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInstructionsPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jInstructionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jWinnerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jInstructionsPanelLayout.createSequentialGroup()
-                        .addComponent(jPlayAgainButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(jExitButton1)))
-                .addGap(172, 172, 172))
+        jWinnerLabel.setBackground(new java.awt.Color(204, 204, 255));
+        jWinnerLabel.setFont(new java.awt.Font("Minion Pro SmBd", 0, 36)); // NOI18N
+        jWinnerLabel.setForeground(new java.awt.Color(61, 61, 155));
+        jWinnerLabel.setText("Sorry, You Lose!");
+
+        jGallowsArea.setEditable(false);
+        jGallowsArea.setBackground(new java.awt.Color(255, 247, 222));
+        jGallowsArea.setColumns(20);
+        jGallowsArea.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
+        jGallowsArea.setRows(5);
+        jGallowsArea.setText("                       ______________\n                       |                              |\n                       |                              |\n                       |                              |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n          ______|______________\n   ___|                                             |\n   |                                                    | ");
+        jGallowsArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(66, 66, 166), 3));
+        jScrollPane1.setViewportView(jGallowsArea);
+
+        javax.swing.GroupLayout jLoserPanelLayout = new javax.swing.GroupLayout(jLoserPanel);
+        jLoserPanel.setLayout(jLoserPanelLayout);
+        jLoserPanelLayout.setHorizontalGroup(
+            jLoserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLoserPanelLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(jLoserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jWinnerLabel)
+                    .addGroup(jLoserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jLoserPanelLayout.createSequentialGroup()
+                            .addComponent(jPlayAgainButton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jExitButton1))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
-        jInstructionsPanelLayout.setVerticalGroup(
-            jInstructionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInstructionsPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+        jLoserPanelLayout.setVerticalGroup(
+            jLoserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLoserPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addComponent(jWinnerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jInstructionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(jLoserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPlayAgainButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jExitButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jInstructionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLoserPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInstructionsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLoserPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jExitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jExitButton1ActionPerformed
 
     private void jPlayAgainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlayAgainButtonActionPerformed
         GameFrame gameFrame = null;
@@ -112,10 +132,6 @@ public class LoseGameFrame extends javax.swing.JFrame {
         gameFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPlayAgainButtonActionPerformed
-
-    private void jExitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitButton1ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jExitButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,8 +169,10 @@ public class LoseGameFrame extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jExitButton1;
-    private javax.swing.JPanel jInstructionsPanel;
+    private javax.swing.JTextArea jGallowsArea;
+    private javax.swing.JPanel jLoserPanel;
     private javax.swing.JButton jPlayAgainButton;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jWinnerLabel;
     // End of variables declaration//GEN-END:variables
 }

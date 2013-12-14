@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 import wddbyui.cit260.hangman.enums.Status;
 import wddbyui.cit260.hangman.menus.MainMenuControl;
 import wddbyui.cit260.hangman.menus.MainMenuView;
-import wddbyui.cit260.hangman.words.Alphabet;
 import wddbyui.cit260.hangman.words.MysteryWord;
 
 /**
@@ -16,15 +15,14 @@ import wddbyui.cit260.hangman.words.MysteryWord;
 public class GameFrame extends javax.swing.JFrame {
     
     private MysteryWord mysteryWord;
-    private Alphabet alphabet = new Alphabet();
     private MainMenuView mainMenuView = new MainMenuView();
     private MainMenuControl mainMenuControl = new MainMenuControl();
     private Gallows gallows = new Gallows();
 
     private Status status;
     private char mysteryLetter;
-    private String gallowsString = "";
-    
+    private static String gallowsString = "";
+
     /**
      * Creates new form GameFrame
      */
@@ -38,8 +36,10 @@ public class GameFrame extends javax.swing.JFrame {
             this.jGuessWordLabel.setText(GetNamesFrame.getNameOfPlayer() + ", guess this word:");
         }
         
-        this.jAlphabetLabel.setText(alphabet.displayArray());
+        //this.jAlphabetLabel.setText(alphabet.displayArray());
         this.jMysteryWordDisplayLabel.setText(mysteryWord.displayMysteryWord('_'));
+        gallows.displayGallows('6');
+        this.jGallowsArea.setText(gallowsString);
     }
 
     /**
@@ -55,15 +55,38 @@ public class GameFrame extends javax.swing.JFrame {
         jpTitle = new javax.swing.JLabel();
         jExitButton = new javax.swing.JButton();
         jpInstructionsButton = new javax.swing.JButton();
-        jLetterInputField = new javax.swing.JTextField();
-        jEnterLetterLabel = new javax.swing.JLabel();
-        jSubmitLetterButton = new javax.swing.JButton();
-        jAlphabetLabel = new javax.swing.JLabel();
         jRemainingLettersLabel = new javax.swing.JLabel();
         jMysteryWordDisplayLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jGallowsArea = new javax.swing.JTextArea();
         jGuessWordLabel = new javax.swing.JLabel();
+        jAButton = new javax.swing.JButton();
+        jBButton = new javax.swing.JButton();
+        jCButton = new javax.swing.JButton();
+        jDButton = new javax.swing.JButton();
+        jEButton = new javax.swing.JButton();
+        jFButton = new javax.swing.JButton();
+        jGButton = new javax.swing.JButton();
+        jHButton = new javax.swing.JButton();
+        jIButton = new javax.swing.JButton();
+        jJButton = new javax.swing.JButton();
+        jKButton = new javax.swing.JButton();
+        jLButton = new javax.swing.JButton();
+        jMButton = new javax.swing.JButton();
+        jNButton = new javax.swing.JButton();
+        jOButton = new javax.swing.JButton();
+        jPButton = new javax.swing.JButton();
+        jQButton = new javax.swing.JButton();
+        jRButton = new javax.swing.JButton();
+        jSButton = new javax.swing.JButton();
+        jTButton = new javax.swing.JButton();
+        jUButton = new javax.swing.JButton();
+        jVButton = new javax.swing.JButton();
+        jWButton = new javax.swing.JButton();
+        jXButton = new javax.swing.JButton();
+        jYButton = new javax.swing.JButton();
+        jAButton24 = new javax.swing.JButton();
+        jGuessesLeftLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,31 +113,8 @@ public class GameFrame extends javax.swing.JFrame {
             }
         });
 
-        jLetterInputField.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
-        jLetterInputField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jLetterInputField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(66, 66, 166), 2));
-        jLetterInputField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLetterInputFieldActionPerformed(evt);
-            }
-        });
-
-        jEnterLetterLabel.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
-        jEnterLetterLabel.setText("Enter your letter choice here:");
-
-        jSubmitLetterButton.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
-        jSubmitLetterButton.setText("Submit Letter");
-        jSubmitLetterButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSubmitLetterButtonActionPerformed(evt);
-            }
-        });
-
-        jAlphabetLabel.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
-        jAlphabetLabel.setText("a b c d e f g h i j k l m n o p q r s t u v w x y z");
-
         jRemainingLettersLabel.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
-        jRemainingLettersLabel.setText("Remaining Letters");
+        jRemainingLettersLabel.setText("Choose a letter:");
 
         jMysteryWordDisplayLabel.setBackground(new java.awt.Color(255, 247, 222));
         jMysteryWordDisplayLabel.setFont(new java.awt.Font("Myriad Pro", 0, 24)); // NOI18N
@@ -135,6 +135,269 @@ public class GameFrame extends javax.swing.JFrame {
         jGuessWordLabel.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
         jGuessWordLabel.setText("Guess this word:");
 
+        jAButton.setBackground(new java.awt.Color(204, 204, 255));
+        jAButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jAButton.setText("A");
+        jAButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jAButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAButtonActionPerformed(evt);
+            }
+        });
+
+        jBButton.setBackground(new java.awt.Color(204, 204, 255));
+        jBButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jBButton.setText("B");
+        jBButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jBButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBButtonActionPerformed(evt);
+            }
+        });
+
+        jCButton.setBackground(new java.awt.Color(204, 204, 255));
+        jCButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jCButton.setText("C");
+        jCButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jCButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCButtonActionPerformed(evt);
+            }
+        });
+
+        jDButton.setBackground(new java.awt.Color(204, 204, 255));
+        jDButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jDButton.setText("D");
+        jDButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jDButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDButtonActionPerformed(evt);
+            }
+        });
+
+        jEButton.setBackground(new java.awt.Color(204, 204, 255));
+        jEButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jEButton.setText("E");
+        jEButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jEButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jEButtonActionPerformed(evt);
+            }
+        });
+
+        jFButton.setBackground(new java.awt.Color(204, 204, 255));
+        jFButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jFButton.setText("F");
+        jFButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jFButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFButtonActionPerformed(evt);
+            }
+        });
+
+        jGButton.setBackground(new java.awt.Color(204, 204, 255));
+        jGButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jGButton.setText("G");
+        jGButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jGButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jGButtonActionPerformed(evt);
+            }
+        });
+
+        jHButton.setBackground(new java.awt.Color(204, 204, 255));
+        jHButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jHButton.setText("H");
+        jHButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jHButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jHButtonActionPerformed(evt);
+            }
+        });
+
+        jIButton.setBackground(new java.awt.Color(204, 204, 255));
+        jIButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jIButton.setText("I");
+        jIButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jIButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jIButtonActionPerformed(evt);
+            }
+        });
+
+        jJButton.setBackground(new java.awt.Color(204, 204, 255));
+        jJButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jJButton.setText("J");
+        jJButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jJButtonActionPerformed(evt);
+            }
+        });
+
+        jKButton.setBackground(new java.awt.Color(204, 204, 255));
+        jKButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jKButton.setText("K");
+        jKButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jKButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jKButtonActionPerformed(evt);
+            }
+        });
+
+        jLButton.setBackground(new java.awt.Color(204, 204, 255));
+        jLButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jLButton.setText("L");
+        jLButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jLButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLButtonActionPerformed(evt);
+            }
+        });
+
+        jMButton.setBackground(new java.awt.Color(204, 204, 255));
+        jMButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jMButton.setText("M");
+        jMButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jMButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMButtonActionPerformed(evt);
+            }
+        });
+
+        jNButton.setBackground(new java.awt.Color(204, 204, 255));
+        jNButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jNButton.setText("N");
+        jNButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jNButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jNButtonActionPerformed(evt);
+            }
+        });
+
+        jOButton.setBackground(new java.awt.Color(204, 204, 255));
+        jOButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jOButton.setText("O");
+        jOButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jOButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jOButtonActionPerformed(evt);
+            }
+        });
+
+        jPButton.setBackground(new java.awt.Color(204, 204, 255));
+        jPButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jPButton.setText("P");
+        jPButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jPButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPButtonActionPerformed(evt);
+            }
+        });
+
+        jQButton.setBackground(new java.awt.Color(204, 204, 255));
+        jQButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jQButton.setText("Q");
+        jQButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jQButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jQButtonActionPerformed(evt);
+            }
+        });
+
+        jRButton.setBackground(new java.awt.Color(204, 204, 255));
+        jRButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jRButton.setText("R");
+        jRButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jRButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRButtonActionPerformed(evt);
+            }
+        });
+
+        jSButton.setBackground(new java.awt.Color(204, 204, 255));
+        jSButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jSButton.setText("S");
+        jSButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jSButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSButtonActionPerformed(evt);
+            }
+        });
+
+        jTButton.setBackground(new java.awt.Color(204, 204, 255));
+        jTButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jTButton.setText("T");
+        jTButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jTButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTButtonActionPerformed(evt);
+            }
+        });
+
+        jUButton.setBackground(new java.awt.Color(204, 204, 255));
+        jUButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jUButton.setText("U");
+        jUButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jUButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUButtonActionPerformed(evt);
+            }
+        });
+
+        jVButton.setBackground(new java.awt.Color(204, 204, 255));
+        jVButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jVButton.setText("V");
+        jVButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jVButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jVButtonActionPerformed(evt);
+            }
+        });
+
+        jWButton.setBackground(new java.awt.Color(204, 204, 255));
+        jWButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jWButton.setText("W");
+        jWButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jWButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jWButtonActionPerformed(evt);
+            }
+        });
+
+        jXButton.setBackground(new java.awt.Color(204, 204, 255));
+        jXButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jXButton.setText("X");
+        jXButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jXButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jXButtonActionPerformed(evt);
+            }
+        });
+
+        jYButton.setBackground(new java.awt.Color(204, 204, 255));
+        jYButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jYButton.setText("Y");
+        jYButton.setPreferredSize(new java.awt.Dimension(50, 30));
+        jYButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jYButtonActionPerformed(evt);
+            }
+        });
+
+        jAButton24.setBackground(new java.awt.Color(204, 204, 255));
+        jAButton24.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
+        jAButton24.setText("Z");
+        jAButton24.setPreferredSize(new java.awt.Dimension(50, 30));
+        jAButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAButton24ActionPerformed(evt);
+            }
+        });
+
+        jGuessesLeftLabel.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
+        jGuessesLeftLabel.setText("You have 6 guesses left");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -145,65 +408,140 @@ public class GameFrame extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLetterInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jSubmitLetterButton))
-                            .addComponent(jpInstructionsButton)
-                            .addComponent(jGuessWordLabel)
-                            .addComponent(jEnterLetterLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRemainingLettersLabel)
-                            .addComponent(jMysteryWordDisplayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jAButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jBButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jDButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jEButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jFButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jGButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(101, 101, 101)
+                                        .addComponent(jpTitle))
+                                    .addComponent(jpInstructionsButton)
+                                    .addComponent(jGuessWordLabel)
+                                    .addComponent(jMysteryWordDisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jGuessesLeftLabel))
+                                .addGap(59, 59, 59)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(111, 111, 111)
-                                .addComponent(jpTitle))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jAlphabetLabel))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(191, 191, 191)
-                                .addComponent(jExitButton)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGap(6, 6, 6)
+                                .addComponent(jHButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jIButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jJButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jKButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jNButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jOButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jQButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jUButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jVButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jWButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jXButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jYButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jAButton24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(335, 335, 335)
+                        .addComponent(jExitButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jRemainingLettersLabel)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jpTitle)
-                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jpTitle)
+                        .addGap(23, 23, 23)
                         .addComponent(jpInstructionsButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                         .addComponent(jGuessWordLabel)
                         .addGap(18, 18, 18)
                         .addComponent(jMysteryWordDisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(jEnterLetterLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSubmitLetterButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                            .addComponent(jLetterInputField))
-                        .addGap(29, 29, 29)
-                        .addComponent(jRemainingLettersLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addComponent(jGuessesLeftLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRemainingLettersLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 11, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
-                .addComponent(jAlphabetLabel)
-                .addGap(18, 18, 18)
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jAButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jEButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jGButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jHButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jIButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jJButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jKButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jNButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jOButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jQButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jUButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jVButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jWButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jXButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jYButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jAButton24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
                 .addComponent(jExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,22 +560,172 @@ public class GameFrame extends javax.swing.JFrame {
         this.dispose(); //exit the game
     }//GEN-LAST:event_jExitButtonActionPerformed
 
-    private void jSubmitLetterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitLetterButtonActionPerformed
+    private void jAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAButtonActionPerformed
+        mysteryLetter = this.jAButton.getText().charAt(0);
+        this.jAButton.setText("_");
         this.playTheGame();
-    }//GEN-LAST:event_jSubmitLetterButtonActionPerformed
+    }//GEN-LAST:event_jAButtonActionPerformed
 
-    private void jLetterInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLetterInputFieldActionPerformed
+    private void jBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBButtonActionPerformed
+        mysteryLetter = this.jBButton.getText().charAt(0);
+        this.jBButton.setText("_");
         this.playTheGame();
-    }//GEN-LAST:event_jLetterInputFieldActionPerformed
+    }//GEN-LAST:event_jBButtonActionPerformed
+
+    private void jCButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCButtonActionPerformed
+        mysteryLetter = this.jCButton.getText().charAt(0);
+        this.jCButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jCButtonActionPerformed
+
+    private void jDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDButtonActionPerformed
+        mysteryLetter = this.jDButton.getText().charAt(0);
+        this.jDButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jDButtonActionPerformed
+
+    private void jEButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEButtonActionPerformed
+        mysteryLetter = this.jEButton.getText().charAt(0);
+        this.jEButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jEButtonActionPerformed
+
+    private void jFButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFButtonActionPerformed
+        mysteryLetter = this.jFButton.getText().charAt(0);
+        this.jFButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jFButtonActionPerformed
+
+    private void jGButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGButtonActionPerformed
+        mysteryLetter = this.jGButton.getText().charAt(0);
+        this.jGButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jGButtonActionPerformed
+
+    private void jHButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHButtonActionPerformed
+        mysteryLetter = this.jHButton.getText().charAt(0);
+        this.jHButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jHButtonActionPerformed
+
+    private void jIButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIButtonActionPerformed
+        mysteryLetter = this.jIButton.getText().charAt(0);
+        this.jIButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jIButtonActionPerformed
+
+    private void jJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jJButtonActionPerformed
+        mysteryLetter = this.jJButton.getText().charAt(0);
+        this.jJButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jJButtonActionPerformed
+
+    private void jKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKButtonActionPerformed
+        mysteryLetter = this.jKButton.getText().charAt(0);
+        this.jKButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jKButtonActionPerformed
+
+    private void jLButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLButtonActionPerformed
+        mysteryLetter = this.jLButton.getText().charAt(0);
+        this.jLButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jLButtonActionPerformed
+
+    private void jMButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMButtonActionPerformed
+        mysteryLetter = this.jMButton.getText().charAt(0);
+        this.jMButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jMButtonActionPerformed
+
+    private void jNButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNButtonActionPerformed
+        mysteryLetter = this.jNButton.getText().charAt(0);
+        this.jNButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jNButtonActionPerformed
+
+    private void jOButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOButtonActionPerformed
+        mysteryLetter = this.jOButton.getText().charAt(0);
+        this.jOButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jOButtonActionPerformed
+
+    private void jPButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPButtonActionPerformed
+        mysteryLetter = this.jPButton.getText().charAt(0);
+        this.jPButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jPButtonActionPerformed
+
+    private void jQButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jQButtonActionPerformed
+        mysteryLetter = this.jQButton.getText().charAt(0);
+        this.jQButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jQButtonActionPerformed
+
+    private void jRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRButtonActionPerformed
+        mysteryLetter = this.jRButton.getText().charAt(0);
+        this.jRButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jRButtonActionPerformed
+
+    private void jSButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSButtonActionPerformed
+        mysteryLetter = this.jSButton.getText().charAt(0);
+        this.jSButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jSButtonActionPerformed
+
+    private void jTButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTButtonActionPerformed
+        mysteryLetter = this.jTButton.getText().charAt(0);
+        this.jTButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jTButtonActionPerformed
+
+    private void jUButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUButtonActionPerformed
+        mysteryLetter = this.jUButton.getText().charAt(0);
+        this.jUButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jUButtonActionPerformed
+
+    private void jVButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVButtonActionPerformed
+        mysteryLetter = this.jVButton.getText().charAt(0);
+        this.jVButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jVButtonActionPerformed
+
+    private void jWButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jWButtonActionPerformed
+        mysteryLetter = this.jWButton.getText().charAt(0);
+        this.jWButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jWButtonActionPerformed
+
+    private void jXButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jXButtonActionPerformed
+        mysteryLetter = this.jXButton.getText().charAt(0);
+        this.jXButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jXButtonActionPerformed
+
+    private void jYButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jYButtonActionPerformed
+        mysteryLetter = this.jYButton.getText().charAt(0);
+        this.jYButton.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jYButtonActionPerformed
+
+    private void jAButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAButton24ActionPerformed
+        mysteryLetter = this.jAButton24.getText().charAt(0);
+        this.jAButton24.setText("_");
+        this.playTheGame();
+    }//GEN-LAST:event_jAButton24ActionPerformed
 
     private void playTheGame() {
-        mysteryLetter = this.jLetterInputField.getText().charAt(0);
+        //mysteryLetter = this.jLetterInputField.getText().charAt(0);
+        mysteryLetter = Character.toLowerCase(mysteryLetter);
         this.jMysteryWordDisplayLabel.setText(mysteryWord.displayMysteryWord(mysteryLetter));
-        alphabet.setLetter(mysteryLetter);
-        this.jAlphabetLabel.setText(alphabet.displayArray());
-        this.jLetterInputField.setText("");
+        //alphabet.setLetter(mysteryLetter);
+        //this.jAlphabetLabel.setText(alphabet.displayArray());
+        //this.jLetterInputField.setText("");
         gallows.displayGallows(mysteryWord.getNumberOfGuesses());
         this.jGallowsArea.setText(gallowsString);
+        this.jGuessesLeftLabel.setText("You have " + mysteryWord.getNumberOfGuesses() + " guesses left.");
         this.setStatus(mysteryWord.winOrLose());
         
         if (this.getStatus() == Status.WIN_GAME){
@@ -291,17 +779,40 @@ public class GameFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jAlphabetLabel;
-    private javax.swing.JLabel jEnterLetterLabel;
+    private javax.swing.JButton jAButton;
+    private javax.swing.JButton jAButton24;
+    private javax.swing.JButton jBButton;
+    private javax.swing.JButton jCButton;
+    private javax.swing.JButton jDButton;
+    private javax.swing.JButton jEButton;
     private javax.swing.JButton jExitButton;
+    private javax.swing.JButton jFButton;
+    private javax.swing.JButton jGButton;
     private javax.swing.JTextArea jGallowsArea;
     private javax.swing.JLabel jGuessWordLabel;
-    private javax.swing.JTextField jLetterInputField;
+    private javax.swing.JLabel jGuessesLeftLabel;
+    private javax.swing.JButton jHButton;
+    private javax.swing.JButton jIButton;
+    private javax.swing.JButton jJButton;
+    private javax.swing.JButton jKButton;
+    private javax.swing.JButton jLButton;
+    private javax.swing.JButton jMButton;
     private javax.swing.JLabel jMysteryWordDisplayLabel;
+    private javax.swing.JButton jNButton;
+    private javax.swing.JButton jOButton;
+    private javax.swing.JButton jPButton;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jQButton;
+    private javax.swing.JButton jRButton;
     private javax.swing.JLabel jRemainingLettersLabel;
+    private javax.swing.JButton jSButton;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jSubmitLetterButton;
+    private javax.swing.JButton jTButton;
+    private javax.swing.JButton jUButton;
+    private javax.swing.JButton jVButton;
+    private javax.swing.JButton jWButton;
+    private javax.swing.JButton jXButton;
+    private javax.swing.JButton jYButton;
     private javax.swing.JButton jpInstructionsButton;
     private javax.swing.JLabel jpTitle;
     // End of variables declaration//GEN-END:variables
@@ -314,6 +825,14 @@ public class GameFrame extends javax.swing.JFrame {
         this.status = status;
     }
 
+    public static String getGallowsString() {
+        return gallowsString;
+    }
+
+    public static void setGallowsString(String gallowsString) {
+        GameFrame.gallowsString = gallowsString;
+    }
+        
     private void displayWinningMessage() {
         WinGameFrame winGameFrame = new WinGameFrame();
         winGameFrame.setVisible(true);
