@@ -332,9 +332,9 @@ public class GameFrame extends javax.swing.JFrame {
 
             switch(gallowsChoice){
                 case 6:
-                    gallowsString = ("\t------------"
-                                   + "\n\t|          |"
-                                   + "\n\t|          |"
+                    gallowsString = ("\t______________"
+                                   + "\n\t|\t|"
+                                   + "\n\t|\t|"
                                    + "\n\t|"
                                    + "\n\t|" 
                                    + "\n\t|"
@@ -342,97 +342,111 @@ public class GameFrame extends javax.swing.JFrame {
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
+                                   + "\n\t|______________"
+                                   + "\n\t|\t|"
                                    + "\n");
                 break;
             
                 case 5:
-                    gallowsString = ("\t------------"
-                                   + "\n\t|          |"
-                                   + "\n\t|          |"
-                                   + "\n\t|          O"
+                    gallowsString = ("\t______________"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t O"
                                    + "\n\t|" 
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
+                                   + "\n\t|______________"
+                                   + "\n\t|\t|"
                                    + "\n");
                 break;
                 
                 case 4:
-                    gallowsString = ("\t------------"
-                                   + "\n\t|          |"
-                                   + "\n\t|          |"
-                                   + "\n\t|          O"
-                                   + "\n\t|          |" 
-                                   + "\n\t|          |"
+                    gallowsString = ("\t______________"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t O"
+                                   + "\n\t|\t |" 
+                                   + "\n\t|\t |"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
+                                   + "\n\t|______________"
+                                   + "\n\t|\t|"
                                    + "\n");
                 break;
             
                 case 3:
-                    gallowsString = ("\t------------"
-                                   + "\n\t|          |"
-                                   + "\n\t|          |"
-                                   + "\n\t|          O"
-                                   + "\n\t|         /|" 
-                                   + "\n\t|          |"
+                    gallowsString = ("\t______________"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t O"
+                                   + "\n\t|\t/|" 
+                                   + "\n\t|\t |"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
+                                   + "\n\t|______________"
+                                   + "\n\t|\t|"
                                    + "\n");
                 break;
             
                 case 2:
-                    gallowsString = ("\t------------"
-                                   + "\n\t|          |"
-                                   + "\n\t|          |"
-                                   + "\n\t|          O"
-                                   + "\n\t|         /|\\" 
-                                   + "\n\t|          |"
+                    gallowsString = ("\t______________"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t O"
+                                   + "\n\t|\t/|\\" 
+                                   + "\n\t|\t |"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
+                                   + "\n\t|______________"
+                                   + "\n\t|\t|"
                                    + "\n");
                 break;
             
                 case 1:
-                    gallowsString = ("\t------------"
-                                   + "\n\t|          |"
-                                   + "\n\t|          |"
-                                   + "\n\t|          O"
-                                   + "\n\t|         /|\\" 
-                                   + "\n\t|          |"
-                                   + "\n\t|         /"
+                    gallowsString = ("\t______________"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t O"
+                                   + "\n\t|\t/|\\" 
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t/"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
+                                   + "\n\t|______________"
+                                   + "\n\t|\t|"
                                    + "\n");
                 break;
             
                 case 0:
-                    gallowsString = ("\t------------"
-                                   + "\n\t|          |"
-                                   + "\n\t|          |"
-                                   + "\n\t|          O"
-                                   + "\n\t|         /|\\" 
-                                   + "\n\t|          |"
-                                   + "\n\t|         / \\"
+                    gallowsString = ("\t______________"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t O"
+                                   + "\n\t|\t/|\\" 
+                                   + "\n\t|\t |"
+                                   + "\n\t|\t/ \\"
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
+                                   + "\n\t|______________"
+                                   + "\n\t|\t|"
                                    + "\n");
                 break;
             
                 default:
-                    gallowsString = ("\t------------"
-                                   + "\n\t|          |"
-                                   + "\n\t|          |"
+                    gallowsString = ("\t______________"
+                                   + "\n\t|\t|"
+                                   + "\n\t|\t|"
                                    + "\n\t|"
                                    + "\n\t|" 
                                    + "\n\t|"
@@ -440,6 +454,8 @@ public class GameFrame extends javax.swing.JFrame {
                                    + "\n\t|"
                                    + "\n\t|"
                                    + "\n\t|"
+                                   + "\n\t|______________"
+                                   + "\n\t|\t|"
                                    + "\n");
                 }
     }
