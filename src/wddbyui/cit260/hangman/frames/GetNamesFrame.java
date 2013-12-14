@@ -7,11 +7,6 @@ package wddbyui.cit260.hangman.frames;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import wddbyui.cit260.hangman.enums.ErrorType;
-import wddbyui.cit260.hangman.exceptions.HangmanException;
-import wddbyui.cit260.hangman.exceptions.MenuException;
-import wddbyui.cit260.hangman.game.Game;
-import wddbyui.cit260.hangman.game.Hangman;
 import wddbyui.cit260.hangman.game.PlayerName;
 
 /**
@@ -20,10 +15,10 @@ import wddbyui.cit260.hangman.game.PlayerName;
  */
 public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & Gerald
 
-    private Game game = new Game();
     private PlayerName playerName = new PlayerName();
-    
-    /**
+    private static String nameOfPlayer = "";
+
+     /**
      * Creates new form GetNamesFrame
      */
     public GetNamesFrame() {
@@ -112,6 +107,7 @@ public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorn
     private void jNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNameButtonActionPerformed
         
         playerName.promptName(this.jNameTextField.getText());
+        nameOfPlayer = this.jNameTextField.getText();
         this.dispose();
         // need to display player's name
         
@@ -172,4 +168,13 @@ public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorn
     private javax.swing.JTextField jNameTextField;
     private javax.swing.JPanel jpForm;
     // End of variables declaration//GEN-END:variables
+
+    public static String getNameOfPlayer() {
+        return nameOfPlayer;
+    }
+
+    public static void setNameOfPlayer(String nameOfPlayer) {
+        GetNamesFrame.nameOfPlayer = nameOfPlayer;
+    }
+    
 }

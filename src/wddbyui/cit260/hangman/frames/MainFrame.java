@@ -186,14 +186,6 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
         GetNamesFrame getNamesFrame = new GetNamesFrame();
         getNamesFrame.setVisible(true);
         this.dispose();
-        
-        /*try {
-            game.playTheGame();
-        } catch (IOException | MenuException | HangmanException e) {
-            System.out.println(ErrorType.FATAL_ERROR.getMessage()
-                + "\n" + e.getStackTrace().toString());
-        }*/
-        
     }//GEN-LAST:event_jpStartButtonActionPerformed
 
     /**

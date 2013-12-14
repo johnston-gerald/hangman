@@ -3,7 +3,7 @@ package wddbyui.cit260.hangman.frames;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import wddbyui.cit260.hangman.game.Game;
+import wddbyui.cit260.hangman.enums.Status;
 import wddbyui.cit260.hangman.menus.MainMenuControl;
 import wddbyui.cit260.hangman.menus.MainMenuView;
 import wddbyui.cit260.hangman.words.Alphabet;
@@ -16,20 +16,30 @@ import wddbyui.cit260.hangman.words.MysteryWord;
 public class GameFrame extends javax.swing.JFrame {
     
     private MysteryWord mysteryWord;
-    //Game.Gallows gallows = new Game.Gallows();
     private Alphabet alphabet = new Alphabet();
     private MainMenuView mainMenuView = new MainMenuView();
     private MainMenuControl mainMenuControl = new MainMenuControl();
+    private Gallows gallows = new Gallows();
+
+    private Status status;
+    private char mysteryLetter;
+    private String gallowsString = "";
     
     /**
      * Creates new form GameFrame
      */
     public GameFrame() throws IOException {
+        this.setStatus(Status.PLAYING);
+        
         this.mysteryWord = new MysteryWord();
         initComponents();
         
+        if (!GetNamesFrame.getNameOfPlayer().isEmpty()) {
+            this.jGuessWordLabel.setText(GetNamesFrame.getNameOfPlayer() + ", guess this word:");
+        }
+        
         this.jAlphabetLabel.setText(alphabet.displayArray());
-        this.jMysteryWordDiisplayLabel.setText(mysteryWord.displayMysteryWord('_'));
+        this.jMysteryWordDisplayLabel.setText(mysteryWord.displayMysteryWord('_'));
     }
 
     /**
@@ -50,7 +60,7 @@ public class GameFrame extends javax.swing.JFrame {
         jSubmitLetterButton = new javax.swing.JButton();
         jAlphabetLabel = new javax.swing.JLabel();
         jRemainingLettersLabel = new javax.swing.JLabel();
-        jMysteryWordDiisplayLabel = new javax.swing.JLabel();
+        jMysteryWordDisplayLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jGallowsArea = new javax.swing.JTextArea();
         jGuessWordLabel = new javax.swing.JLabel();
@@ -82,8 +92,12 @@ public class GameFrame extends javax.swing.JFrame {
 
         jLetterInputField.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jLetterInputField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jLetterInputField.setText("W");
         jLetterInputField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(66, 66, 166), 2));
+        jLetterInputField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLetterInputFieldActionPerformed(evt);
+            }
+        });
 
         jEnterLetterLabel.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
         jEnterLetterLabel.setText("Enter your letter choice here:");
@@ -97,16 +111,16 @@ public class GameFrame extends javax.swing.JFrame {
         });
 
         jAlphabetLabel.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
-        jAlphabetLabel.setText("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z");
+        jAlphabetLabel.setText("a b c d e f g h i j k l m n o p q r s t u v w x y z");
 
         jRemainingLettersLabel.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
         jRemainingLettersLabel.setText("Remaining Letters");
 
-        jMysteryWordDiisplayLabel.setBackground(new java.awt.Color(255, 247, 222));
-        jMysteryWordDiisplayLabel.setFont(new java.awt.Font("Myriad Pro", 0, 24)); // NOI18N
-        jMysteryWordDiisplayLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMysteryWordDiisplayLabel.setText("word");
-        jMysteryWordDiisplayLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(66, 66, 166), 2));
+        jMysteryWordDisplayLabel.setBackground(new java.awt.Color(255, 247, 222));
+        jMysteryWordDisplayLabel.setFont(new java.awt.Font("Myriad Pro", 0, 24)); // NOI18N
+        jMysteryWordDisplayLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jMysteryWordDisplayLabel.setText("word");
+        jMysteryWordDisplayLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(66, 66, 166), 2));
 
         jGallowsArea.setEditable(false);
         jGallowsArea.setBackground(new java.awt.Color(255, 247, 222));
@@ -119,7 +133,7 @@ public class GameFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jGallowsArea);
 
         jGuessWordLabel.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
-        jGuessWordLabel.setText("Guess This Word:");
+        jGuessWordLabel.setText("Guess this word:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -138,19 +152,22 @@ public class GameFrame extends javax.swing.JFrame {
                             .addComponent(jGuessWordLabel)
                             .addComponent(jEnterLetterLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jRemainingLettersLabel)
-                            .addComponent(jMysteryWordDiisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jMysteryWordDisplayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(jpTitle))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jAlphabetLabel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(jExitButton)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(111, 111, 111)
+                                .addComponent(jpTitle))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jAlphabetLabel))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(191, 191, 191)
+                                .addComponent(jExitButton)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,7 +180,7 @@ public class GameFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jGuessWordLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(jMysteryWordDiisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jMysteryWordDisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(59, 59, 59)
                         .addComponent(jEnterLetterLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -171,11 +188,11 @@ public class GameFrame extends javax.swing.JFrame {
                             .addComponent(jSubmitLetterButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                             .addComponent(jLetterInputField))
                         .addGap(29, 29, 29)
-                        .addComponent(jRemainingLettersLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
+                        .addComponent(jRemainingLettersLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)))
+                        .addGap(0, 11, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
                 .addComponent(jAlphabetLabel)
                 .addGap(18, 18, 18)
                 .addComponent(jExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,10 +223,34 @@ public class GameFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jExitButtonActionPerformed
 
     private void jSubmitLetterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitLetterButtonActionPerformed
-        this.jMysteryWordDiisplayLabel.setText(mysteryWord.displayMysteryWord(this.jLetterInputField.getText().charAt(0)));
-        
+        this.playTheGame();
     }//GEN-LAST:event_jSubmitLetterButtonActionPerformed
 
+    private void jLetterInputFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLetterInputFieldActionPerformed
+        this.playTheGame();
+    }//GEN-LAST:event_jLetterInputFieldActionPerformed
+
+    private void playTheGame() {
+        mysteryLetter = this.jLetterInputField.getText().charAt(0);
+        this.jMysteryWordDisplayLabel.setText(mysteryWord.displayMysteryWord(mysteryLetter));
+        alphabet.setLetter(mysteryLetter);
+        this.jAlphabetLabel.setText(alphabet.displayArray());
+        this.jLetterInputField.setText("");
+        gallows.displayGallows(mysteryWord.getNumberOfGuesses());
+        this.jGallowsArea.setText(gallowsString);
+        this.setStatus(mysteryWord.winOrLose());
+        
+        if (this.getStatus() == Status.WIN_GAME){
+            displayWinningMessage();
+        }
+        else {
+            if (this.getStatus() == Status.LOSE_GAME) {
+                gallows.displayGallows(mysteryWord.getNumberOfGuesses());
+                displayLosingMessage();
+            }
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -256,7 +297,7 @@ public class GameFrame extends javax.swing.JFrame {
     private javax.swing.JTextArea jGallowsArea;
     private javax.swing.JLabel jGuessWordLabel;
     private javax.swing.JTextField jLetterInputField;
-    private javax.swing.JLabel jMysteryWordDiisplayLabel;
+    private javax.swing.JLabel jMysteryWordDisplayLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jRemainingLettersLabel;
     private javax.swing.JScrollPane jScrollPane1;
@@ -264,4 +305,145 @@ public class GameFrame extends javax.swing.JFrame {
     private javax.swing.JButton jpInstructionsButton;
     private javax.swing.JLabel jpTitle;
     // End of variables declaration//GEN-END:variables
+
+    public Status getStatus() {
+        return status;
+    }
+
+    private void setStatus(Status status) {
+        this.status = status;
+    }
+
+    private void displayWinningMessage() {
+        WinGameFrame winGameFrame = new WinGameFrame();
+        winGameFrame.setVisible(true);
+        this.dispose();
+    }
+
+    private void displayLosingMessage() {
+        LoseGameFrame loseGameFrame = new LoseGameFrame();
+        loseGameFrame.setVisible(true);
+        this.dispose();
+    }
+    
+    class Gallows {
+            
+        private void displayGallows(int gallowsChoice) {  
+
+            switch(gallowsChoice){
+                case 6:
+                    gallowsString = ("\t------------"
+                                   + "\n\t|          |"
+                                   + "\n\t|          |"
+                                   + "\n\t|"
+                                   + "\n\t|" 
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n");
+                break;
+            
+                case 5:
+                    gallowsString = ("\t------------"
+                                   + "\n\t|          |"
+                                   + "\n\t|          |"
+                                   + "\n\t|          O"
+                                   + "\n\t|" 
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n");
+                break;
+                
+                case 4:
+                    gallowsString = ("\t------------"
+                                   + "\n\t|          |"
+                                   + "\n\t|          |"
+                                   + "\n\t|          O"
+                                   + "\n\t|          |" 
+                                   + "\n\t|          |"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n");
+                break;
+            
+                case 3:
+                    gallowsString = ("\t------------"
+                                   + "\n\t|          |"
+                                   + "\n\t|          |"
+                                   + "\n\t|          O"
+                                   + "\n\t|         /|" 
+                                   + "\n\t|          |"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n");
+                break;
+            
+                case 2:
+                    gallowsString = ("\t------------"
+                                   + "\n\t|          |"
+                                   + "\n\t|          |"
+                                   + "\n\t|          O"
+                                   + "\n\t|         /|\\" 
+                                   + "\n\t|          |"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n");
+                break;
+            
+                case 1:
+                    gallowsString = ("\t------------"
+                                   + "\n\t|          |"
+                                   + "\n\t|          |"
+                                   + "\n\t|          O"
+                                   + "\n\t|         /|\\" 
+                                   + "\n\t|          |"
+                                   + "\n\t|         /"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n");
+                break;
+            
+                case 0:
+                    gallowsString = ("\t------------"
+                                   + "\n\t|          |"
+                                   + "\n\t|          |"
+                                   + "\n\t|          O"
+                                   + "\n\t|         /|\\" 
+                                   + "\n\t|          |"
+                                   + "\n\t|         / \\"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n");
+                break;
+            
+                default:
+                    gallowsString = ("\t------------"
+                                   + "\n\t|          |"
+                                   + "\n\t|          |"
+                                   + "\n\t|"
+                                   + "\n\t|" 
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n\t|"
+                                   + "\n");
+                }
+    }
+       
+}
+
 }

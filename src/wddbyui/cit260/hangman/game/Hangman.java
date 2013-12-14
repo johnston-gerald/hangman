@@ -24,6 +24,7 @@ public class Hangman implements Serializable {
             
             /* Create and display the form */   //Paired Lesson 12, Lorna & Gerald
             java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
                 public void run() {
                     Hangman.mainFrame = new MainFrame();
                     Hangman.mainFrame.setVisible(true);

@@ -22,7 +22,8 @@ public class Alphabet implements Serializable {
     public String displayArray () {
         
         //System.out.println("Remaining Letters:");
-    
+        alphabetString = "";
+        
         for(int i = 0; i < alphabetArray.length; i++) {
         
             if (alphabetArray[i] == letter) {
