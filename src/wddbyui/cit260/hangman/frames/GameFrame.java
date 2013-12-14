@@ -90,6 +90,11 @@ public class GameFrame extends javax.swing.JFrame {
 
         jSubmitLetterButton.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
         jSubmitLetterButton.setText("Submit Letter");
+        jSubmitLetterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSubmitLetterButtonActionPerformed(evt);
+            }
+        });
 
         jAlphabetLabel.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jAlphabetLabel.setText("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z");
@@ -129,9 +134,9 @@ public class GameFrame extends javax.swing.JFrame {
                                 .addComponent(jSubmitLetterButton))
                             .addComponent(jpInstructionsButton)
                             .addComponent(jGuessWordLabel)
-                            .addComponent(jMysteryWordDiisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jEnterLetterLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRemainingLettersLabel))
+                            .addComponent(jRemainingLettersLabel)
+                            .addComponent(jMysteryWordDiisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -197,6 +202,11 @@ public class GameFrame extends javax.swing.JFrame {
     private void jExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitButtonActionPerformed
         this.dispose(); //exit the game
     }//GEN-LAST:event_jExitButtonActionPerformed
+
+    private void jSubmitLetterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitLetterButtonActionPerformed
+        this.jMysteryWordDiisplayLabel.setText(mysteryWord.displayMysteryWord(this.jLetterInputField.getText().charAt(0)));
+        
+    }//GEN-LAST:event_jSubmitLetterButtonActionPerformed
 
     /**
      * @param args the command line arguments
