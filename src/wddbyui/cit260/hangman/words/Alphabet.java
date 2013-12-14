@@ -8,8 +8,10 @@ import wddbyui.cit260.hangman.interfaces.DisplayArray;
  * @author gerrygj
  */
 
-public class Alphabet implements Serializable, DisplayArray {
+public class Alphabet implements Serializable {
 
+    private String alphabetString = "";
+    
     public Alphabet() {
     }
 
@@ -17,10 +19,9 @@ public class Alphabet implements Serializable, DisplayArray {
     private char[] alphabetArray = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     private char letter = '_';
     
-    @Override
-    public void displayArray () {
-    
-        System.out.println("Remaining Letters:");
+    public String displayArray () {
+        
+        //System.out.println("Remaining Letters:");
     
         for(int i = 0; i < alphabetArray.length; i++) {
         
@@ -28,10 +29,12 @@ public class Alphabet implements Serializable, DisplayArray {
                 alphabetArray[i] = '_';
             }
         
-            System.out.print(alphabetArray[i] + " ");
+            //System.out.print(alphabetArray[i] + " ");
+            alphabetString += alphabetArray[i] + " ";
         }
     
-        System.out.print("\n\n");
+        //System.out.print("\n\n");
+        return alphabetString;
         
     }
 

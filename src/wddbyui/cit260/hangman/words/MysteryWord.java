@@ -8,7 +8,7 @@ import java.util.Scanner;
 import wddbyui.cit260.hangman.enums.ErrorType;
 import wddbyui.cit260.hangman.game.ErrorHandling;
 import wddbyui.cit260.hangman.enums.Status;
-import wddbyui.cit260.hangman.exceptions.HangmanException;   //Lesson 11 Lorna Individual
+import wddbyui.cit260.hangman.exceptions.HangmanException;
 
 /**
  *
@@ -38,7 +38,7 @@ public class MysteryWord implements Serializable {
 
         while (!valid) {
             System.out.println("Please enter a letter or enter 1 for the menu: ");
-        try {          //Lesson 11 Lorna Individual
+        try {
             letter = letterScanner.next();
                       
             if (letter.charAt(0) >= '1' && letter.charAt(0) <= '3') { //menu
@@ -59,7 +59,7 @@ public class MysteryWord implements Serializable {
             
             throw new HangmanException();
             
-         } catch(HangmanException exc) {     //Lesson 11 Lorna Individual
+         } catch(HangmanException exc) {
             System.out.println("\n" + ErrorType.ENTER_LETTER.getMessage() + "\n");
         }           
         }
@@ -92,7 +92,7 @@ public class MysteryWord implements Serializable {
             numberOfGuesses--;
         }
     
-        mysteryWordOutput = mysteryWordOutput + "(" + mysteryWord.length() + " letters)";
+        //mysteryWordOutput = mysteryWordOutput + "(" + mysteryWord.length() + " letters)";
         return mysteryWordOutput;
     }
 

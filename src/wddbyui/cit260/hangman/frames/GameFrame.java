@@ -1,20 +1,35 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package wddbyui.cit260.hangman.frames;
+
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import wddbyui.cit260.hangman.game.Game;
+import wddbyui.cit260.hangman.menus.MainMenuControl;
+import wddbyui.cit260.hangman.menus.MainMenuView;
+import wddbyui.cit260.hangman.words.Alphabet;
+import wddbyui.cit260.hangman.words.MysteryWord;
 
 /**
  *
  * @author Lorna
  */
 public class GameFrame extends javax.swing.JFrame {
-
+    
+    private MysteryWord mysteryWord;
+    //Game.Gallows gallows = new Game.Gallows();
+    private Alphabet alphabet = new Alphabet();
+    private MainMenuView mainMenuView = new MainMenuView();
+    private MainMenuControl mainMenuControl = new MainMenuControl();
+    
     /**
      * Creates new form GameFrame
      */
-    public GameFrame() {
+    public GameFrame() throws IOException {
+        this.mysteryWord = new MysteryWord();
         initComponents();
+        
+        this.jAlphabetLabel.setText(alphabet.displayArray());
+        this.jMysteryWordDiisplayLabel.setText(mysteryWord.displayMysteryWord('_'));
     }
 
     /**
@@ -214,7 +229,11 @@ public class GameFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new GameFrame().setVisible(true);
+                try {
+                    new GameFrame().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(GameFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

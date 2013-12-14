@@ -5,6 +5,8 @@
 package wddbyui.cit260.hangman.frames;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import wddbyui.cit260.hangman.enums.ErrorType;
 import wddbyui.cit260.hangman.exceptions.HangmanException;
 import wddbyui.cit260.hangman.exceptions.MenuException;
@@ -120,7 +122,12 @@ public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorn
                 + "\n" + e.getStackTrace().toString());
         }
         */
-        GameFrame gameFrame = new GameFrame();
+        GameFrame gameFrame = null;
+        try {
+            gameFrame = new GameFrame();
+        } catch (IOException ex) {
+            Logger.getLogger(GetNamesFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         gameFrame.setVisible(true);
     }//GEN-LAST:event_jNameButtonActionPerformed
 
