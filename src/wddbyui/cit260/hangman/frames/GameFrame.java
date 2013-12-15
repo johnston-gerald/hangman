@@ -99,6 +99,7 @@ public class GameFrame extends javax.swing.JFrame {
 
         jExitButton.setFont(new java.awt.Font("Myriad Web Pro", 0, 16)); // NOI18N
         jExitButton.setText("Exit Game");
+        jExitButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jExitButtonActionPerformed(evt);
@@ -107,6 +108,7 @@ public class GameFrame extends javax.swing.JFrame {
 
         jpInstructionsButton.setFont(new java.awt.Font("Myriad Web Pro", 0, 16)); // NOI18N
         jpInstructionsButton.setText("Display Instructions");
+        jpInstructionsButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpInstructionsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jpInstructionsButtonActionPerformed(evt);
@@ -128,7 +130,7 @@ public class GameFrame extends javax.swing.JFrame {
         jGallowsArea.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
         jGallowsArea.setForeground(jpTitle.getForeground());
         jGallowsArea.setRows(5);
-        jGallowsArea.setText("                       ______________\n                       |                              |\n                       |                              |\n                       |                              |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n          ______|______________\n   ___|                                             |\n   |                                                    | ");
+        jGallowsArea.setText("                       ______________\n                       |                              |\n                       |                              |\n                       |                              |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n                       |\n         ______|______________\n   ___|                                             |\n    |                                                   | ");
         jGallowsArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(66, 66, 166), 3));
         jScrollPane1.setViewportView(jGallowsArea);
 
@@ -138,6 +140,7 @@ public class GameFrame extends javax.swing.JFrame {
         jAButton.setBackground(new java.awt.Color(204, 204, 255));
         jAButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jAButton.setText("A");
+        jAButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jAButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jAButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +151,7 @@ public class GameFrame extends javax.swing.JFrame {
         jBButton.setBackground(new java.awt.Color(204, 204, 255));
         jBButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jBButton.setText("B");
+        jBButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jBButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,6 +162,7 @@ public class GameFrame extends javax.swing.JFrame {
         jCButton.setBackground(new java.awt.Color(204, 204, 255));
         jCButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jCButton.setText("C");
+        jCButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jCButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jCButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +173,7 @@ public class GameFrame extends javax.swing.JFrame {
         jDButton.setBackground(new java.awt.Color(204, 204, 255));
         jDButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jDButton.setText("D");
+        jDButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jDButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jDButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,6 +184,7 @@ public class GameFrame extends javax.swing.JFrame {
         jEButton.setBackground(new java.awt.Color(204, 204, 255));
         jEButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jEButton.setText("E");
+        jEButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jEButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jEButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,6 +195,7 @@ public class GameFrame extends javax.swing.JFrame {
         jFButton.setBackground(new java.awt.Color(204, 204, 255));
         jFButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jFButton.setText("F");
+        jFButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jFButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jFButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,6 +206,7 @@ public class GameFrame extends javax.swing.JFrame {
         jGButton.setBackground(new java.awt.Color(204, 204, 255));
         jGButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jGButton.setText("G");
+        jGButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jGButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jGButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,6 +217,7 @@ public class GameFrame extends javax.swing.JFrame {
         jHButton.setBackground(new java.awt.Color(204, 204, 255));
         jHButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jHButton.setText("H");
+        jHButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jHButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jHButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,6 +228,7 @@ public class GameFrame extends javax.swing.JFrame {
         jIButton.setBackground(new java.awt.Color(204, 204, 255));
         jIButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jIButton.setText("I");
+        jIButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jIButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jIButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,6 +239,7 @@ public class GameFrame extends javax.swing.JFrame {
         jJButton.setBackground(new java.awt.Color(204, 204, 255));
         jJButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jJButton.setText("J");
+        jJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jJButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,6 +250,7 @@ public class GameFrame extends javax.swing.JFrame {
         jKButton.setBackground(new java.awt.Color(204, 204, 255));
         jKButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jKButton.setText("K");
+        jKButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jKButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jKButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,6 +261,7 @@ public class GameFrame extends javax.swing.JFrame {
         jLButton.setBackground(new java.awt.Color(204, 204, 255));
         jLButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jLButton.setText("L");
+        jLButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jLButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,6 +272,7 @@ public class GameFrame extends javax.swing.JFrame {
         jMButton.setBackground(new java.awt.Color(204, 204, 255));
         jMButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jMButton.setText("M");
+        jMButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jMButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,6 +283,7 @@ public class GameFrame extends javax.swing.JFrame {
         jNButton.setBackground(new java.awt.Color(204, 204, 255));
         jNButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jNButton.setText("N");
+        jNButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jNButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jNButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,6 +294,7 @@ public class GameFrame extends javax.swing.JFrame {
         jOButton.setBackground(new java.awt.Color(204, 204, 255));
         jOButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jOButton.setText("O");
+        jOButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jOButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jOButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,6 +305,7 @@ public class GameFrame extends javax.swing.JFrame {
         jPButton.setBackground(new java.awt.Color(204, 204, 255));
         jPButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jPButton.setText("P");
+        jPButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jPButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -298,6 +316,7 @@ public class GameFrame extends javax.swing.JFrame {
         jQButton.setBackground(new java.awt.Color(204, 204, 255));
         jQButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jQButton.setText("Q");
+        jQButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jQButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jQButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,6 +327,7 @@ public class GameFrame extends javax.swing.JFrame {
         jRButton.setBackground(new java.awt.Color(204, 204, 255));
         jRButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jRButton.setText("R");
+        jRButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jRButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jRButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -318,6 +338,7 @@ public class GameFrame extends javax.swing.JFrame {
         jSButton.setBackground(new java.awt.Color(204, 204, 255));
         jSButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jSButton.setText("S");
+        jSButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jSButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jSButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -328,6 +349,7 @@ public class GameFrame extends javax.swing.JFrame {
         jTButton.setBackground(new java.awt.Color(204, 204, 255));
         jTButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jTButton.setText("T");
+        jTButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jTButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -338,6 +360,7 @@ public class GameFrame extends javax.swing.JFrame {
         jUButton.setBackground(new java.awt.Color(204, 204, 255));
         jUButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jUButton.setText("U");
+        jUButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jUButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jUButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -348,6 +371,7 @@ public class GameFrame extends javax.swing.JFrame {
         jVButton.setBackground(new java.awt.Color(204, 204, 255));
         jVButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jVButton.setText("V");
+        jVButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jVButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jVButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -358,6 +382,7 @@ public class GameFrame extends javax.swing.JFrame {
         jWButton.setBackground(new java.awt.Color(204, 204, 255));
         jWButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jWButton.setText("W");
+        jWButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jWButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jWButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,6 +393,7 @@ public class GameFrame extends javax.swing.JFrame {
         jXButton.setBackground(new java.awt.Color(204, 204, 255));
         jXButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jXButton.setText("X");
+        jXButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jXButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jXButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -378,6 +404,7 @@ public class GameFrame extends javax.swing.JFrame {
         jYButton.setBackground(new java.awt.Color(204, 204, 255));
         jYButton.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jYButton.setText("Y");
+        jYButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jYButton.setPreferredSize(new java.awt.Dimension(50, 30));
         jYButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -388,6 +415,7 @@ public class GameFrame extends javax.swing.JFrame {
         jAButton24.setBackground(new java.awt.Color(204, 204, 255));
         jAButton24.setFont(new java.awt.Font("Myriad Pro", 0, 18)); // NOI18N
         jAButton24.setText("Z");
+        jAButton24.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jAButton24.setPreferredSize(new java.awt.Dimension(50, 30));
         jAButton24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -490,7 +518,7 @@ public class GameFrame extends javax.swing.JFrame {
                         .addComponent(jpTitle)
                         .addGap(23, 23, 23)
                         .addComponent(jpInstructionsButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                         .addComponent(jGuessWordLabel)
                         .addGap(18, 18, 18)
                         .addComponent(jMysteryWordDisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
