@@ -34,7 +34,6 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
         jpBody = new javax.swing.JPanel();
         jpTitle = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jpContinueButton = new javax.swing.JButton();
         jpInstructionsButton = new javax.swing.JButton();
         jExitButton = new javax.swing.JButton();
         jpStartButton = new javax.swing.JButton();
@@ -54,14 +53,6 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
         jpTitle.setName("jpTitle"); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-
-        jpContinueButton.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jpContinueButton.setText("Continue Playing");
-        jpContinueButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jpContinueButtonActionPerformed(evt);
-            }
-        });
 
         jpInstructionsButton.setFont(new java.awt.Font("Myriad Web Pro", 0, 16)); // NOI18N
         jpInstructionsButton.setText("Display Instructions");
@@ -99,22 +90,16 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jpStartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jpContinueButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jpInstructionsButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jpInstructionsButton)
-                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jpStartButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jpContinueButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jpInstructionsButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(jExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -177,10 +162,6 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
         this.dispose(); //exit the game
     }//GEN-LAST:event_jExitButtonActionPerformed
 
-    private void jpContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpContinueButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpContinueButtonActionPerformed
-
     private void jpStartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpStartButtonActionPerformed
         
         GetNamesFrame getNamesFrame = new GetNamesFrame();
@@ -228,7 +209,6 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jpBody;
-    private javax.swing.JButton jpContinueButton;
     private javax.swing.JButton jpInstructionsButton;
     private javax.swing.JButton jpStartButton;
     private javax.swing.JLabel jpTitle;
