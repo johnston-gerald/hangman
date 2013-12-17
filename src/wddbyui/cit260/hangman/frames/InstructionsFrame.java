@@ -4,17 +4,21 @@
  */
 package wddbyui.cit260.hangman.frames;
 
+import java.io.Serializable;
+import wddbyui.cit260.hangman.enums.Help;
+
 /**
  *
  * @author Lorna
  */
-public class InstructionsFrame extends javax.swing.JFrame {
+public class InstructionsFrame extends javax.swing.JFrame implements Serializable {
 
     /**
      * Creates new form InstructionsFrame
      */
     public InstructionsFrame() {
         initComponents();
+        this.jTextInstructions.setText(Help.INSTRUCTIONS.getMessage());
     }
 
     /**

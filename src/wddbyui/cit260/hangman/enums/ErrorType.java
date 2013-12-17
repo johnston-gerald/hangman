@@ -12,8 +12,8 @@ public enum ErrorType implements DisplayMessage{
     ENTER_LETTER ("Invalid Input. Please enter only an uppercase or lowercase letter."), 
     MISSING_FILE ("Error. The file, words.txt, is missing."),
     INCORRECT_FILE ("Error. The file, words.txt, is not formatted properly."),
-    FATAL_ERROR ("Fatal Error.  This program is terminated.  Good-bye!"),  //Gerald and Lorna Lesson 11 Paired assignment
-    NAME_ERROR ("Error.  Please enter your name without any spaces.");   //Lesson 11 Lorna Individual
+    FATAL_ERROR ("Fatal Error.  This program is terminated.  Good-bye!"),
+    NAME_ERROR ("Error.  Please enter your name without any spaces.");
     String message;
     
     ErrorType(String message) {

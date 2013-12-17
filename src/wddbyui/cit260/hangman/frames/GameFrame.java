@@ -1,21 +1,20 @@
 package wddbyui.cit260.hangman.frames;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import wddbyui.cit260.hangman.enums.Status;
 import wddbyui.cit260.hangman.menus.MainMenuControl;
-import wddbyui.cit260.hangman.menus.MainMenuView;
 import wddbyui.cit260.hangman.words.MysteryWord;
 
 /**
  *
  * @author Lorna
  */
-public class GameFrame extends javax.swing.JFrame {
+public class GameFrame extends javax.swing.JFrame implements Serializable {
     
     private MysteryWord mysteryWord;
-    private MainMenuView mainMenuView = new MainMenuView();
     private MainMenuControl mainMenuControl = new MainMenuControl();
     private Gallows gallows = new Gallows();
 
@@ -36,7 +35,6 @@ public class GameFrame extends javax.swing.JFrame {
             this.jGuessWordLabel.setText(GetNamesFrame.getNameOfPlayer() + ", guess this word:");
         }
         
-        //this.jAlphabetLabel.setText(alphabet.displayArray());
         this.jMysteryWordDisplayLabel.setText(mysteryWord.displayMysteryWord('_'));
         gallows.displayGallows('6');
         this.jGallowsArea.setText(gallowsString);
@@ -51,7 +49,7 @@ public class GameFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jHangmanPanel = new javax.swing.JPanel();
         jpTitle = new javax.swing.JLabel();
         jExitButton = new javax.swing.JButton();
         jpInstructionsButton = new javax.swing.JButton();
@@ -90,7 +88,7 @@ public class GameFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jHangmanPanel.setBackground(new java.awt.Color(204, 204, 255));
 
         jpTitle.setFont(new java.awt.Font("Minion Pro SmBd", 0, 36)); // NOI18N
         jpTitle.setForeground(new java.awt.Color(61, 61, 155));
@@ -426,16 +424,16 @@ public class GameFrame extends javax.swing.JFrame {
         jGuessesLeftLabel.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
         jGuessesLeftLabel.setText("You have 6 guesses left");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jHangmanPanelLayout = new javax.swing.GroupLayout(jHangmanPanel);
+        jHangmanPanel.setLayout(jHangmanPanelLayout);
+        jHangmanPanelLayout.setHorizontalGroup(
+            jHangmanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jHangmanPanelLayout.createSequentialGroup()
+                .addGroup(jHangmanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jHangmanPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jHangmanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jHangmanPanelLayout.createSequentialGroup()
                                 .addComponent(jAButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jBButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -450,9 +448,9 @@ public class GameFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jGButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jHangmanPanelLayout.createSequentialGroup()
+                                .addGroup(jHangmanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jHangmanPanelLayout.createSequentialGroup()
                                         .addGap(101, 101, 101)
                                         .addComponent(jpTitle))
                                     .addComponent(jpInstructionsButton)
@@ -460,9 +458,9 @@ public class GameFrame extends javax.swing.JFrame {
                                     .addComponent(jMysteryWordDisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jGuessesLeftLabel))
                                 .addGap(59, 59, 59)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jHangmanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jHangmanPanelLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(jHButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -475,7 +473,7 @@ public class GameFrame extends javax.swing.JFrame {
                                 .addComponent(jLButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jHangmanPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jNButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -502,19 +500,19 @@ public class GameFrame extends javax.swing.JFrame {
                         .addComponent(jYButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jAButton24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jHangmanPanelLayout.createSequentialGroup()
                         .addGap(335, 335, 335)
                         .addComponent(jExitButton))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jHangmanPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jRemainingLettersLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        jHangmanPanelLayout.setVerticalGroup(
+            jHangmanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jHangmanPanelLayout.createSequentialGroup()
+                .addGroup(jHangmanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jHangmanPanelLayout.createSequentialGroup()
                         .addComponent(jpTitle)
                         .addGap(23, 23, 23)
                         .addComponent(jpInstructionsButton)
@@ -527,11 +525,11 @@ public class GameFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jRemainingLettersLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jHangmanPanelLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jHangmanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jAButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -546,7 +544,7 @@ public class GameFrame extends javax.swing.JFrame {
                     .addComponent(jLButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jHangmanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jNButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jOButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -569,22 +567,24 @@ public class GameFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jHangmanPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jHangmanPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jpInstructionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpInstructionsButtonActionPerformed
-        InstructionsFrame instructionsFrame = new InstructionsFrame();
-        instructionsFrame.setVisible(true);
+        this.setStatus(Status.INSTRUCTIONS);
+        mainMenuControl.activateControl(status);
     }//GEN-LAST:event_jpInstructionsButtonActionPerformed
 
     private void jExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitButtonActionPerformed
+        this.setStatus(Status.EXIT);
+        mainMenuControl.activateControl(status);
         this.dispose(); //exit the game
     }//GEN-LAST:event_jExitButtonActionPerformed
 
@@ -820,6 +820,7 @@ public class GameFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jGuessWordLabel;
     private javax.swing.JLabel jGuessesLeftLabel;
     private javax.swing.JButton jHButton;
+    private javax.swing.JPanel jHangmanPanel;
     private javax.swing.JButton jIButton;
     private javax.swing.JButton jJButton;
     private javax.swing.JButton jKButton;
@@ -829,7 +830,6 @@ public class GameFrame extends javax.swing.JFrame {
     private javax.swing.JButton jNButton;
     private javax.swing.JButton jOButton;
     private javax.swing.JButton jPButton;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jQButton;
     private javax.swing.JButton jRButton;
     private javax.swing.JLabel jRemainingLettersLabel;

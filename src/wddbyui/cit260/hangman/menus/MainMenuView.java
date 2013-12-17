@@ -1,7 +1,7 @@
 package wddbyui.cit260.hangman.menus;
 
 import wddbyui.cit260.hangman.enums.Status;
-import wddbyui.cit260.hangman.exceptions.MenuException; //Lesson 11 Paired, Lorna & Gerald
+import wddbyui.cit260.hangman.exceptions.MenuException;
 
 /**
  *
@@ -21,8 +21,8 @@ public class MainMenuView extends Menu {
         super(MainMenuView.menuItems);
     }
 
-    public Status getMainMenuItem() throws MenuException {   //Lesson 11 Paired, Lorna & Gerald
+    /*public Status getMainMenuItem() throws MenuException {
         return mainMenuControl.activateControl(this.getCommand().charAt(0));
-    }
+    }*/
     
 }

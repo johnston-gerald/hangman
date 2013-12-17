@@ -2,7 +2,8 @@ package wddbyui.cit260.hangman.menus;
 
 import wddbyui.cit260.hangman.enums.Status;
 import java.io.Serializable;
-import wddbyui.cit260.hangman.enums.Help;
+import wddbyui.cit260.hangman.frames.GetNamesFrame;
+import wddbyui.cit260.hangman.frames.InstructionsFrame;
 
 /**
  *
@@ -13,23 +14,26 @@ public class MainMenuControl implements Serializable {
     public MainMenuControl() {
     }
     
-    public Status activateControl(char menuSelection) { 
+    public void activateControl(Status status) { 
 
-        switch(menuSelection){
+        switch(status){
             
-            case '1':
-                return Status.PLAYING;
+            case PLAYING:
+                GetNamesFrame getNamesFrame = new GetNamesFrame();
+                getNamesFrame.setVisible(true);
+                break;
 
-            case '2':
-                System.out.println(Help.INSTRUCTIONS.getMessage());
-                return Status.PLAYING;
+            case INSTRUCTIONS:
+                InstructionsFrame instructionsFrame = new InstructionsFrame();
+                instructionsFrame.setVisible(true);
+                break;
             
-            case '3':
-                return Status.EXIT;
+            case EXIT:
+                break;
                 
-            default:
-                System.out.println();
-                return Status.PLAYING;
+            /*default:
+                //System.out.println();
+                //return Status.MENU;*/
             }
         } 
 }

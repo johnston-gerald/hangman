@@ -8,7 +8,7 @@ import wddbyui.cit260.hangman.exceptions.HangmanException;
  *
  * @author gerrygj
  */
-public class PlayerName implements Serializable {   //Paired Lesson 12, Lorna & Gerald
+public class PlayerName implements Serializable {
 
     private static String name = null;
     
@@ -17,15 +17,10 @@ public class PlayerName implements Serializable {   //Paired Lesson 12, Lorna & 
    
     public void promptName(String inputName) {
         try {
-             //Scanner input = new Scanner(System.in);  //obsolete code
              Boolean valid = false;
         
            while(!valid) {
                
-               //obsolete code
-                    //System.out.println("Enter your name: ");
-                    //this.name = input.next();
-                    //if (name.equals(name.toString())) {
                name = inputName;
                
                if (name != null) {

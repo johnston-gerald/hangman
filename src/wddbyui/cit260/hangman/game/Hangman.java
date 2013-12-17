@@ -3,7 +3,6 @@ package wddbyui.cit260.hangman.game;
 import java.io.IOException;
 import java.io.Serializable;
 import wddbyui.cit260.hangman.enums.ErrorType;
-import wddbyui.cit260.hangman.exceptions.MenuException;
 import wddbyui.cit260.hangman.frames.MainFrame;
 
 /**
@@ -17,12 +16,12 @@ public class Hangman implements Serializable {
     public Hangman() {
     }
 
-    public static void main(String[] args) throws IOException, MenuException {
+    public static void main(String[] args) throws IOException {
         Hangman hangman = null;
         try {
             hangman = new Hangman();
             
-            /* Create and display the form */   //Paired Lesson 12, Lorna & Gerald
+            /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 @Override
                 public void run() {
@@ -30,15 +29,6 @@ public class Hangman implements Serializable {
                     Hangman.mainFrame.setVisible(true);
                 }
             });
-            
-            /*  //obsolete code
-            PlayerName playerName = new PlayerName();
-            System.out.println("\nWelcome " + playerName.getName());
-       
-            System.out.println(Help.WELCOME.getMessage());
-        
-            Game game = new Game();
-            game.playTheGame();*/
         }
         catch(Throwable e) {
             System.out.println(ErrorType.FATAL_ERROR.getMessage()

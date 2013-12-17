@@ -30,9 +30,9 @@ public class FileArrayProvider implements Serializable {
         this.fileName = fileName;
     }
 
-    public void readLines() throws FileNotFoundException, IOException { //Gerald, Lesson 11 Individual
+    public void readLines() throws FileNotFoundException, IOException {
         FileReader fileReader;
-        try {   //Gerald, Lesson 11 Individual
+        try {
             fileReader = new FileReader(fileName);
             List<String> lines;
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -44,7 +44,7 @@ public class FileArrayProvider implements Serializable {
         
             wordList = lines.toArray(new String[lines.size()]);
         }
-        catch (FileNotFoundException e) {   //Gerald, Lesson 11 Individual
+        catch (FileNotFoundException e) {
             System.out.println(ErrorType.MISSING_FILE.getMessage());
             //Logger.getLogger(FileArrayProvider.class.getName()).log(Level.SEVERE, null, e);   // use for testing
         }

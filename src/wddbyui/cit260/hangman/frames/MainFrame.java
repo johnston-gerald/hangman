@@ -4,22 +4,26 @@
  */
 package wddbyui.cit260.hangman.frames;
 
+import java.io.Serializable;
+import wddbyui.cit260.hangman.enums.Help;
+import wddbyui.cit260.hangman.enums.Status;
 import wddbyui.cit260.hangman.menus.MainMenuControl;
 
 /**
  *
  * @author gerrygj
  */
-public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & Gerald
+public class MainFrame extends javax.swing.JFrame implements Serializable {
     
+    private Status status;
     private MainMenuControl mainMenuControl = new MainMenuControl();
-    //private Game game = new Game();
-
+   
     /**
      * Creates new form MainFrame
      */
     public MainFrame() {
         initComponents();
+        this.jtWelcome.setText(Help.WELCOME.getMessage());
     }
 
     /**
@@ -154,18 +158,19 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
     }// </editor-fold>//GEN-END:initComponents
 
     private void jpInstructionsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpInstructionsButtonActionPerformed
-        InstructionsFrame instructionsFrame = new InstructionsFrame();
-        instructionsFrame.setVisible(true);
+        this.setStatus(Status.INSTRUCTIONS);
+        mainMenuControl.activateControl(status);
     }//GEN-LAST:event_jpInstructionsButtonActionPerformed
 
     private void jExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jExitButtonActionPerformed
+        this.setStatus(Status.EXIT);
+        mainMenuControl.activateControl(status);
         this.dispose(); //exit the game
     }//GEN-LAST:event_jExitButtonActionPerformed
 
     private void jpStartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpStartButtonActionPerformed
-        
-        GetNamesFrame getNamesFrame = new GetNamesFrame();
-        getNamesFrame.setVisible(true);
+        this.setStatus(Status.PLAYING);
+        mainMenuControl.activateControl(status);
         this.dispose();
     }//GEN-LAST:event_jpStartButtonActionPerformed
 
@@ -214,4 +219,13 @@ public class MainFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & 
     private javax.swing.JLabel jpTitle;
     private javax.swing.JTextArea jtWelcome;
     // End of variables declaration//GEN-END:variables
+
+public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
 }

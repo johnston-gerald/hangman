@@ -8,6 +8,7 @@ import wddbyui.cit260.hangman.interfaces.DisplayMessage;
  */
 public enum Status implements DisplayMessage{
     
+    INSTRUCTIONS ("INSTRUCTIONS"),
     PLAYING ("PLAYING"), 
     WIN_GAME ("WIN_GAME"), 
     LOSE_GAME ("LOSE_GAME"), 

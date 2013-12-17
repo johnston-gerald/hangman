@@ -5,6 +5,7 @@
 package wddbyui.cit260.hangman.frames;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,7 +13,7 @@ import java.util.logging.Logger;
  *
  * @author gerrygj
  */
-public class LoseGameFrame extends javax.swing.JFrame {
+public class LoseGameFrame extends javax.swing.JFrame implements Serializable {
 
     /**
      * Creates new form LoseGameFrame

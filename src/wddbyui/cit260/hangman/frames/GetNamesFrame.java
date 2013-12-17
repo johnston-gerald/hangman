@@ -5,15 +5,15 @@
 package wddbyui.cit260.hangman.frames;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.Serializable;
+import wddbyui.cit260.hangman.enums.ErrorType;
 import wddbyui.cit260.hangman.game.PlayerName;
 
 /**
  *
  * @author gerrygj
  */
-public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorna & Gerald
+public class GetNamesFrame extends javax.swing.JFrame implements Serializable {
 
     private PlayerName playerName = new PlayerName();
     private static String nameOfPlayer = "";
@@ -23,13 +23,7 @@ public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorn
      */
     public GetNamesFrame() {
         initComponents();
-        //this.game = game;
-        //setLocationRelativeTo(null);
     }
-
-    //public GetNamesFrame() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -55,6 +49,11 @@ public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorn
         jNameLabel.setText("Please enter your name:");
 
         jNameTextField.setFont(new java.awt.Font("Myriad Web Pro", 0, 16)); // NOI18N
+        jNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jNameTextFieldActionPerformed(evt);
+            }
+        });
 
         jNameButton.setFont(new java.awt.Font("Myriad Web Pro", 0, 16)); // NOI18N
         jNameButton.setText("Submit");
@@ -105,28 +104,28 @@ public class GetNamesFrame extends javax.swing.JFrame { //Paired Lesson 12, Lorn
     }// </editor-fold>//GEN-END:initComponents
 
     private void jNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNameButtonActionPerformed
-        
+        this.startGame();
+    }//GEN-LAST:event_jNameButtonActionPerformed
+
+    private void jNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNameTextFieldActionPerformed
+        this.startGame();
+    }//GEN-LAST:event_jNameTextFieldActionPerformed
+
+    private void startGame() {
         playerName.promptName(this.jNameTextField.getText());
         nameOfPlayer = this.jNameTextField.getText();
         this.dispose();
-        // need to display player's name
         
-     /*   try {
-            game.playTheGame();
-        } catch (IOException | MenuException | HangmanException e) {
-            System.out.println(ErrorType.FATAL_ERROR.getMessage()
-                + "\n" + e.getStackTrace().toString());
-        }
-        */
         GameFrame gameFrame = null;
         try {
             gameFrame = new GameFrame();
-        } catch (IOException ex) {
-            Logger.getLogger(GetNamesFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException e) {
+            System.out.println(ErrorType.FATAL_ERROR.getMessage()
+                + "\n" + e.getStackTrace().toString());
         }
         gameFrame.setVisible(true);
-    }//GEN-LAST:event_jNameButtonActionPerformed
-
+    }
+    
     /**
      * @param args the command line arguments
      */

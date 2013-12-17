@@ -8,22 +8,17 @@ import wddbyui.cit260.hangman.interfaces.DisplayMessage;
  */
 public enum Help implements DisplayMessage{
     
-    WELCOME ("\n\t***********************************************************************"
-            + "\n\t* Welcome to the game of Hangman!                                     *"                            
-            + "\n\t* You will be playing against the computer. The object of the game    *"
-            + "\n\t* is to correctly guess all the letters of the mystery word before    *"
-            + "\n\t* you are hung. Good Luck!!!                                          *"
-            + "\n\t***********************************************************************"
-            + "\n"), 
+    WELCOME ("Welcome to the game of Hangman!\n" +
+             "\n" +
+             "You will be playing against the computer. The object of the game is to correctly guess all the letters of the mystery word before you are hung.\n" +
+             "\n" +
+             "Good Luck!!!"), 
     
-    INSTRUCTIONS ("\n\t***********************************************************************"
-            + "\n\t* You are playing against the computer. The object of the game is to  *"
-            + "\n\t* correctly guess all the letters of the mystery word before you are  *"
-            + "\n\t* hung. Please enter a letter in uppercase or lowercase. Otherwise,   *"
-            + "\n\t* enter 1 to access the menu. You can access the menu functions at    *"
-            + "\n\t* any point in the game by entering the menu item number.             *"
-            + "\n\t***********************************************************************"
-            + "\n");
+    INSTRUCTIONS ("You are playing against the computer. The object of the game is to correctly guess all the letters of the mystery word before you are hung. A body part will be added to the gallows for each incorrect letter chosen.\n" +
+                  "\n" +
+                  "To play, please enter a letter.  You may use uppercase or lowercase. \n" +
+                  "\n" +
+                  "Choose well and have a long life!");
     
         String message;
     
