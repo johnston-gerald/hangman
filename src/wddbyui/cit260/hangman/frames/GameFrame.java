@@ -747,12 +747,8 @@ public class GameFrame extends javax.swing.JFrame implements Serializable {
     }//GEN-LAST:event_jAButton24ActionPerformed
 
     private void playTheGame() {
-        //mysteryLetter = this.jLetterInputField.getText().charAt(0);
         mysteryLetter = Character.toLowerCase(mysteryLetter);
         this.jMysteryWordDisplayLabel.setText(mysteryWord.displayMysteryWord(mysteryLetter));
-        //alphabet.setLetter(mysteryLetter);
-        //this.jAlphabetLabel.setText(alphabet.displayArray());
-        //this.jLetterInputField.setText("");
         gallows.displayGallows(mysteryWord.getNumberOfGuesses());
         this.jGallowsArea.setText(gallowsString);
         this.jGuessesLeftLabel.setText("You have " + mysteryWord.getNumberOfGuesses() + " guesses left.");
