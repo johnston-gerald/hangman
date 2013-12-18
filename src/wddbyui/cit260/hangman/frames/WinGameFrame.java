@@ -168,6 +168,7 @@ public class WinGameFrame extends javax.swing.JFrame implements Serializable {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new WinGameFrame().setVisible(true);
             }

@@ -163,6 +163,7 @@ public class LoseGameFrame extends javax.swing.JFrame implements Serializable {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new LoseGameFrame().setVisible(true);
             }

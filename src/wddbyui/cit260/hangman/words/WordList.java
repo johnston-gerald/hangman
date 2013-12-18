@@ -19,7 +19,6 @@ public class WordList extends FileArrayProvider implements DisplayArray {
     }
     
     // this function is just for testing
-
     @Override
     public void displayArray() {
         System.out.println("\n\t===============================================================");

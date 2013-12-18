@@ -13,7 +13,7 @@ import wddbyui.cit260.hangman.menus.MainMenuControl;
  *
  * @author gerrygj
  */
-public class MainFrame extends javax.swing.JFrame implements Serializable {
+public class MainFrame extends javax.swing.JFrame implements Serializable  {
     
     private Status status;
     private MainMenuControl mainMenuControl = new MainMenuControl();
