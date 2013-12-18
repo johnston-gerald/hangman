@@ -16,7 +16,7 @@ public enum Help implements DisplayMessage{
     
     INSTRUCTIONS ("You are playing against the computer. The object of the game is to correctly guess all the letters of the mystery word before you are hung. A body part will be added to the gallows for each incorrect letter chosen.\n" +
                   "\n" +
-                  "To play, please enter a letter.  You may use uppercase or lowercase. \n" +
+                  "To play, please click on a letter. \n" +
                   "\n" +
                   "Choose well and have a long life!");
     

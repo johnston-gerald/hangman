@@ -61,7 +61,7 @@ public class InstructionsFrame extends javax.swing.JFrame implements Serializabl
         jTextInstructions.setFont(new java.awt.Font("Myriad Pro", 0, 16)); // NOI18N
         jTextInstructions.setLineWrap(true);
         jTextInstructions.setRows(5);
-        jTextInstructions.setText("You are playing against the computer. The object of the game is to correctly guess all the letters of the mystery word before you are hung. A body part will be added to the gallows for each incorrect letter chosen.\n\nTo play, please enter a letter.  You may use uppercase or lowercase. \n\nChoose well and have a long life!");
+        jTextInstructions.setText("You are playing against the computer. The object of the game is to correctly guess all the letters of the mystery word before you are hung. A body part will be added to the gallows for each incorrect letter chosen.\n\nTo play, please click on a letter.\n\nChoose well and have a long life!");
         jTextInstructions.setWrapStyleWord(true);
         jScrollPane2.setViewportView(jTextInstructions);
 

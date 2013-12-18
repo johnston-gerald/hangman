@@ -120,7 +120,7 @@
                 </Property>
                 <Property name="lineWrap" type="boolean" value="true"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="You are playing against the computer. The object of the game is to correctly guess all the letters of the mystery word before you are hung. A body part will be added to the gallows for each incorrect letter chosen.&#xa;&#xa;To play, please enter a letter.  You may use uppercase or lowercase. &#xa;&#xa;Choose well and have a long life!"/>
+                <Property name="text" type="java.lang.String" value="You are playing against the computer. The object of the game is to correctly guess all the letters of the mystery word before you are hung. A body part will be added to the gallows for each incorrect letter chosen.&#xa;&#xa;To play, please click on a letter.&#xa;&#xa;Choose well and have a long life!"/>
                 <Property name="wrapStyleWord" type="boolean" value="true"/>
               </Properties>
             </Component>
